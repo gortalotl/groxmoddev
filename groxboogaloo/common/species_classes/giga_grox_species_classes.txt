@@ -1,0 +1,11 @@
+GIGAGROX = {
+	archetype = BIOLOGICAL
+
+	possible = { always = no }
+	randomized = no
+	portraits = {
+		"gigagrox"
+	}
+	graphical_culture = mammalian_01
+	move_pop_sound_effect = "moving_pop_confirmation"
+}

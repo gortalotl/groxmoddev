@@ -1,0 +1,92 @@
+ship_section_template = {
+	key = "GROX_CORVETTE"
+	ship_size = giga_grox_corvette
+	fits_on_slot = "mid"
+	entity = ""
+	icon = ""
+	component_slot = {
+		name = "SMALL_GUN_01"
+		template = "small_turret"
+		locatorname = "root"
+	}
+	component_slot = {
+		name = "SMALL_GUN_02"
+		template = "small_turret"
+		locatorname = "root"
+	}
+	component_slot = {
+		name = "SMALL_GUN_03"
+		template = "small_turret"
+		locatorname = "root"
+	}
+	small_utility_slots = 4
+	aux_utility_slots = 0
+}
+ship_section_template = {
+	key = "GROX_DESTROYER"
+	ship_size = giga_grox_destroyer
+	fits_on_slot = "mid"
+	entity = "giga_grox_destroyer"
+	icon = ""
+	component_slot = {
+		name = "MEDIUM_GUN_01"
+		template = "medium_turret"
+		locatorname = "root"
+	}
+	component_slot = {
+		name = "MEDIUM_GUN_02"
+		template = "medium_turret"
+		locatorname = "root"
+	}
+	component_slot = {
+		name = "MEDIUM_GUN_03"
+		template = "medium_turret"
+		locatorname = "root"
+	}
+	component_slot = {
+		name = "POINT_DEFENCE_01"
+		template = "medium_turret"
+		locatorname = "root"
+	}
+	component_slot = {
+		name = "POINT_DEFENCE_02"
+		template = "medium_turret"
+		locatorname = "root"
+	}
+	component_slot = {
+		name = "LARGE_GUN_01"
+		template = "medium_turret"
+		locatorname = "root"
+	}
+	medium_utility_slots = 4
+	aux_utility_slots = 0
+}
+ship_section_template = {
+	key = "GROX_ASTEROID"
+	ship_size = giga_grox_assault_asteroid
+	fits_on_slot = "mid"
+	entity = "giga_asteroid_artillery_core_entity"
+	icon = ""
+	component_slot = {
+		name = "LARGE_GUN_01"
+		template = "giga_invisible_large_fixed"
+		locatorname = "root"
+	}
+	component_slot = {
+		name = "LARGE_GUN_02"
+		template = "giga_invisible_large_fixed"
+		locatorname = "root"
+	}
+	component_slot = {
+		name = "LARGE_GUN_03"
+		template = "giga_invisible_large_fixed"
+		locatorname = "root"
+	}
+	component_slot = {
+		name = "OMEGA_GUN_01"
+		template = "invisible_titanic_fixed"
+		locatorname = "root"
+	}
+	large_utility_slots = 5
+	aux_utility_slots = 0
+}

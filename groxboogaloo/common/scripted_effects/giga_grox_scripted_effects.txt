@@ -1,0 +1,499 @@
+create_giga_grox = {
+	create_species = {
+		name = "Grox"
+		plural = "Grox"
+		class = GIGAGROX
+		portrait = gigagrox
+		homeworld = THIS
+		traits = {
+			trait = trait_pc_grox_barren_preference
+			trait = trait_robust
+			trait = trait_fertile
+			trait = trait_cybernetic
+			trait = trait_sedentary
+		}
+		effect = {
+			save_global_event_target_as = giga_grox_species
+		}
+	}
+	while = {
+		#here they come
+		count = 150
+		create_pop = {
+			species = event_target:giga_grox_species
+		}
+		clear_deposits = yes
+	}
+	while = {
+		#district stuff
+		count = 10
+		add_district = {
+			district_type = district_grox_city
+			ignore_cap = yes
+		}
+	}
+	while = {
+		#district stuff
+		count = 5
+		add_district = {
+			district_type = district_grox_forge
+			ignore_cap = yes
+		}
+	}
+	while = {
+		#district stuff
+		count = 5
+		add_district = {
+			district_type = district_grox_farm
+			ignore_cap = yes
+		}
+	}
+	while = {
+		#district stuff
+		count = 5
+		add_district = {
+			district_type = district_grox_mining
+			ignore_cap = yes
+		}
+	}
+	while = {
+		#district stuff
+		count = 5
+		add_district = {
+			district_type = district_grox_energy
+			ignore_cap = yes
+		}
+	}
+	create_country = {
+		species = event_target:giga_grox_species
+		name = "Grox Empire"
+		type = giga_grox_country
+		authority = auth_imperial
+		civics = {
+			civic = civic_warrior_culture
+			civic = civic_ancient_caches_of_technology
+		}
+		ethos = {
+			ethic = ethic_fanatic_xenophobe
+			ethic = ethic_materialist
+		}
+		origin = origin_default
+		flag = {
+			icon = {
+				category = "gigagrox"
+				file = "grox_flag.dds"
+			}
+			background = {
+				category = "backgrounds"
+				file = "circle.dds"
+			}
+			colors = {
+				"red"
+				"red_orange"
+				"null"
+				"null"
+			}
+		}
+		effect = {
+			set_country_flag = giga_grox_country
+			set_graphical_culture = fallen_empire_04
+			save_global_event_target_as = giga_grox_country
+		}
+	}
+	set_owner = event_target:giga_grox_country
+	set_capital = yes
+	add_building = building_giga_grox_capital
+	while = {
+		count = 1
+		add_building = building_grox_city
+	}
+	while = {
+		count = 1
+		add_building = building_grox_fort
+	}
+	while = {
+		count = 2
+		add_building = building_grox_civilian_forge
+	}
+	add_building = building_grox_autofab
+	if = {
+		limit = {
+			NOT = {
+				has_global_flag = grox_spawned
+			}
+		}
+		system_event = {
+			id = giga_grox.1000
+		}
+	}
+}
+
+#populates planets that aren't the grox's capital
+grox_major_forge_colony = {
+	while = {
+		count = 60
+		create_pop = {
+			species = event_target:giga_grox_species
+		}
+	}
+	set_owner = event_target:giga_grox_country
+	clear_deposits = yes
+	add_building = building_giga_grox_capital
+	add_building = building_grox_city
+	add_building = building_grox_civilian_forge
+	add_building = building_grox_civilian_forge
+	add_building = building_grox_autofab
+	add_building = building_grox_autofab
+	while = {
+		#district stuff
+		count = 5
+		add_district = {
+			district_type = district_grox_forge
+			ignore_cap = yes
+		}
+	}
+	while = {
+		count = 2
+		add_district = district_grox_mining
+	}
+	while = {
+		count = 2
+		add_district = district_grox_city
+	}
+}
+
+grox_temple_world = {
+	while = {
+		count = 40
+		create_pop = {
+			species = event_target:giga_grox_species
+		}
+	}
+	add_building = building_giga_grox_capital
+	add_building = building_grox_temple
+	add_building = building_grox_temple
+	add_building = building_grox_civilian_forge
+	add_building = building_grox_autofab
+	add_building = building_grox_autofab
+	clear_deposits = yes
+	while = {
+		count = 5
+		add_district = district_grox_city
+	}
+	set_owner = event_target:giga_grox_country
+}
+
+create_giga_grox_outpost = {
+	create_starbase = {
+		#gives them some pretty strong outposts so they arent a pushover
+		size = "starbase_citadel"
+		module = "gun_battery"
+		module = "gun_battery"
+		module = "hangar_bay"
+		module = "hangar_bay"
+		module = "hangar_bay"
+		module = "hangar_bay"
+		effect = {
+			set_owner = event_target:giga_grox_country
+		}
+	}
+}
+
+grox_forge_ring = {
+	#for equatorial shipyards
+	while = {
+		count = 25
+		create_pop = {
+			species = event_target:giga_grox_species
+		}
+	}
+	while = {
+		count = 5
+		add_district = district_giga_planet_alloys
+	}
+	while = {
+		count = 2
+		add_district = district_giga_planet_city
+	}
+	add_building = building_giga_grox_capital
+	add_building = building_grox_autofab
+	set_owner = event_target:giga_grox_country
+}
+
+#grox do a little trolling (m brain edition)
+grox_torture_segment = {
+	create_species = {
+		name = "Insectrox"
+		plural = "Insectrox"
+		class = art
+		portrait = art18
+		homeworld = THIS
+		traits = {
+			trait = trait_very_strong
+			trait = trait_docile
+			trait = trait_syncretic_proles
+			trait = trait_delicious
+		}
+		effect = {
+			save_global_event_target_as = grox_insectrox
+		}
+	}
+	while = {
+		count = 5
+		add_district = district_virtual_hell
+	}
+	while = {
+		count = 5
+		create_pop = {
+			species = event_target:giga_grox_species
+		}
+	}
+	while = {
+		count = 50
+		create_pop = {
+			species = event_target:grox_insectrox
+		}
+	}
+	while = {
+		count = 10
+		create_pop = {
+			species = event_target:giga_grox_species
+		}
+	}
+	add_building = building_giga_grox_capital
+	add_building = building_grox_fort
+	set_owner = event_target:giga_grox_country
+}
+
+#####################################
+####### GROX RAID FLEET STUFF #######
+#####################################
+create_grox_raiders = {
+	if = {
+		limit = {
+			midgame_years_passed < 25
+		}
+		set_name = "Nov Irki"
+		while = {
+			count = 15
+			create_ship = {
+				name = Erkitak
+				design = "Erkitak"
+				prefix = no
+			}
+		}
+		while = {
+			count = 4
+			create_ship = {
+				name = Arikinovarat
+				design = "Arikinovarat"
+				prefix = no
+			}
+		}
+		while = {
+			count = 1
+			create_ship = {
+				name = Akitaliata
+				design = "Akitaliata"
+				prefix = no
+			}
+		}
+		set_fleet_flag = grox_raider_fleet
+	}
+	else_if = {
+		limit = {
+			midgame_years_passed < 50
+		}
+		while = {
+			count = 30
+			create_ship = {
+				name = Erkitak
+				design = "Erkitak"
+				prefix = no
+			}
+		}
+		while = {
+			count = 12
+			create_ship = {
+				name = Arikinovarat
+				design = "Arikinovarat"
+				prefix = no
+			}
+		}
+		while = {
+			count = 2
+			create_ship = {
+				name = Akitaliata
+				design = "Akitaliata"
+				prefix = no
+			}
+		}
+		set_fleet_flag = grox_raider_fleet_1
+	}
+	else_if = {
+		limit = {
+			midgame_years_passed < 75
+		}
+		while = {
+			count = 18
+			create_ship = {
+				name = random
+				design = "NAME_Outrider"
+				prefix = no
+				#graphical_culture = "pirate_01"
+			}
+		}
+		while = {
+			count = 10
+			create_ship = {
+				name = random
+				design = "NAME_Lancer"
+				prefix = no
+				#graphical_culture = "pirate_01"
+			}
+		}
+		while = {
+			count = 3
+			create_ship = {
+				name = Akitaliata
+				design = "Akitaliata"
+				prefix = no
+				#graphical_culture = "pirate_01"
+			}
+		}
+		set_fleet_flag = grox_raider_fleet_1
+	}
+	else = {
+		while = {
+			count = 24
+			create_ship = {
+				name = random
+				design = "NAME_Outrider"
+				prefix = no
+				#graphical_culture = "pirate_01"
+			}
+		}
+		while = {
+			count = 14
+			create_ship = {
+				name = random
+				design = "NAME_Lancer"
+				prefix = no
+				#graphical_culture = "pirate_01"
+			}
+		}
+		while = {
+			count = 4
+			create_ship = {
+				name = Akitaliata
+				design = "Akitaliata"
+				prefix = no
+				#graphical_culture = "pirate_01"
+			}
+		}
+		set_fleet_flag = grox_raider_fleet_1
+	}
+}
+
+create_grox_disco_moon = {
+	#GLOWY BOY
+	create_fleet = {
+		name = "Lumi"
+		settings = {
+			spawn_debris = no
+			can_change_composition = no
+			can_disband = no
+			can_change_leader = no
+			can_upgrade = no
+			uses_naval_capacity = no
+			garrison = yes
+		}
+		effect = {
+			set_owner = event_target:giga_grox_country
+			while = {
+				count = 1
+				create_ship = {
+					name = "Luminatum"
+					design = "Disco Planetoid"
+					prefix = no
+					upgradable = no
+				}
+				create_ship = {
+					name = "Erkitak"
+					design = "Erkitak"
+					prefix = no
+					upgradable = no
+				}
+				create_ship = {
+					name = "Arikinovarat"
+					design = "Arikinovarat"
+					prefix = no
+					upgradable = no
+				}
+				create_ship = {
+					name = "Akitaliata"
+					design = "Akitaliata"
+					prefix = no
+					upgradable = no
+				}
+			}
+			set_location = {
+				target = event_target:giga_grox_capital
+				distance = 1
+				angle = 0
+			}
+		}
+	}
+}
+
+increase_grox_progress = {
+	if = {
+		limit = {
+			NOT = {
+				has_global_flag = grox_qso_complete
+			}
+		}
+		if = {
+			limit = {
+				check_variable = {
+					which = grox_progress
+					value < 100
+				}
+			}
+			change_variable = {
+				which = grox_progress
+				value = 1
+			}
+		}
+	}
+	else = {
+		if = {
+			limit = {
+				check_variable = {
+					which = aeternite_intel_count
+					value >= 100
+				}
+			}
+			change_variable = {
+				which = grox_progress
+				value = 1
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = aeternite_intel_count
+						value = 30
+					}
+				}
+				set_country_flag = giga_achievement_aet4
+				set_timed_country_flag = {
+					flag = giga_achievement_aet4_notification
+					days = 30
+				}
+				giga_achievement_sound = yes
+			}
+			clear_aet_intel_modifier = yes
+			apply_aet_intel_modifier = yes
+		}
+	}
+}

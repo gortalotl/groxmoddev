@@ -1,0 +1,784 @@
+namespace = giga_mega
+# Give Special Project for Galactic core
+country_event = {
+	id = giga_mega.402
+	title = "giga_mega.402.name"
+	desc = "giga_mega.402.desc"
+	picture = GFX_evt_black_hole
+	show_sound = event_sensor_ping
+	is_triggered_only = yes
+	option = {
+		name = "giga_mega.402.a"
+		enable_special_project = {
+			name = "INVESTIGATE_GALACTIC_CORE"
+			owner = root
+		}
+		capital_scope = {
+			set_planet_flag = giga_core_sp_here@root
+		}
+	}
+}
+
+# Spawn Galactic Core
+country_event = {
+	id = giga_mega.403
+	title = "giga_mega.403.name"
+	desc = "giga_mega.403.desc"
+	picture = GFX_evt_black_hole
+	show_sound = event_sensor_ping
+	is_triggered_only = yes
+	immediate = {
+		set_spawn_system_batch = begin
+		if = {
+			limit = {
+				has_global_flag = giga_core_aeternum
+			}
+			no_scope = {
+				spawn_system = {
+					min_distance >= 0
+					max_distance <= 0
+					min_orientation_angle = 44
+					max_orientation_angle = 46
+					initializer = "giga_black_hole_aeternum_initializer"
+					hyperlane = no
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				NOT = {
+					has_global_flag = giga_core_aeternum
+				}
+				has_global_flag = giga_core_birch
+			}
+			no_scope = {
+				spawn_system = {
+					min_distance >= 0
+					max_distance <= 0
+					min_orientation_angle = 44
+					max_orientation_angle = 46
+					initializer = "giga_black_hole_core_initializer"
+					hyperlane = no
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				NOT = {
+					has_global_flag = giga_core_grox
+				}
+				has_global_flag = giga_core_qso
+			}
+			no_scope = {
+				spawn_system = {
+					min_distance >= 0
+					max_distance <= 0
+					min_orientation_angle = 44
+					max_orientation_angle = 46
+					initializer = "giga_black_hole_quasar_initializer"
+					hyperlane = no
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				has_global_flag = giga_core_grox
+				has_global_flag = giga_core_qso
+				every_country = {
+					limit = {
+						is_ai = no
+					}
+					country_event = {
+						id = giga_grox.2001
+						days = 30
+					}
+				}
+			}
+			no_scope = {
+				spawn_system = {
+					min_distance >= 0
+					max_distance <= 0
+					min_orientation_angle = 44
+					max_orientation_angle = 46
+					initializer = "giga_black_hole_grox_initializer"
+					hyperlane = no
+				}
+			}
+		}
+		event_target:giga_core_system = {
+			if = {
+				limit = {
+					has_global_flag = giga_core_aeternum
+				}
+				#Aeternum's perfect hexagon
+				every_country = {
+					limit = {
+						is_ai = no
+					}
+					country_event = {
+						id = giga_aeternum.2010
+						days = 30
+					}
+				}
+				spawn_system = {
+					min_distance >= 15
+					max_distance <= 15
+					min_orientation_angle = 90
+					max_orientation_angle = 90
+					initializer = "giga_inner_1_aeternum_initializer"
+					hyperlane = no
+				}
+				spawn_system = {
+					min_distance >= 15
+					max_distance <= 15
+					min_orientation_angle = 150
+					max_orientation_angle = 150
+					initializer = "giga_inner_2_aeternum_initializer"
+					hyperlane = no
+				}
+				spawn_system = {
+					min_distance >= 15
+					max_distance <= 15
+					min_orientation_angle = 210
+					max_orientation_angle = 210
+					initializer = "giga_inner_3_aeternum_initializer"
+					hyperlane = no
+				}
+				spawn_system = {
+					min_distance >= 15
+					max_distance <= 15
+					min_orientation_angle = 270
+					max_orientation_angle = 270
+					initializer = "giga_inner_4_aeternum_initializer"
+					hyperlane = no
+				}
+				spawn_system = {
+					min_distance >= 15
+					max_distance <= 15
+					min_orientation_angle = 330
+					max_orientation_angle = 330
+					initializer = "giga_inner_5_aeternum_initializer"
+					hyperlane = no
+				}
+				spawn_system = {
+					min_distance >= 15
+					max_distance <= 15
+					min_orientation_angle = 30
+					max_orientation_angle = 30
+					initializer = "giga_inner_6_aeternum_initializer"
+					hyperlane = no
+				}
+				spawn_system = {
+					min_distance >= 55
+					max_distance <= 55
+					min_orientation_angle = 90
+					max_orientation_angle = 90
+					initializer = "giga_outer_1_initializer"
+					hyperlane = no
+				}
+				spawn_system = {
+					min_distance >= 55
+					max_distance <= 55
+					min_orientation_angle = 210
+					max_orientation_angle = 210
+					initializer = "giga_outer_2_initializer"
+					hyperlane = no
+				}
+				spawn_system = {
+					min_distance >= 55
+					max_distance <= 55
+					min_orientation_angle = 330
+					max_orientation_angle = 330
+					initializer = "giga_outer_3_initializer"
+					hyperlane = no
+				}
+				#Inner hexagon lanes
+				add_hyperlane = {
+					from = event_target:giga_core_system
+					to = event_target:giga_inner_1
+				}
+				add_hyperlane = {
+					from = event_target:giga_core_system
+					to = event_target:giga_inner_2
+				}
+				add_hyperlane = {
+					from = event_target:giga_core_system
+					to = event_target:giga_inner_3
+				}
+				add_hyperlane = {
+					from = event_target:giga_core_system
+					to = event_target:giga_inner_4
+				}
+				add_hyperlane = {
+					from = event_target:giga_core_system
+					to = event_target:giga_inner_5
+				}
+				add_hyperlane = {
+					from = event_target:giga_core_system
+					to = event_target:giga_inner_6
+				}
+				add_hyperlane = {
+					from = event_target:giga_inner_1
+					to = event_target:giga_inner_2
+				}
+				add_hyperlane = {
+					from = event_target:giga_inner_2
+					to = event_target:giga_inner_3
+				}
+				add_hyperlane = {
+					from = event_target:giga_inner_3
+					to = event_target:giga_inner_4
+				}
+				add_hyperlane = {
+					from = event_target:giga_inner_4
+					to = event_target:giga_inner_5
+				}
+				add_hyperlane = {
+					from = event_target:giga_inner_5
+					to = event_target:giga_inner_6
+				}
+				add_hyperlane = {
+					from = event_target:giga_inner_6
+					to = event_target:giga_inner_1
+				}
+				add_hyperlane = {
+					from = event_target:giga_inner_1
+					to = event_target:giga_outer_1
+				}
+				add_hyperlane = {
+					from = event_target:giga_inner_3
+					to = event_target:giga_outer_2
+				}
+				add_hyperlane = {
+					from = event_target:giga_inner_5
+					to = event_target:giga_outer_3
+				}
+				#Outer systems connect to allow going around the hexagon
+				add_hyperlane = {
+					from = event_target:giga_outer_1
+					to = event_target:giga_outer_2
+				}
+				add_hyperlane = {
+					from = event_target:giga_outer_2
+					to = event_target:giga_outer_3
+				}
+				add_hyperlane = {
+					from = event_target:giga_outer_3
+					to = event_target:giga_outer_1
+				}
+				event_target:birch_aeternum = {
+					#Initialize stuff
+					country_event = {
+						id = giga_aeternum.1000
+						days = 2
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					has_global_flag = giga_core_grox
+				}
+				#The Grox
+				system_event = {
+					id = giga_grox.1000
+				}
+				every_country = {
+					limit = {
+						is_ai = no
+					}
+					country_event = {
+						id = giga_grox.2000
+						days = 30
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					NOR = {
+						has_global_flag = giga_core_aeternum
+						has_global_flag = giga_core_grox
+					}
+				}
+				spawn_system = {
+					min_distance >= 30
+					max_distance <= 30
+					min_orientation_angle = 25
+					max_orientation_angle = 25
+					initializer = "giga_inner_1_initializer"
+					hyperlane = no
+				}
+				spawn_system = {
+					min_distance >= 60
+					max_distance <= 60
+					min_orientation_angle = 90
+					max_orientation_angle = 90
+					initializer = "giga_inner_2_initializer"
+					hyperlane = no
+				}
+				spawn_system = {
+					min_distance >= 25
+					max_distance <= 25
+					min_orientation_angle = 80
+					max_orientation_angle = 80
+					initializer = "giga_inner_3_initializer"
+					hyperlane = no
+				}
+				spawn_system = {
+					min_distance >= 60
+					max_distance <= 60
+					min_orientation_angle = 130
+					max_orientation_angle = 130
+					initializer = "giga_inner_7_initializer"
+					hyperlane = no
+				}
+				spawn_system = {
+					min_distance >= 60
+					max_distance <= 60
+					min_orientation_angle = 180
+					max_orientation_angle = 180
+					initializer = "giga_inner_4_initializer"
+					hyperlane = no
+				}
+				spawn_system = {
+					min_distance >= 35
+					max_distance <= 35
+					min_orientation_angle = 220
+					max_orientation_angle = 220
+					initializer = "giga_inner_5_initializer"
+					hyperlane = no
+				}
+				spawn_system = {
+					min_distance >= 60
+					max_distance <= 60
+					min_orientation_angle = 290
+					max_orientation_angle = 290
+					initializer = "giga_inner_6_initializer"
+					hyperlane = no
+				}
+				spawn_system = {
+					min_distance >= 80
+					max_distance <= 80
+					min_orientation_angle = 110
+					max_orientation_angle = 110
+					initializer = "giga_outer_1_initializer"
+					hyperlane = no
+				}
+				spawn_system = {
+					min_distance >= 90
+					max_distance <= 90
+					min_orientation_angle = 230
+					max_orientation_angle = 230
+					initializer = "giga_outer_2_initializer"
+					hyperlane = no
+				}
+				spawn_system = {
+					min_distance >= 80
+					max_distance <= 80
+					min_orientation_angle = 350
+					max_orientation_angle = 350
+					initializer = "giga_outer_3_initializer"
+					hyperlane = no
+				}
+				add_hyperlane = {
+					from = event_target:giga_core_system
+					to = event_target:giga_inner_1
+				}
+				add_hyperlane = {
+					from = event_target:giga_core_system
+					to = event_target:giga_inner_3
+				}
+				add_hyperlane = {
+					from = event_target:giga_core_system
+					to = event_target:giga_inner_6
+				}
+				add_hyperlane = {
+					from = event_target:giga_inner_1
+					to = event_target:giga_inner_2
+				}
+				add_hyperlane = {
+					from = event_target:giga_inner_1
+					to = event_target:giga_inner_6
+				}
+				add_hyperlane = {
+					from = event_target:giga_inner_2
+					to = event_target:giga_inner_4
+				}
+				add_hyperlane = {
+					from = event_target:giga_inner_5
+					to = event_target:giga_inner_4
+				}
+				add_hyperlane = {
+					from = event_target:giga_inner_5
+					to = event_target:giga_inner_6
+				}
+				add_hyperlane = {
+					from = event_target:giga_inner_7
+					to = event_target:giga_inner_4
+				}
+				add_hyperlane = {
+					from = event_target:giga_inner_2
+					to = event_target:giga_outer_1
+				}
+				add_hyperlane = {
+					from = event_target:giga_inner_4
+					to = event_target:giga_outer_2
+				}
+				add_hyperlane = {
+					from = event_target:giga_inner_6
+					to = event_target:giga_outer_3
+				}
+			}
+			star = {
+				random_list = {
+					1 = {
+						set_name = "Corey's Gut"
+					}
+					1 = {
+						set_name = "Time's Agony"
+					}
+					1 = {
+						set_name = "Undying Fury"
+					}
+					1 = {
+						set_name = "Eternal Horizon"
+					}
+					1 = {
+						set_name = "Sagittrevorius A"
+					}
+					1 = {
+						set_name = "Pouchkinn's Vortex"
+					}
+					1 = {
+						set_name = "The End"
+					}
+					1 = {
+						set_name = "Voluptia"
+					}
+					1 = {
+						set_name = "Powehi"
+					}
+					1 = {
+						set_name = "Centaurus A"
+					}
+					1 = {
+						set_name = "Cygnus X-1"
+					}
+					1 = {
+						set_name = "Sagittarius A*"
+					}
+					1 = {
+						set_name = "TON 618"
+					}
+					1 = {
+						set_name = "Steve"
+					}
+					1 = {
+						set_name = "Sbeve"
+					}
+					1 = {
+						set_name = "Twissell"
+					}
+					1 = {
+						set_name = "Anulus"
+					}
+					1 = {
+						set_name = "Aria"
+					}
+					1 = {
+						set_name = "Nero"
+					}
+					1 = {
+						set_name = "Diym"
+					}
+					1 = {
+						set_name = "The Auditor"
+					}
+					1 = {
+						set_name = "Calliope"
+					}
+					1 = {
+						set_name = "Abrogation"
+					}
+					1 = {
+						set_name = "Wimbleton"
+					}
+					1 = {
+						set_name = "Mike"
+					}
+					1 = {
+						set_name = "Supermario"
+					}
+					1 = {
+						set_name = "Temporal Itch"
+					}
+					1 = {
+						set_name = "Stellar Beholder"
+					}
+					1 = {
+						set_name = "Grim Reaper"
+					}
+					1 = {
+						set_name = "dQw4w9WgXcQ"
+					}
+					1 = {
+						set_name = "Shatterer of Behemoths"
+					}
+					1 = {
+						set_name = "Grand Gargantua"
+					}
+					1 = {
+						set_name = "111001"
+					}
+					1 = {
+						set_name = "Great Mother"
+					}
+					1 = {
+						set_name = "Placeholder black hole, real one is being renovated, apologies for the inconvenience"
+					}
+					1 = {
+						set_name = "Despacito"
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					has_global_flag = giga_core_grox
+				}
+			}
+			event_target:giga_outer_1 = {
+				random_list = {
+					1 = {
+						while = {
+							count = 1
+							giga_generate_hyperlane = yes
+						}
+					}
+					1 = {
+						while = {
+							count = 2
+							giga_generate_hyperlane = yes
+						}
+					}
+				}
+			}
+			event_target:giga_outer_2 = {
+				random_list = {
+					1 = {
+						while = {
+							count = 1
+							giga_generate_hyperlane = yes
+						}
+					}
+					1 = {
+						while = {
+							count = 2
+							giga_generate_hyperlane = yes
+						}
+					}
+				}
+			}
+			event_target:giga_outer_3 = {
+				random_list = {
+					1 = {
+						while = {
+							count = 1
+							giga_generate_hyperlane = yes
+						}
+					}
+					1 = {
+						while = {
+							count = 2
+							giga_generate_hyperlane = yes
+						}
+					}
+				}
+			}
+		}
+		else = {
+			event_target:giga_grox_outer_1 = {
+				random_list = {
+					1 = {
+						while = {
+							count = 1
+							giga_generate_hyperlane = yes
+						}
+					}
+					1 = {
+						while = {
+							count = 2
+							giga_generate_hyperlane = yes
+						}
+					}
+				}
+			}
+			event_target:giga_grox_outer_3 = {
+				random_list = {
+					1 = {
+						while = {
+							count = 1
+							giga_generate_hyperlane = yes
+						}
+					}
+					1 = {
+						while = {
+							count = 2
+							giga_generate_hyperlane = yes
+						}
+					}
+				}
+			}
+			event_target:giga_grox_outer_5 = {
+				random_list = {
+					1 = {
+						while = {
+							count = 1
+							giga_generate_hyperlane = yes
+						}
+					}
+					1 = {
+						while = {
+							count = 2
+							giga_generate_hyperlane = yes
+						}
+					}
+				}
+			}
+			event_target:giga_grox_outer_6 = {
+				random_list = {
+					1 = {
+						while = {
+							count = 1
+							giga_generate_hyperlane = yes
+						}
+					}
+					1 = {
+						while = {
+							count = 2
+							giga_generate_hyperlane = yes
+						}
+					}
+				}
+			}
+			event_target:giga_grox_outer_8 = {
+				random_list = {
+					1 = {
+						while = {
+							count = 1
+							giga_generate_hyperlane = yes
+						}
+					}
+					1 = {
+						while = {
+							count = 2
+							giga_generate_hyperlane = yes
+						}
+					}
+				}
+			}
+			event_target:giga_grox_outer_11 = {
+				random_list = {
+					1 = {
+						while = {
+							count = 1
+							giga_generate_hyperlane = yes
+						}
+					}
+					1 = {
+						while = {
+							count = 2
+							giga_generate_hyperlane = yes
+						}
+					}
+				}
+			}
+			event_target:giga_grox_outer_12 = {
+				random_list = {
+					1 = {
+						while = {
+							count = 1
+							giga_generate_hyperlane = yes
+						}
+					}
+					1 = {
+						while = {
+							count = 2
+							giga_generate_hyperlane = yes
+						}
+					}
+				}
+			}
+		}
+		set_spawn_system_batch = end
+	}
+	option = {
+		name = "giga_mega.403.a"
+	}
+}
+
+####################################
+### Galactic Core SP Check #########
+####################################
+country_event = {
+	id = giga_mega.1001
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		OR = {
+			has_special_project = INVESTIGATE_GALACTIC_CORE
+			has_special_project = INVESTIGATE_GALACTIC_CORE_LINK
+			is_researching_special_project = INVESTIGATE_GALACTIC_CORE
+			is_researching_special_project = INVESTIGATE_GALACTIC_CORE_LINK
+		}
+		capital_scope = {
+			NOT = {
+				has_planet_flag = giga_core_sp_here@root
+			}
+		}
+	}
+	immediate = {
+		random_galaxy_planet = {
+			limit = {
+				has_planet_flag = giga_core_sp_here@root
+			}
+			remove_planet_flag = giga_core_sp_here@root
+			root = {
+				if = {
+					limit = {
+						has_special_project = INVESTIGATE_GALACTIC_CORE
+					}
+					abort_special_project = {
+						type = "INVESTIGATE_GALACTIC_CORE"
+						location = prev
+					}
+					capital_scope = {
+						set_planet_flag = giga_core_sp_here@root
+						enable_special_project = {
+							name = "INVESTIGATE_GALACTIC_CORE"
+							location = this
+							owner = root
+						}
+					}
+				}
+				if = {
+					limit = {
+						has_special_project = INVESTIGATE_GALACTIC_CORE_LINK
+					}
+					abort_special_project = {
+						type = "INVESTIGATE_GALACTIC_CORE_LINK"
+						location = prev
+					}
+					capital_scope = {
+						set_planet_flag = giga_core_sp_here@root
+						enable_special_project = {
+							name = "INVESTIGATE_GALACTIC_CORE_LINK"
+							location = this
+							owner = root
+						}
+					}
+				}
+			}
+		}
+	}
+}

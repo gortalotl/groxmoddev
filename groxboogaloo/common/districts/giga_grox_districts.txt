@@ -1,0 +1,297 @@
+district_grox_city = {
+	base_buildtime = 480
+	is_capped_by_modifier = no
+	show_on_uncolonized = {
+		exists = from
+		from = {
+			uses_district_set = grox_districts
+		}
+	}
+	potential = {
+		exists = owner
+		uses_district_set = grox_districts
+	}
+	resources = {
+		category = planet_districts
+		cost = {
+			minerals = 720
+		}
+		upkeep = {
+			energy = 2
+		}
+	}
+	planet_modifier = {
+		planet_housing_add = 10
+		planet_amenities_add = 15
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				OR = {
+					is_country_type = giga_grox_country
+					is_gestalt = no
+				}
+			}
+		}
+		modifier = {
+			job_enforcer_add = 2
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_gestalt = yes
+			}
+		}
+		modifier = {
+			job_patrol_drone_add = 2
+		}
+	}
+}
+
+#gonna use districts because they're cool, they will use buildings to some extent as well though
+district_grox_forge = {
+	base_buildtime = 480
+	is_capped_by_modifier = no
+	show_on_uncolonized = {
+		exists = from
+		from = {
+			uses_district_set = grox_districts
+		}
+	}
+	potential = {
+		exists = owner
+		uses_district_set = grox_districts
+	}
+	allow = {
+		NOT = {
+			has_modifier = resort_colony
+		}
+	}
+	resources = {
+		category = planet_districts_industrial
+		cost = {
+			minerals = 720
+		}
+		upkeep = {
+			energy = 2
+		}
+	}
+	planet_modifier = {
+		planet_housing_add = 10
+		planet_jobs_alloys_produces_mult = 0.05
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				OR = {
+					is_country_type = giga_grox_country
+					is_gestalt = no
+				}
+			}
+		}
+		modifier = {
+			job_foundry_add = 5
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_gestalt = yes
+			}
+		}
+		modifier = {
+			job_alloy_drone_add = 5
+		}
+	}
+}
+
+### 	GROX MINING DISTRICT 	###
+district_grox_mining = {
+	base_buildtime = 480
+	is_capped_by_modifier = no
+	show_on_uncolonized = {
+		exists = from
+		from = {
+			uses_district_set = grox_districts
+		}
+	}
+	potential = {
+		exists = owner
+		uses_district_set = grox_districts
+	}
+	allow = {
+		NOT = {
+			has_modifier = resort_colony
+		}
+	}
+	resources = {
+		category = planet_districts_industrial
+		cost = {
+			minerals = 720
+		}
+		upkeep = {
+			energy = 2
+		}
+	}
+	planet_modifier = {
+		planet_housing_add = 5
+		planet_jobs_minerals_produces_mult = 0.1
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				OR = {
+					is_country_type = giga_grox_country
+					is_gestalt = no
+				}
+			}
+		}
+		modifier = {
+			job_miner_add = 5
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				OR = {
+					#is_country_type = giga_grox_country
+					is_gestalt = yes
+				}
+			}
+		}
+		modifier = {
+			job_mining_drone_add = 5
+		}
+	}
+}
+
+### 	GROX ENERGY DISTRICT 	###
+district_grox_energy = {
+	base_buildtime = 480
+	is_capped_by_modifier = no
+	show_on_uncolonized = {
+		exists = from
+		from = {
+			uses_district_set = grox_districts
+		}
+	}
+	potential = {
+		exists = owner
+		uses_district_set = grox_districts
+	}
+	allow = {
+		NOT = {
+			has_modifier = resort_colony
+		}
+	}
+	resources = {
+		category = planet_districts_industrial
+		cost = {
+			minerals = 720
+		}
+		upkeep = {
+			energy = 2
+		}
+	}
+	planet_modifier = {
+		planet_housing_add = 5
+		planet_jobs_energy_produces_mult = 0.1
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				OR = {
+					is_country_type = giga_grox_country
+					is_gestalt = no
+				}
+			}
+		}
+		modifier = {
+			job_technician_add = 5
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				OR = {
+					#is_country_type = giga_grox_country
+					is_gestalt = yes
+				}
+			}
+		}
+		modifier = {
+			job_technician_drone_add = 5
+		}
+	}
+}
+
+### 	GROX FARMING DISTRICT 	###
+district_grox_farm = {
+	base_buildtime = 480
+	is_capped_by_modifier = no
+	show_on_uncolonized = {
+		exists = from
+		from = {
+			uses_district_set = grox_districts
+		}
+	}
+	potential = {
+		exists = owner
+		uses_district_set = grox_districts
+	}
+	allow = {
+		NOT = {
+			has_modifier = resort_colony
+		}
+	}
+	resources = {
+		category = planet_districts_industrial
+		cost = {
+			minerals = 720
+		}
+		upkeep = {
+			energy = 2
+		}
+	}
+	planet_modifier = {
+		planet_housing_add = 5
+		planet_jobs_food_produces_mult = 0.10
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				OR = {
+					is_country_type = giga_grox_country
+					is_gestalt = no
+				}
+			}
+		}
+		modifier = {
+			job_farmer_add = 5
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				OR = {
+					#is_country_type = giga_grox_country
+					is_gestalt = yes
+				}
+			}
+		}
+		modifier = {
+			job_agri_drone_add = 5
+		}
+	}
+}

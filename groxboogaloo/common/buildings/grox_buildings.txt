@@ -1,0 +1,196 @@
+building_giga_grox_capital = {
+	capital = yes
+	can_build = no
+	can_demolish = no
+	can_be_ruined = no
+	planetary_ftl_inhibitor = yes
+	ai_weight = {
+		weight = 0
+	}
+	potential = {
+		always = no
+	}
+	planet_modifier = {
+		job_politician_add = 5
+		planet_housing_add = 25
+		planet_max_buildings_add = 36
+		planet_stability_add = 25
+	}
+}
+
+building_grox_city = {
+	can_build = no
+	can_demolish = yes
+	can_be_ruined = no
+	ai_weight = {
+		weight = 0
+	}
+	potential = {
+		always = no
+	}
+	resources = {
+		category = planet_buildings
+		produces = {
+			consumer_goods = 50
+			alloys = 25
+			unity = 50
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				OR = {
+					is_country_type = giga_grox_country
+					is_gestalt = no
+				}
+			}
+		}
+		modifier = {
+			planet_housing_add = 10
+			planet_amenities_add = 15
+			job_researcher_add = 5
+			job_bureaucrat_add = 5
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				OR = {
+					#is_country_type = giga_grox_country
+					is_gestalt = yes
+				}
+			}
+		}
+		modifier = {
+			planet_housing_add = 20
+			planet_amenities_add = 15
+		}
+	}
+}
+
+building_grox_civilian_forge = {
+	can_build = no
+	can_demolish = yes
+	can_be_ruined = no
+	ai_weight = {
+		weight = 0
+	}
+	potential = {
+		always = no
+	}
+	#destroy_trigger = {
+	#	is_country_type = gestalt
+	#}
+	resources = {
+		category = planet_buildings
+		produces = {
+			consumer_goods = 50
+			alloys = 25
+		}
+		upkeep = {
+			minerals = 50
+		}
+	}
+	planet_modifier = {
+		job_artisan_add = 5
+	}
+}
+
+building_grox_fort = {
+	can_build = no
+	can_demolish = yes
+	can_be_ruined = no
+	ai_weight = {
+		weight = 0
+	}
+	potential = {
+		always = no
+	}
+	planet_modifier = {
+		planet_orbital_bombardment_damage = -0.5
+		planet_stability_add = 10
+	}
+	triggered_planet_modifier = {
+		potential = {
+			owner = {
+				is_gestalt = no
+			}
+		}
+		job_soldier_add = 5
+	}
+	triggered_planet_modifier = {
+		potential = {
+			owner = {
+				is_gestalt = yes
+			}
+		}
+		job_warrior_drone_add = 5
+	}
+}
+
+building_grox_autofab = {
+	can_build = no
+	can_demolish = yes
+	can_be_ruined = no
+	ai_weight = {
+		weight = 0
+	}
+	potential = {
+		always = no
+	}
+	resources = {
+		category = planet_buildings
+		produces = {
+			minerals = 100
+			volatile_motes = 10
+			exotic_gases = 10
+			rare_crystals = 10
+		}
+		upkeep = {
+			energy = 50
+		}
+	}
+}
+
+building_grox_temple = {
+	can_build = no
+	can_demolish = yes
+	can_be_ruined = no
+	ai_weight = {
+		weight = 0
+	}
+	potential = {
+		always = no
+	}
+	resources = {
+		category = planet_buildings
+		produces = {
+			unity = 50
+		}
+		upkeep = {
+			energy = 2
+		}
+	}
+	planet_modifier = {
+		pop_ethic_spiritualist_attraction_mult = 0.25
+	}
+	triggered_planet_modifier = {
+		potential = {
+			owner = {
+				is_gestalt = no
+			}
+		}
+		job_high_priest_add = 5
+		job_priest_add = 10
+	}
+	triggered_planet_modifier = {
+		potential = {
+			owner = {
+				is_gestalt = yes
+			}
+		}
+		job_coordinator_add = 10
+	}
+}

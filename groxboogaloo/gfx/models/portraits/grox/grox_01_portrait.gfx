@@ -1,0 +1,9 @@
+objectTypes = {
+
+	pdxmesh = {
+		name = "grox_01_portrait_mesh"
+		file = "gfx/models/portraits/grox/grox_01_portrait.mesh"
+		animation = { id = "idle"	type = "grox_anim_idle1" }
+		scale = 1.25
+	}
+}
