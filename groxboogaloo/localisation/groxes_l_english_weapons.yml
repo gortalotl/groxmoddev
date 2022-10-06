@@ -11,4 +11,5 @@ l_english:
   grox_fighter:0 "Grox Fighter Spaceplane"
   grox_fighter_desc:0 "These fighters use advanced grox technologies, including short range FTL, to deliver crippling strikes against any targets in the area, regardless of distance or speed."
   
-  
+  grox_hyperdrive:0 "Alerium Drive"
+  grox_hyperdrive:0 "Originally designed by Huaki Alerious, the Grox High Engineer of Majesty, this is one of the fastest FTL methods in the universe.  The Grox employ it to ensure speedy transport across a single galaxy."
