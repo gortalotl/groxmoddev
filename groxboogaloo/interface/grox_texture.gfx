@@ -1,0 +1,5 @@
+spriteTypes = {
+
+	spriteType = { name = "GFX_ship_part_reactor_hypership"					texturefile = "gfx/interface/icons/ship_parts/ship_part_reactor_hypership.dds" }
+
+}
