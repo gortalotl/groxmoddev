@@ -21,7 +21,8 @@
  giga_grox.2001.name:0 "The Grox"
  giga_grox.2001.desc:0 "§H<<CORE HYPERLANES STATUS: PRESENT>>\n<<GALACTIC POPULATION: PLENTIFUL>>\n<<CRYOGENIC STASIS SHUTTING DOWN>>§!\n§R<<INITIALIZING GROX CIVILIZATION RE-ACTIVATION PROTOCOLS>>§!\n\nAT LAST, THE §R<<GALACTIC VERMIN>>§! HAS ONCE AGAIN PROSPERED AND SPREAD THROUGHOUT THE STARS. WORK SHALL THEREFORE IMMEDIATELY RESUME ON THE §R<<ULTIMATE ANSWER>>§!\n\nVERMIN! PROVING YOURSELVES §R<<USEFUL>>§! TO THE GROX WILL BE GOOD FOR YOUR SURVIVAL. COMPLY WITH OUR DEMANDS AND YOUR INEVITABLE EXTINCTION WILL BE MADE MORE §R<<PLEASANT>>§! BY YOUR STANDARDS."
  giga_grox.2001.a:0 "That's... not good."
-
+ 
+#Planets/buildings
  building_giga_grox_capital:0 "Grox Capital Complex"
  building_giga_grox_capital_desc:0 ""
  building_grox_city:0 "Groxopolis"
@@ -46,6 +47,10 @@
  mod_pc_grox_barren_habitability:0 "Grox World Preference"
  trait_pc_grox_barren_preference:0 "Grox World Preference"
  trait_pc_grox_barren_preference_desc:0 "The Grox have a very unique biology, taking the word extremophile to its extreme. They are thus unable to live on any world that other species would consider habitable, but in turn are able to live on worlds other would consider to be uninhabitable."
+pc_strange_star:0 "Strange star" #not sure if its supposed to be strangelet, strange, or strangematter
+pc_strange_star_desc:0 "This star seems to be made of a poorly understood form of matter. This star's corona is violent and chaotic, making coronal mass ejections commonplace and exceptionally destructive, although orbiting planets towards the edge of the system seem to be mostly spared. The star also rotates with such speed and force that it mimicks the polar electromagnetic emissions of a pulsar"
+
+
  GIGAGROX_desc:0 "Grox" #honestly have no clue what this is
  GIGAGROX_plural:0 "Grox"
  GIGAGROX_insult_01:0 "limbless space slug"
@@ -129,5 +134,5 @@
  giga_grox_hypership:0 "Hypership"
  giga_grox_hypership_plural:0 "Hyperships"
 
- #Easter Eggs
+# Easter Eggs
  giga_grox_spartancot:0 "You know, studies show that having ACOT is more dangerous than having a gun in the house. That’s why I keep 74 loaded guns in my room… in case some maniac tries to install ACOT \n - Spartan"
