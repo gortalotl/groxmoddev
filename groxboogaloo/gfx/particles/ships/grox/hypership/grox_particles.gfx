@@ -1,0 +1,56 @@
+objectTypes = {
+	####################
+	###Grox Hypership###
+	####################
+	pdxparticle = {
+		name = "grox_engine_thrust_effect"
+		type = "grox_engine_thrust_effect"
+		
+		scale = 2.0
+	}
+	
+	pdxparticle = {
+		name = "grox_small_thrust_effect"
+		type = "grox_small_thrust_effect"
+		scale = 4.8
+	}
+
+	pdxparticle = {
+		name = "grox_50_engine_exhaust"
+		type = "grox_engine_exhaust"
+	
+		scale = 0.5
+	}
+	pdxparticle = {
+		name = "grox_150_engine_exhaust"
+		type = "grox_engine_exhaust"
+	
+		scale = 1.5
+	}
+	
+	pdxparticle = {
+		name = "grox_250_engine_exhaust"
+		type = "grox_engine_exhaust"
+	
+		scale = 2.5
+	}
+
+	pdxparticle = {
+		name = "grox_engine_black_hole_effect" #sadly no longer a blackhole
+		type = "grox_engine_black_hole_effect"
+		
+		scale = 4.0
+	}
+
+	pdxparticle = {
+		name = "grox_star_effect"
+		type = "m_class_star_file"
+		scale = 4.8
+	}
+
+	pdxparticle = {
+		name = "giga_grox_small2_particle"
+		type = "giga_grox_small2_particle"
+		scale = 10.0
+	}
+}
