@@ -1,0 +1,15 @@
+objectTypes = {
+
+	pdxmesh = {
+		name = "grox_engine_mesh"
+		file = "gfx\models\ships\grox\hypership\grox_engine.mesh"
+		
+		animation = { id = "idle"						type = "grox_engine_idle_animation" }
+		animation = { id = "moving" 					type = "grox_engine_moving_animation"}
+	}
+	pdxmesh = {
+		name = "grox_hypership_locators_mesh"
+		file = "gfx/models/ships/megastructures/war_system/war_system_locators.mesh"
+		scale = 1
+	}
+}

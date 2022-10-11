@@ -13,3 +13,18 @@ l_english:
   
   grox_hyperdrive:0 "Alerium Drive"
   grox_hyperdrive:0 "Originally designed by Huaki Alerious, the Grox High Engineer of Majesty, this is one of the fastest FTL methods in the universe.  The Grox employ it to ensure speedy transport across a single galaxy."
+
+#Ship Components
+
+ SHIP_MOBILE_HYPERSHIP:0 "REPLACE_ME"
+ aura_hypership:0 "REPLACE_ME"
+ REACTOR_HYPERSHIP:0 "Captive class M giant"
+ REACTOR_HYPERSHIP_desc:0 "ingenuitive Grox scientists and engineers managed to find a way to capture and contain a giant class M star to be used as a reactor for this vessel"
+
+#Ship section Names
+ hypership_ship_bowgun_01_key:0 "Forward Engagement System"
+ hypership_ship_bow_01_key:0 "Dread of Existence"
+ hypership_ship_mid_01_key:0 "Solar Capacitor Arrays"
+ hypership_ship_stern_01_key:0 "Backup Solar Erasers"
+ hypership_ship_sternthrusters_01_key:0 "Grand Hangar Complex"
+ hypership_ship_kugel_01_key:0 "Stern Defense System"

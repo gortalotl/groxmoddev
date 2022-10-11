@@ -1,0 +1,11 @@
+# Hypership
+utility_component_template = {
+	key = "REACTOR_HYPERSHIP"
+	size = small
+	icon = "GFX_ship_part_reactor_hypership"
+	icon_frame = 1
+	power = 1000000
+	component_set = "power_core"
+	size_restriction = { giga_grox_hypership }
+	ai_weight = { weight = 10000 } 
+}
