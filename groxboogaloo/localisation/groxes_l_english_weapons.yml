@@ -1,30 +1,39 @@
 l_english:
-  grox_gigagun:0 "Grox Gigagun"
-  grox_gigagun_desc:0 "This colossal gun is used on Grox ships to ensure the enemy complies with the Grox order to eliminate them."
+  grox_mass_driver:0 "Novian Microsingularity Bombard"
+  grox_gigagun_desc:0 "A Novian weapon which compresses a carefully measured mass of charged particles into a short-lived microscopic black hole which is then fired at relativistic speeds to detonate precisely on impact with enemy ships."
   
-  grox_barrage_of_death:0 "The Barrage of Death"
-  grox_barrage_of_death_desc:0 "This gigantic weapons array batters at enemy ships, fortifications, and anything else the Grox want to destroy to esnure that death is delivered quickly, efficently, and brutally.  Do not point at self."
+  grox_laser:0 "Novian Photograviton Coherence Beam"
+  grox_laser_desc:0 "A Novian weapon which generates a high frequency laser and energetic gravitational wave, harmonized to perpetuate each other before violently interacting upon impact with a target."
   
-  grox_the_missile:0 "Grox Missile"
+  grox_autocannon:0 "Novian Lepton Cannon"
+  grox_autocannon_desc:0 "A Novian weapon which rapidly fires dense bursts of muons. These beams are short-lived, but cause devastating cold fusion chain reactions.
+  
+  grox_the_missile:0 "Novian Missile"
   grox_the_missile_desc:0 "The missile knows where it is at all times. It knows this because it knows where it isn't. By subtracting where it is from where it isn't, or where it isn't from where it is (whichever is greater), it obtains a difference, or deviation. The guidance subsystem uses deviations to generate corrective commands to drive the missile from a position where it is to a position where it isn't, and arriving at a position where it wasn't, it now is. Consequently, the position where it is, is now the position that it wasn't, and it follows that the position that it was, is now the position that it isn't.  In the event that the position that it is in is not the position that it wasn't, the system has acquired a variation, the variation being the difference between where the missile is, and where it wasn't. If variation is considered to be a significant factor, it too may be corrected by the GEA. However, the missile must also know where it was.  The missile guidance computer scenario works as follows. Because a variation has modified some of the information the missile has obtained, it is not sure just where it is. However, it is sure where it isn't, within reason, and it knows where it was. It now subtracts where it should be from where it wasn't, or vice-versa, and by differentiating this from the algebraic sum of where it shouldn't be, and where it was, it is able to obtain the deviation and its variation, which is called error."
   
-  grox_fighter:0 "Grox Fighter Spaceplane"
-  grox_fighter_desc:0 "These fighters use advanced grox technologies, including short range FTL, to deliver crippling strikes against any targets in the area, regardless of distance or speed."
+  grox_torpedo:0 "Novian Dark Energy Torpedo"
+  grox_torpedo_desc:0 "A Novian guided explosive weapon. The warhead siphons dark energy from surrounding space to produce a devastating burst of radiation, far more powerful than any explosive that could be contained within the torpedo itself."
   
-  grox_hyperdrive:0 "Alerium Drive"
-  grox_hyperdrive:0 "Originally designed by Huaki Alerious, the Grox High Engineer of Majesty, this is one of the fastest FTL methods in the universe.  The Grox employ it to ensure speedy transport across a single galaxy."
+  grox_fighter:0 "Novian Voidhawk"
+  grox_fighter_desc:0 "A small carrier-based Novian ship equipped with an Alcubierre drive. These craft are capable of superluminal speeds and on-the-spot turning while experiencing no acceleration from its internal frame of reference, allowing for brutally fast assaults on enemy strike craft and capital ships alike."
+  
+  grox_titan_lance:0 "Novian USM Field Projector"
+  grox_titan_lance_desc:0 "A fearsome Novian weapon equipped only on Celestial ships and the flagships of expeditionary fleets. It exploits electrodynamic properties of charged strangelets to produce a cataclysmically strong linear magnetic field, tearing almost all forms of physical matter asunder."
+  
+  grox_planet_lance:0 "Quasaric Absolution"
+  grox_planet_lance_desc:0 "The ultimate emblem of Novian bloodlust, this weapon employs the same technology found in the Quasi-Stellar Obliterator with a contained artificial singularity to produce an apocalyptic beam of cataclysmic power."
 
 #Ship Components
 
  SHIP_MOBILE_HYPERSHIP:0 "REPLACE_ME"
  aura_hypership:0 "REPLACE_ME"
- REACTOR_HYPERSHIP:0 "Captive class M giant"
- REACTOR_HYPERSHIP_desc:0 "ingenuitive Grox scientists and engineers managed to find a way to capture and contain a giant class M star to be used as a reactor for this vessel"
+ REACTOR_HYPERSHIP:0 "Novian Stellar Reactor"
+ REACTOR_HYPERSHIP_desc:0 "A star-sized mass of fusile material capable of powering a Novian Hypership, stabilized by an array of gravitopanels that allow for fine output control."
 
 #Ship section Names
- hypership_ship_bowgun_01_key:0 "Forward Engagement System"
- hypership_ship_bow_01_key:0 "Dread of Existence"
- hypership_ship_mid_01_key:0 "Solar Capacitor Arrays"
- hypership_ship_stern_01_key:0 "Backup Solar Erasers"
- hypership_ship_sternthrusters_01_key:0 "Grand Hangar Complex"
+ hypership_ship_bowgun_01_key:0 "Nicoll-Dyson Lance"
+ hypership_ship_bow_01_key:0 "Celestial Broadside"
+ hypership_ship_mid_01_key:0 "Close-in Weapons Array"
+ hypership_ship_stern_01_key:0 "Grand Hangar Complex"
+ hypership_ship_sternthrusters_01_key:0 "Rearguard Weapons System"
  hypership_ship_kugel_01_key:0 "Stern Defense System"
