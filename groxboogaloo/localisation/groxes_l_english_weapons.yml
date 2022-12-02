@@ -30,6 +30,10 @@ l_english:
  REACTOR_HYPERSHIP:0 "Novian Stellar Reactor"
  REACTOR_HYPERSHIP_desc:0 "A star-sized mass of fusile material capable of powering a Novian Hypership, stabilized by an array of gravitopanels that allow for fine output control."
 
+ grox_hyperdrive:0 "Alerium Drive"
+ grox_hyperdrive:0 "Originally designed by Huaki Alerious, the Novian High Engineer of Majesty, this is one of the fastest FTL methods in the universe.  The Grox employ it to ensure speedy transport across a single galaxy."
+
+
 #Ship section Names
  hypership_ship_bowgun_01_key:0 "Nicoll-Dyson Lance"
  hypership_ship_bow_01_key:0 "Celestial Broadside"
