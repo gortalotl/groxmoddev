@@ -23,7 +23,7 @@
  giga_grox.2001.a:0 "That's... not good."
 
  building_giga_grox_capital:0 "Grox Capital Complex"
- building_giga_grox_capital_desc:0 ""
+ building_giga_grox_capital_desc:0 "This campus consists of all the facilities a planetery government could ever need, and then some.  This efficently manages the planet to benifit the Empire as a whole."
  building_grox_city:0 "Groxopolis"
  building_grox_city_desc:0 "A highly advanced city that uses Grox technology. "
  building_grox_civilian_forge:0 "Grox Civilian Manufactory"
@@ -90,9 +90,11 @@
  district_grox_farm_plural:0 "Grox Subterranean Farming Districts"
 #special project things
  STUDY_GROX_TECH:0 "Investigate Grox Technology"
- STUDY_GROX_TECH_DESC:0 "REPLACE_ME"
+ STUDY_GROX_TECH_DESC:0 "REPLACE_ME We will need to investigate the technological capabilities of this seemingly ancient and all-powerful empire.  We will deploy probes to survey them from a sidtance and scan anything we can get close to.  However, despite how all-powerful it may seem, anything made is flawed.  Perhaps we will be able to find a weakness with our investigations...."
  STUDY_GROX_SOCIETY:0 "Investigate Grox Culture"
  STUDY_GROX_SOCIETY_DESC:0 "REPLACE_ME"
+ STUDY_GROX_SOCIETY.a:0 "If you know the enemy and know yourself you need not fear the results of a hundred battles."
+
  STUDY_GROX_DESIGNS:0 "Investigate Grox Engineering"
  STUDY_GROX_DESIGNS_DESC:0 "REPLACE_ME"
 #events triggered by completing special projects
@@ -100,13 +102,13 @@
  giga_grox.3001.name:0 "Grox Intelligence Agency"
  giga_grox.3001.desc:0 "The discovery of the Grox Empire will certainly pose a threat to our nation. It will be necessary to form an agency dedicated to the study and collection of information related to the Grox. Every move they make that we know of will be catalogued and studied. There is great opportunity for scientific, cultural, and military gain by studying them considering how old their civilization is. Studying the Grox will be very beneficial in the long run, especially if they were to §Pattack§! us in the future, which is highly likely considering the data we have gathered from the limited communications we've had with them and their xenophobic nature."
  giga_grox.10001.name:0 "Grox Technology Study Complete"
- giga_grox.10001.desc:0 "From what our scientists and the limited data our probes have been able to gather Grox technology is highly advanced. However, similar to most precursor civilizations, it is not without its flaws. Most of their technology seems to be made for war as well as lasting for centuries with little maintenance, likely due to their civilization going into stasis for long periods. Despite going to such lengths, it is showing the consequences of such little maintenance"
+ giga_grox.10001.desc:0 "From what our scientists and the limited data our probes have been able to gather Grox technology is highly advanced. However, similar to most precursor civilizations, it is not without its flaws. Most of their technology seems to be made for war as well as lasting for centuries with little maintenance, likely due to their civilization going into stasis for long periods. Despite going to such lengths, it is showing the consequences of such little maintenance.  In addition, while it seems highly advanced to our engineers and scientists, there is also a sense of brutality, and while we cannot fully understand it yet, we can see it appears to be extremely 'brute forced' to function, with less intellectual capability and more raw determination creating their technology. \n\n At last,  they appear to use forms of matter than seem to defy all known conventions, and have total mastery over it.  It appears to share the most similarities with a theoretical from of matter our scientists long ago dubbed 'Strange Matter.'"
  giga_grox.10001.a:0 "Interesting"
  giga_grox.10002.name:0 "Grox Culture Investigation Complete"
- giga_grox.10002.desc:0 "From the limited data we could gather about the Grox's society and culture it has been determined that they are a very unusual species. For an unknown reason their bodies use significantly different elements in the atmosphere which are not common on other habitable worlds. The Grox are a very rugged species because of this, being able to survive on many worlds that other species would consider barren. On these worlds they usually live subterranean colonies, in which they can control the climate and atmosphere of. However, if they were to set foot on a world that other species would typically consider habitable they would quickly die due to their unique biology.\n\nTheir culture has been impacted by this noticeably. Many parts of Grox society seem designed to prevent their population from becoming soft, so they can protect themselves from the 'primitives' they see as a threat to their 'utopic' way of life. It is unknown what experience could cause a whole race to become so rampantly xenophobic and distrusting of outsiders.\n\n"
+ giga_grox.10002.desc:0 "From the limited data we could gather about the Grox's society and culture it has been determined that they are a very unusual species. For an unknown reason their bodies use significantly different elements in the atmosphere which are not common on other habitable worlds. The Grox are a very rugged species because of this, being able to survive on many worlds that other species would consider barren. On these worlds they usually live subterranean colonies, in which they can control the climate and atmosphere of. However, if they were to set foot on a world that other species would typically consider habitable they would quickly die due to their unique biology.\n\nTheir culture has been impacted by this noticeably. Many parts of Grox society seem designed to prevent their population from becoming soft, so they can protect themselves from the 'primitives.'  It is unknown what experience could cause a whole race to become so rampantly xenophobic and distrusting of outsiders.\n\n"
  giga_grox.10002.a:0 "Worrying"
  giga_grox.10003.name:0 "Grox Engineering Analysis Complete"
- giga_grox.10003.desc:0 "After the conclusion of our study of Grox engineering it has been concluded that some Grox ships make very limited use of higher dimensional engineering due to the sheer stress put on their constructs from their size. They appear to be meeting the energy demands of such advanced technology by §Sextracting energy from the hyperquasar at the center of the galaxy§!. If we were somehow able to get access to this, we would undoubtedly be able to throw much of their civilization into disarray, however such an attack would be very costly."
+ giga_grox.10003.desc:0 "After the conclusion of our study of Grox engineering it has been concluded that some Grox ships make very limited use of higher dimensional engineering due to the sheer stress put on their constructs from their size. Despite this apparent wealth of engineering technology availible, they seem to use it exceedingly rarely, only when absolutely necessary and making use of more "primitive" or "barbaric" methods when at all possible.  They appear to be meeting the energy demands of such advanced technology by §Sextracting energy from the hyperquasar at the center of the galaxy§!. If we were somehow able to get access to this, we would undoubtedly be able to throw much of their civilization into disarray, however such an attack would be very costly."
  giga_grox.10003.a:0 "Intriguing"
 #event for finishing all special projects
  giga_grox.10004.name:0 "The Ultimate Answer"
@@ -126,6 +128,8 @@
  giga_grox_destroyer_plural:0 "Grox Destroyers"
  giga_grox_assault_asteroid:0 "Ancient Assault Asteroid"
  giga_grox_assault_asteroid_plural:0 "Ancient Assault Asteroids"
+ giga_grox_sleepless_moon:0 "Sleepless Moon"
+ giga_grox_sleepless_moon_plural:0 "Sleepless Moons"
  giga_grox_hypership:0 "Hypership"
  giga_grox_hypership_plural:0 "Hyperships"
 
