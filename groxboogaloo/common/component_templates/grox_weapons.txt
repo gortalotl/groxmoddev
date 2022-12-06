@@ -1,4 +1,133 @@
 weapon_component_template = {
+	type = instant
+
+	key = "SMALL_GROX_AUTOCANNON"
+	size = small
+
+	icon = "GFX_ship_part_autocannon_3"
+	icon_frame = 1
+
+	prerequisites = { "tech_grox_autocannons" }
+	component_set = "GROX_AUTOCANNON"
+	projectile_gfx = "stormfire_auto_cannons_s"
+	tags = { weapon_type_kinetic }
+	ai_tags = { weapon_role_anti_shield brawler }
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @s_t5_cost
+			volatile_motes = @s_t5_rare
+		}
+		upkeep = {
+			energy = @s_t5_upkeep_energy
+			alloys = @s_t5_upkeep_alloys
+		}
+	}
+
+	power = -46
+	damage = { min = 87 max = 174 }
+	windup = { min = 1 max = 4 }
+	total_fire_time = 6
+	range = 30
+	accuracy = 0.85
+	tracking = 0.75
+
+	ai_weight = {
+		weight = 1
+		modifier = {
+			factor = 0.0
+			no_resource_for_component = { RESOURCE = volatile_motes }
+		}
+	}
+}
+
+weapon_component_template = {
+	type = instant
+
+	key = "MEDIUM_GROX_AUTOCANNON"
+	size = medium
+
+	icon = "GFX_ship_part_autocannon_3"
+	icon_frame = 1
+
+	prerequisites = { "tech_grox_autocannons" }
+	component_set = "GROX_AUTOCANNON"
+	projectile_gfx = "stormfire_auto_cannons_m"
+	tags = { weapon_type_kinetic }
+	ai_tags = { weapon_role_anti_shield brawler }
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @l_t5_cost
+			volatile_motes = @l_t5_rare
+		}
+		upkeep = {
+			energy = @l_t5_upkeep_energy
+			alloys = @l_t5_upkeep_alloys
+		}
+	}
+	
+	power = -102
+	damage = { min = 221 max = 442 }
+	windup = { min = 2 max = 6 }
+	total_fire_time = 9
+	range = 35
+	accuracy = 0.85
+	tracking = 0.25
+
+	ai_weight = {
+		weight = 1
+		modifier = {
+			factor = 0.0
+			no_resource_for_component = { RESOURCE = volatile_motes }
+		}
+	}
+}
+
+weapon_component_template = {
+	type = instant
+
+	key = "LARGE_GROX_AUTOCANNON"
+	size = large
+
+	icon = "GFX_ship_part_autocannon_3"
+	icon_frame = 1
+
+	prerequisites = { "tech_grox_autocannons" }
+	component_set = "GROX_AUTOCANNON"
+	projectile_gfx = "stormfire_auto_cannons_l"
+	tags = { weapon_type_kinetic }
+	ai_tags = { weapon_role_anti_shield brawler }
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @s_t5_cost
+			volatile_motes = @s_t5_rare
+		}
+		upkeep = {
+			energy = @s_t5_upkeep_energy
+			alloys = @s_t5_upkeep_alloys
+		}
+	}
+	
+	power = -46
+	damage = { min = 529 max = 1058 }
+	windup = { min = 2 max = 8 }
+	total_fire_time = 12
+	range = 40
+	accuracy = 0.85
+	tracking = 0.25
+	
+	ai_weight = {
+		weight = 1
+		modifier = {
+			factor = 0.0
+			no_resource_for_component = { RESOURCE = volatile_motes }
+		}
+	}
+}
+
+weapon_component_template = {
 	key = "GIGA_PLANET_MISSILE_1"
 	size = titanic
 	entity = "invisible_turret_entity"
