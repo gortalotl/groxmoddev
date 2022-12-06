@@ -1,0 +1,111 @@
+entity = {
+	name = "strange_star_class_star_entity"
+	pdxmesh = "star_mesh"
+	locator = { name = "wave"	position = { 0 0 0 } scale = 0.8 }
+	locator = { name = "outburst"	position = { 0 0 0 } rotation = { 15 0 -15 } }
+	default_state = "idle"
+	state = { name = "idle" animation = "idle"
+		event = { time = 0.0 node = "planet" particle = "strange_class_star_effect"  keep_particle = no trigger_once = yes sound = { soundeffect = "tox_amb_star_hum" } }
+ }
+	scale = 1.4
+	cull_radius = 20000	
+	attach = { wave = "strange_class_star_entity" }	
+	attach = { wave = "strange_class_star_wave_entity" }
+	attach = { outburst = "strange_outbursts_entity" }	
+	game_data = {
+
+		bloom_factor = 0.7
+
+		}
+}
+
+entity = {
+	name = "strange_class_star_entity"
+	pdxmesh = "strange_class_star_mesh"
+	
+			game_data = {
+		shader_type = VFX
+
+		bloom_factor = 1.4
+		uv_animation_speed = 0.035
+		uv_animation_direction = { 0.6 0.8 }
+
+		wpo_animation_speed = 0.1
+		wpo_animation_direction = { 0.5 1.0 }
+		wpo_animation_scale = 1.0
+		wpo_animation_big_scale = .6
+		wpo_animation_offset_strength = 4.0
+		}
+}
+
+entity = {
+	name = "strange_class_star_wave_entity"
+	pdxmesh = "strange_class_star_wave_mesh"
+
+			game_data = {
+		shader_type = VFX
+
+		bloom_factor			= 0.7
+		uv_animation_speed 		= 0.015
+		uv_animation_direction 	= { 0.5 0.8 }
+
+		wpo_animation_speed = 0.1
+		wpo_animation_direction = { 0.5 1.0 }
+		wpo_animation_scale = 1.0
+		wpo_animation_big_scale = .6
+		wpo_animation_offset_strength = 4.0
+		}
+}
+
+entity = { 
+	name = "strange_outbursts_entity"
+	pdxmesh = "neutron_outbursts_mesh"
+	
+	default_state = "idle"
+	state = { name = "idle" state_time = 5
+		 event = { time = 0.0 node = "polar_effect_1" particle = "strange_star_outburst_effect"  keep_particle = no trigger_once = yes }
+		 event = { time = 0.0 node = "polar_effect_2" particle = "strange_star_outburst_effect"  keep_particle = no trigger_once = yes }
+	}
+	#the great wall of texture overrides
+	meshsettings = {
+		name = "polySurfaceShape1"
+		texture_diffuse = "strange_outburst.dds"
+	}
+	meshsettings = {
+		name = "polySurfaceShape4"
+		texture_diffuse = "strange_outburst.dds"
+	}
+	meshsettings = {
+		name = "polySurfaceShape5"
+		texture_diffuse = "strange_outburst.dds"
+	}
+	meshsettings = {
+		name = "polySurfaceShape8"
+		texture_diffuse = "strange_outburst.dds"
+	}
+	meshsettings = {
+		name = "polySurface19Shape"
+		texture_diffuse = "strange_outburst.dds"
+	}
+	meshsettings = {
+		name = "polySurface20Shape"
+		texture_diffuse = "strange_outburst.dds"
+	}
+
+	meshsettings = {
+		name = "polySurface9Shape"
+		texture_diffuse = "strange_core_outburst.dds"
+	}
+	meshsettings = {
+		name = "polySurface10Shape"
+		texture_diffuse = "strange_core_outburst.dds"
+	}
+
+	scale = 2.6
+	
+	game_data = {
+		bloom_factor = 0.6
+		uv_animation_speed   = 0.5
+		uv_animation_direction  = { 0.75 1.0 }
+	}	
+}

@@ -1,0 +1,409 @@
+particle={
+	name="strange_class_star_file"
+	subsystem={
+		name="Surface_fire"
+		max_amount=2500
+		slave_particles=0
+		sort="depth"
+		emitter_type="sphere"
+		sphere_emitter_radius={ 4.51 0 }
+		sphere_emitter_yaw={ 0 180 }
+		sphere_emitter_pitch={ 0 85 }
+		invert=no
+		trail=no
+		local_space=yes
+		billboard=yes
+		hide=no
+		texture={
+			file="gfx/particles/fire03_des.dds"
+			x=1
+			y=1
+			shader="ParticleAdditive"
+		}
+		color={
+			x={ 150 20 }
+			y={ 255 20 }
+			z=0
+			alpha=150,fade_in_out
+		}
+		position={
+			x=0
+			y=0
+			z=0
+		}
+		start=0
+		duration=-1
+		emitter_yaw={ 0 0 }
+		emitter_pitch={ 0 0 }
+		velocity_pitch={ 0 180 }
+		velocity_yaw={ 0 180 }
+		velocity={ 0 0 }
+		life={ 4 2 }
+		emission=700
+		size={ 0.24,size_grow 0.16 }
+		rotation={ 0 180 }
+		rotation_speed={ 0 0 }
+	}
+	subsystem={
+		name="Solar_flares"
+		max_amount=50
+		slave_particles=0
+		sort="depth"
+		emitter_type="sphere"
+		sphere_emitter_radius={ 4.16 0 }
+		sphere_emitter_yaw={ 0 180 }
+		sphere_emitter_pitch={ 0 80 }
+		invert=no
+		trail=no
+		local_space=yes
+		billboard=yes
+		hide=no
+		texture={
+			file="gfx/particles/sun_flairs.dds"
+			x=1
+			y=1
+			shader="ParticleAdditive"
+		}
+		color={
+			x=255
+			y=90
+			z=90
+			alpha=150,fade_in_out_flairs
+		}
+		position={
+			x=0
+			y=0
+			z=0
+		}
+		start=0
+		duration=-1
+		emitter_yaw={ 0 0 }
+		emitter_pitch={ 0 0 }
+		velocity_pitch={ 0 180 }
+		velocity_yaw={ 0 180 }
+		velocity={ 0 0 }
+		life={ 10 2 }
+		emission=2
+		size={ 3,size_grow_flairs 0.5 }
+		rotation={ 0 180 }
+		rotation_speed={ 10 1 }
+	}
+	subsystem={
+		name="glow"
+		max_amount=8
+		slave_particles=0
+		sort="depth"
+		emitter_type="point"
+		invert=no
+		trail=no
+		local_space=yes
+		billboard=no
+		hide=no
+		texture={
+			file="gfx/particles/lens_flare_01.dds"
+			x=1
+			y=1
+			shader="ParticleAdditive"
+		}
+		color={
+			x=255
+			y=90
+			z=90
+			alpha=150,fade_in_out_flairs
+		}
+		position={
+			x=0
+			y=0
+			z=0
+		}
+		start=0
+		duration=-1
+		emitter_yaw={ 0 0 }
+		emitter_pitch={ 0 0 }
+		velocity_pitch={ 0 180 }
+		velocity_yaw={ 0 180 }
+		velocity={ 0 0 }
+		life={ 10 2 }
+		emission=4
+		size={ 50 5 }
+		particle_yaw={ 0 70 }
+		particle_pitch={ 0 70 }
+		rotation={ 0 180 }
+		rotation_speed={ 1 0.1 }
+	}
+	subsystem={
+		name="smoke"
+		max_amount=15
+		slave_particles=0
+		sort="depth"
+		emitter_type="sphere"
+		sphere_emitter_radius={ 10 5 }
+		sphere_emitter_yaw={ 0 180 }
+		sphere_emitter_pitch={ 0 2 }
+		invert=no
+		trail=no
+		local_space=yes
+		billboard=no
+		hide=no
+		texture={
+			file="gfx/particles/explosion_03_smoke_6_6.dds"
+			x=6
+			y=6
+			shader="ParticleAdditive"
+		}
+		color={
+			x=255
+			y=130
+			z=130
+			alpha=75,smoke_alpha
+		}
+		position={
+			x=0
+			y=0
+			z=0
+		}
+		start=0
+		duration=-1
+		emitter_yaw={ 0 0 }
+		emitter_pitch={ 0 0 }
+		velocity_pitch={ 0 0 }
+		velocity_yaw={ 0 180 }
+		velocity={ 3 2 }
+		life={ 6 1 }
+		emission=4
+		size={ 30 5 }
+		particle_yaw={ 0 0 }
+		particle_pitch={ 90 10 }
+		rotation={ 0 180 }
+		rotation_speed={ 1 0.1 }
+		mass=1
+		force=drag
+	}
+	subsystem={
+		name="smoke_noanim"
+		max_amount=15
+		slave_particles=0
+		sort="depth"
+		emitter_type="sphere"
+		sphere_emitter_radius={ 20 5 }
+		sphere_emitter_yaw={ 0 180 }
+		sphere_emitter_pitch={ 0 2 }
+		invert=no
+		trail=no
+		local_space=yes
+		billboard=no
+		hide=no
+		texture={
+			file="gfx/particles/explosion_02_smoke_6_6.dds"
+			x=6
+			y=6
+			shader="ParticleAdditive"
+		}
+		color={
+			x=255
+			y=130
+			z=130
+			alpha=80,smoke_alpha
+		}
+		position={
+			x=0
+			y=0
+			z=0
+		}
+		start=0
+		duration=-1
+		emitter_yaw={ 0 0 }
+		emitter_pitch={ 0 0 }
+		velocity_pitch={ 0 0 }
+		velocity_yaw={ 0 180 }
+		velocity={ 3 2 }
+		life={ 6 1 }
+		emission=4
+		size={ 40 5 }
+		particle_yaw={ 0 0 }
+		particle_pitch={ 90 10 }
+		rotation={ 0 180 }
+		rotation_speed={ 1 0.1 }
+		mass=1
+		force=drag
+	}
+	subsystem={
+		name="corona_flares"
+		max_amount=8
+		slave_particles=0
+		sort="depth"
+		emitter_type="point"
+		invert=no
+		trail=no
+		local_space=yes
+		billboard=no
+		hide=no
+		texture={
+			file="gfx/particles/lens_flare_sharp.dds"
+			x=1
+			y=1
+			shader="ParticleAdditive"
+		}
+		color={
+			x=255
+			y=90
+			z=90
+			alpha=150,fade_in_out_flairs
+		}
+		position={
+			x={ 0 1 }
+			y={ 0 1 }
+			z={ 0 1 }
+		}
+		start=0
+		duration=-1
+		emitter_yaw={ 0 0 }
+		emitter_pitch={ 0 0 }
+		velocity_pitch={ 0 180 }
+		velocity_yaw={ 0 180 }
+		velocity={ 0 0 }
+		life={ 10 2 }
+		emission=4
+		size={ 90,corona_size 15 }
+		particle_yaw={ 0 70 }
+		particle_pitch={ 0 70 }
+		rotation={ 0 180 }
+		rotation_speed={ 1 0.1 }
+	}
+	subsystem={
+		name="Solar_flares"
+		max_amount=4
+		slave_particles=0
+		sort="depth"
+		emitter_type="sphere"
+		sphere_emitter_radius={ 4.16 0 }
+		sphere_emitter_yaw={ 0 180 }
+		sphere_emitter_pitch={ 0 80 }
+		invert=no
+		trail=no
+		local_space=yes
+		billboard=yes
+		hide=no
+		texture={
+			file="gfx/particles/starswirl.dds"
+			x=1
+			y=1
+			shader="ParticleAdditive"
+		}
+		color={
+			x=255,fade_in_out
+			y=90,fade_in_out
+			z=90
+			alpha=255,fade_in_out_flairs
+		}
+		position={
+			x=0
+			y=0
+			z=0
+		}
+		start=0
+		duration=-1
+		emitter_yaw={ 0 0 }
+		emitter_pitch={ 0 0 }
+		velocity_pitch={ 0 180 }
+		velocity_yaw={ 0 180 }
+		velocity={ 0 0 }
+		life={ 10 2 }
+		emission=2
+		size={ 3,size_grow_flairs 1 }
+		rotation={ 0 180 }
+		rotation_speed={ 4 1 }
+	}
+	animation={
+		name="fade_in_out"
+		start=0
+		duration=1
+		repeat=yes
+		minValue=0
+		maxValue=1
+		curve={
+			0 0 0.4 1 1 0 
+		}
+		op="MUL"
+		time="life"
+	}
+	animation={
+		name="size_grow"
+		start=0
+		duration=1
+		repeat=no
+		minValue=1
+		maxValue=3
+		curve={
+			0 0 1 1 
+		}
+		op="MUL"
+		time="life"
+	}
+	animation={
+		name="fade_in_out_flairs"
+		start=0
+		duration=1
+		repeat=yes
+		minValue=0
+		maxValue=1
+		curve={
+			0 0 0.4 1 0.7 0.3 1 0 
+		}
+		op="MUL"
+		time="life"
+	}
+	animation={
+		name="size_grow_flairs"
+		start=0
+		duration=1
+		repeat=no
+		minValue=1
+		maxValue=2.5
+		curve={
+			0 0 1 1 
+		}
+		op="MUL"
+		time="life"
+	}
+	animation={
+		name="smoke_alpha"
+		start=0
+		duration=1
+		repeat=no
+		minValue=0
+		maxValue=1
+		curve={
+			0 0 0.2 0.14063 0.41471 0.30469 0.64706 0.1875 1 0 
+		}
+		op="MUL"
+		time="life"
+	}
+	animation={
+		name="corona_size"
+		start=0
+		duration=1
+		repeat=no
+		minValue=0
+		maxValue=1
+		curve={
+			0 0 0.46176 0.5 1 0 
+		}
+		op="MUL"
+		time="life"
+	}
+	force={
+		type="friction"
+		name="drag"
+		position={
+			0 0 0 
+		}
+		direction={
+			0 0 0 
+		}
+		local_force=yes
+		yaw=0
+		division=16
+		amount=1
+	}
+}
