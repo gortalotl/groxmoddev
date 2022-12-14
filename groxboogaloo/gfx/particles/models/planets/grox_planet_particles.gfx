@@ -1,0 +1,23 @@
+ObjectTypes = {
+
+    pdxparticle = {
+		name = "strange_shattered_planet_debris_effect"
+		type = "strange_shattered_planet_debris_effect"
+		
+		scale = 1.0
+	}
+
+	pdxparticle = {
+		name = "strange_class_star_effect" #strange star dust effect
+		type = "strange_class_star_file"
+	
+		scale = 1
+	}
+
+	pdxparticle = {
+		name = "strange_star_outburst_effect" #strange star neutron outbursts
+		type = "strange_star_outburst_effect"
+		
+		scale = 1.0
+	}
+}
