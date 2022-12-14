@@ -34,6 +34,16 @@ l_english:
  grox_hyperdrive:0 "Originally designed by Huaki Alerious, the Novian High Engineer of Majesty, this is one of the fastest FTL methods in the universe.  The Grox employ it to ensure speedy transport across a single galaxy."
 
 
+#Ship stuff
+ grox_frigate_title:0 "Grox Frigate"
+ grox_frigate_desc:0 "This frigate was once meant for civilian purposes, but the Grox have since modified it to escort their larger ships."
+ 
+ grox_hypership:0 "Grox Hypership"
+ grox_hypership_desc:0 "Truly the epitome of a stellar-scale warship, the Hypership is completely assembled and built from scratch, rather than bolting together celestial bodies like the measly Systemcraft.  Powered by a self-sustaining M-class Star, the Grox use it as a primary flagship and mobile command centers."
+ 
+ hypership_modern:0 "Hypership"
+ hypership_modern_desc:0 "While this design originated from the barbaric Grox Empire, it has since been refined to take full advantage of Strange Matter tech, psionics, and even higher dimensions.  It's power eclipses even Grox defense fleets, truly the paramount of Galactic Warfare."
+ 
 #Ship section Names
  hypership_ship_bowgun_01_key:0 "Nicoll-Dyson Lance"
  hypership_ship_bow_01_key:0 "Celestial Broadside"
