@@ -1,0 +1,1383 @@
+# Galactic Core (Grox)
+giga_black_hole_grox_initializer = {
+	name = "Tiorolca"
+	class = "sc_quasar"
+	flags = {
+		giga_core_04
+		giga_galactic_center
+		giga_grox_system
+	}
+	asteroid_belt = {
+		type = rocky_asteroid_belt
+		radius = 300
+	}
+	planet = {
+		name = "Hyperquasar"
+		class = "pc_core_quasar"
+		orbit_distance = 0
+		orbit_angle = 1
+		size = 10
+		has_ring = no
+		init_effect = {
+			save_global_event_target_as = grox_quasar
+		}
+	}
+	planet = {
+		name = "Tiorolc"
+		class = "pc_grox_barren"
+		orbit_distance = 400
+		orbit_angle = 45
+		size = 30
+		has_ring = no
+		init_effect = {
+			create_giga_grox = yes
+			save_global_event_target_as = giga_grox_capital
+			set_planet_flag = grox_capital
+			create_grox_disco_moon = yes
+		}
+		moon = {
+			name = Tlamoc
+			class = pc_shattered
+			orbit_distance = 10
+			orbit_angle = 0
+			size = 10
+		}
+		moon = {
+			name = Gruno
+			class = pc_barren
+			orbit_distance = 15
+			orbit_angle = 45
+			size = 8
+		}
+		moon = {
+			name = Groxerqueque
+			class = pc_barren
+			orbit_distance = 5
+			orbit_angle = 120
+			size = 12
+		}
+	}
+	planet = {
+		name = Grob
+		class = pc_broken
+		orbit_distance = 300		#PLEASE BE IN LINE WITH THE ORBIT LINE IN GAME FOR THE LOVE OF GOD #it worked :)
+		orbit_angle = 180
+		size = 25
+		has_ring = yes
+	}
+	init_effect = {
+		create_giga_grox_outpost = yes
+		save_global_event_target_as = giga_core_system
+		spawn_megastructure = {
+			type = "quasi_stellar_obliterator_0"
+			coords_from = event_target:grox_quasar
+			owner = event_target:giga_grox_country
+		}
+		every_system_planet = {
+			set_planet_flag = cant_build_here
+			set_planet_flag = cant_target_this_planet
+		}
+		if = {
+			limit = {
+				NOT = {
+					has_global_flag = grox_spawned
+				}
+			}
+			system_event = {
+				id = giga_grox.1000
+			}
+		}
+	}
+}
+
+giga_grox_inner_1_initializer = {
+	name = Nirius
+	class = sc_b
+	flags = {
+		giga_grox_system
+		giga_grox_inner_1
+		giga_grox_inner
+	}
+	planet = {
+		class = pc_b_star
+		orbit_distance = 0
+		orbit_angle = 1
+		size = 30
+		has_ring = no
+	}
+	planet = {
+		name = "Groxica"
+		class = "pc_grox_molten"
+		orbit_distance = 50
+		orbit_angle = 25
+		size = 25
+		has_ring = yes
+		init_effect = {
+			grox_major_forge_colony = yes
+		}
+	}
+	planet = {
+		name = "Tatanuta"
+		class = pc_barren
+		orbit_distance = 70
+		orbit_angle = 90
+		size = 12
+	}
+	asteroid_belt = {
+		type = rocky_asteroid_belt
+		radius = 90
+	}
+	init_effect = {
+		save_global_event_target_as = giga_grox_inner_1
+		every_system_planet = {
+			set_planet_flag = cant_build_here
+			set_planet_flag = cant_target_this_planet
+		}
+	}
+}
+
+giga_grox_inner_2_initializer = {
+	name = Vania
+	class = sc_g
+	flags = {
+		giga_grox_system
+		giga_grox_inner_2
+		giga_grox_inner
+	}
+	planet = {
+		class = pc_g_star
+		orbit_distance = 0
+		orbit_angle = 1
+		size = 30
+		has_ring = no
+	}
+	asteroid_belt = {
+		type = rocky_asteroid_belt
+		radius = 20
+	}
+	planet = {
+		name = Taniya
+		class = pc_shattered
+		orbit_distance = 30
+		orbit_angle = 30
+		size = 10
+	}
+	planet = {
+		name = Attica
+		class = pc_toxic
+		orbit_distance = 35
+		orbit_angle = 100
+		size = 15
+	}
+	init_effect = {
+		save_global_event_target_as = giga_grox_inner_2
+		every_system_planet = {
+			set_planet_flag = cant_build_here
+			set_planet_flag = cant_target_this_planet
+		}
+	}
+}
+
+giga_grox_inner_3_initializer = {
+	name = Redixya
+	class = sc_m_giant
+	flags = {
+		giga_grox_system
+		giga_grox_inner_3
+		giga_grox_inner
+	}
+	planet = {
+		class = pc_m_giant_star
+		orbit_distance = 0
+		orbit_angle = 1
+		size = 30
+		has_ring = no
+	}
+	planet = {
+		class = pc_molten
+		name = Gounitut
+		orbit_distance = 50
+		orbit_angle = 55
+		size = 15
+	}
+	asteroid_belt = {
+		type = rocky_asteroid_belt
+		radius = 80
+	}
+	planet = {
+		class = pc_asteroid
+		orbit_distance = 80
+		orbit_angle = 40
+		size = 2
+	}
+	planet = {
+		class = pc_asteroid
+		orbit_distance = 80
+		orbit_angle = 40
+		size = 2
+	}
+	planet = {
+		class = pc_asteroid
+		orbit_distance = 80
+		orbit_angle = 40
+		size = 2
+	}
+	planet = {
+		class = pc_barren
+		name = Gounitut
+		orbit_distance = 100
+		orbit_angle = 150
+		size = 12
+	}
+	planet = {
+		class = pc_barren
+		name = Itihukata
+		orbit_distance = 110
+		orbit_angle = 200
+		size = 20
+	}
+	init_effect = {
+		save_global_event_target_as = giga_grox_inner_3
+		every_system_planet = {
+			set_planet_flag = cant_build_here
+			set_planet_flag = cant_target_this_planet
+		}
+	}
+}
+
+giga_grox_inner_4_initializer = {
+	name = Zvesdus
+	class = sc_g
+	flags = {
+		giga_grox_system
+		giga_grox_inner_4
+		giga_grox_inner
+	}
+	planet = {
+		class = pc_g_star
+		orbit_distance = 0
+		orbit_angle = 1
+		size = 30
+		has_ring = no
+		init_effect = {
+			save_global_event_target_as = groxlifter1
+		}
+	}
+	planet = {
+		class = pc_barren
+		orbit_distance = 50
+		orbit_angle = 254
+		size = 9
+		has_ring = yes
+	}
+	init_effect = {
+		save_global_event_target_as = giga_grox_inner_4
+		every_system_planet = {
+			set_planet_flag = cant_build_here
+			set_planet_flag = cant_target_this_planet
+		}
+		spawn_megastructure = {
+			type = "star_lifter_5_g_star"
+			coords_from = event_target:groxlifter1
+			owner = event_target:giga_grox_country
+		}
+	}
+}
+
+giga_grox_inner_5_initializer = {
+	name = Achizves
+	class = sc_m
+	flags = {
+		giga_grox_system
+		giga_grox_inner_5
+		giga_grox_inner
+	}
+	planet = {
+		class = star
+		orbit_distance = 0
+		orbit_angle = 1
+		size = 30
+		has_ring = no
+	}
+	planet = {
+		name = Novita
+		class = pc_shattered
+		orbit_distance = 75
+		orbit_angle = 280
+		size = 13
+	}
+	planet = {
+		name = Gorthuakata
+		class = pc_grox_molten
+		orbit_distance = 75
+		orbit_angle = 100
+		size = 10
+	}
+	asteroid_belt = {
+		type = rocky_asteroid_belt
+		radius = 75
+	}
+	planet = {
+		name = Eqtya
+		class = pc_barren
+		orbit_distance = 100
+		orbit_angle = 180
+		size = 25
+	}
+	init_effect = {
+		save_global_event_target_as = giga_grox_inner_5
+		every_system_planet = {
+			set_planet_flag = cant_build_here
+			set_planet_flag = cant_target_this_planet
+		}
+	}
+}
+
+giga_grox_inner_6_initializer = {
+	name = Etoilius
+	class = rl_all_stars
+	flags = {
+		giga_grox_system
+		giga_grox_inner_6
+		giga_grox_inner
+	}
+	planet = {
+		class = star
+		orbit_distance = 0
+		orbit_angle = 1
+		size = 10
+		has_ring = no
+	}
+	init_effect = {
+		save_global_event_target_as = giga_grox_inner_6
+		every_system_planet = {
+			set_planet_flag = cant_build_here
+			set_planet_flag = cant_target_this_planet
+		}
+	}
+}
+
+giga_grox_inner_7_initializer = {
+	name = Goritya
+	class = rl_all_stars
+	flags = {
+		giga_grox_system
+		giga_inner_7
+		giga_grox_inner
+	}
+	planet = {
+		class = star
+		orbit_distance = 0
+		orbit_angle = 1
+		size = 30
+		has_ring = no
+	}
+	init_effect = {
+		save_global_event_target_as = giga_grox_inner_7
+		every_system_planet = {
+			set_planet_flag = cant_build_here
+			set_planet_flag = cant_target_this_planet
+		}
+	}
+}
+
+#Middle ring
+giga_grox_middle_1_initializer = {
+	name = Iriti'Ata
+	class = rl_all_stars
+	flags = {
+		giga_grox_system
+		giga_grox_middle_1
+		giga_grox_middle
+	}
+	planet = {
+		class = star
+		orbit_distance = 0
+		orbit_angle = 1
+		size = 30
+		has_ring = no
+	}
+	init_effect = {
+		save_global_event_target_as = giga_grox_middle_1
+		every_system_planet = {
+			set_planet_flag = cant_build_here
+			set_planet_flag = cant_target_this_planet
+		}
+	}
+}
+
+giga_grox_middle_2_initializer = {
+	name = "Arikia Etollia"
+	class = rl_all_stars
+	flags = {
+		giga_grox_system
+		giga_grox_middle_2
+		giga_grox_middle
+	}
+	planet = {
+		class = star
+		orbit_distance = 0
+		orbit_angle = 1
+		size = 30
+		has_ring = no
+	}
+	init_effect = {
+		save_global_event_target_as = giga_grox_middle_2
+		every_system_planet = {
+			set_planet_flag = cant_build_here
+			set_planet_flag = cant_target_this_planet
+		}
+	}
+}
+
+giga_grox_middle_3_initializer = {
+	name = "Huakanov"
+	class = rl_all_stars
+	flags = {
+		giga_grox_system
+		giga_grox_middle_3
+		giga_grox_middle
+	}
+	planet = {
+		class = star
+		orbit_distance = 0
+		orbit_angle = 1
+		size = 30
+		has_ring = no
+	}
+	init_effect = {
+		save_global_event_target_as = giga_grox_middle_3
+		every_system_planet = {
+			set_planet_flag = cant_build_here
+			set_planet_flag = cant_target_this_planet
+		}
+	}
+}
+
+giga_grox_middle_4_initializer = {
+	name = "Novwaka"
+	class = sc_m
+	flags = {
+		giga_grox_system
+		giga_grox_middle_4
+		giga_grox_middle
+	}
+	planet = {
+		class = pc_m_star
+		orbit_distance = 0
+		orbit_angle = 1
+		size = 30
+		has_ring = no
+	}
+	planet = {
+		class = pc_grox_toxic
+		orbit_distance = 100
+		orbit_angle = 165
+		size = 11
+		has_ring = yes
+		init_effect = {
+			grox_temple_world = yes
+			save_event_target_as = grox_temple_world
+			set_planet_flag = grox_temple_world
+		}
+		moon = {
+			class = pc_shielded
+			orbit_distance = 5
+			orbit_angle = 45
+			size = 3
+		}
+	}
+	init_effect = {
+		save_global_event_target_as = giga_grox_middle_4
+		every_system_planet = {
+			set_planet_flag = cant_build_here
+			set_planet_flag = cant_target_this_planet
+		}
+	}
+}
+
+giga_grox_middle_5_initializer = {
+	name = "Tali Uakt"
+	class = rl_all_stars
+	flags = {
+		giga_grox_system
+		giga_grox_middle_5
+		giga_grox_middle
+	}
+	planet = {
+		class = star
+		orbit_distance = 0
+		orbit_angle = 1
+		size = 30
+		has_ring = no
+	}
+	init_effect = {
+		save_global_event_target_as = giga_grox_middle_5
+		every_system_planet = {
+			set_planet_flag = cant_build_here
+			set_planet_flag = cant_target_this_planet
+		}
+	}
+}
+
+giga_grox_middle_6_initializer = {
+	name = "Uytie Girk"
+	class = rl_all_stars
+	flags = {
+		giga_grox_system
+		giga_grox_middle_6
+		giga_grox_middle
+	}
+	planet = {
+		class = star
+		orbit_distance = 0
+		orbit_angle = 1
+		size = 30
+		has_ring = no
+	}
+	init_effect = {
+		save_global_event_target_as = giga_grox_middle_6
+		every_system_planet = {
+			set_planet_flag = cant_build_here
+			set_planet_flag = cant_target_this_planet
+		}
+	}
+}
+
+giga_grox_middle_7_initializer = {
+	name = "Tem Huakit"
+	class = "sc_m"
+	flags = {
+		giga_grox_system
+		giga_grox_middle_7
+		giga_grox_middle
+	}
+	planet = {
+		class = pc_m_star
+		orbit_distance = 0
+		orbit_angle = 1
+		size = 30
+		has_ring = no
+	}
+	init_effect = {
+		save_global_event_target_as = giga_grox_middle_7
+		every_system_planet = {
+			#if = {
+			#	limit = {
+			#		is_planet_class = pc_virtual_reality
+			#	}
+			#	grox_torture_segment = yes				#ohno
+			#}
+			set_planet_flag = cant_build_here
+			set_planet_flag = cant_target_this_planet
+		}
+		spawn_megastructure = {
+			type = matrioshka_brain_5_m_star
+		}
+	}
+}
+
+giga_grox_middle_8_initializer = {
+	name = "Nov Motu"
+	class = rl_all_stars
+	flags = {
+		giga_grox_system
+		giga_grox_middle_8
+		giga_grox_middle
+	}
+	planet = {
+		class = star
+		orbit_distance = 0
+		orbit_angle = 1
+		size = 30
+		has_ring = no
+	}
+	init_effect = {
+		save_global_event_target_as = giga_grox_middle_8
+		every_system_planet = {
+			set_planet_flag = cant_build_here
+			set_planet_flag = cant_target_this_planet
+		}
+	}
+}
+
+giga_grox_middle_9_initializer = {
+	name = "Enganui"
+	class = rl_all_stars
+	flags = {
+		giga_grox_system
+		giga_grox_middle_9
+		giga_grox_middle
+	}
+	planet = {
+		class = star
+		orbit_distance = 0
+		orbit_angle = 1
+		size = 30
+		has_ring = no
+	}
+	init_effect = {
+		save_global_event_target_as = giga_grox_middle_9
+		every_system_planet = {
+			set_planet_flag = cant_build_here
+			set_planet_flag = cant_target_this_planet
+		}
+	}
+}
+
+#Outer ring (12 systems), 12 of which are grox #elo what-gort
+giga_grox_outer_1_initializer = {
+	name = "Koh Itin"
+	class = sc_giga_o_star
+	flags = {
+		giga_grox_system
+		giga_grox_outer_1
+		giga_grox_outer
+	}
+	planet = {
+		class = pc_b_star
+		orbit_distance = 0
+		orbit_angle = 1
+		size = 25
+		has_ring = no
+		init_effect = {
+			save_global_event_target_as = grox_star_dyson1
+		}
+	}
+	init_effect = {
+		save_global_event_target_as = giga_grox_outer_1
+		every_system_planet = {
+			set_planet_flag = cant_build_here
+			set_planet_flag = cant_target_this_planet
+		}
+		spawn_megastructure = {
+			type = dyson_sphere_5_o_star
+			coords_from = event_target:grox_star_dyson1
+			owner = event_target:giga_grox_country
+		}
+	}
+}
+
+giga_grox_outer_2_initializer = {
+	name = "Shiv Aratk"
+	class = rl_all_stars
+	flags = {
+		giga_grox_system
+		giga_grox_outer_2
+		giga_grox_outer
+	}
+	planet = {
+		class = star
+		orbit_distance = 0
+		orbit_angle = 1
+		size = 30
+		has_ring = no
+	}
+	planet = {
+		class = pc_molten
+		orbit_distance = 30
+		orbit_angle = 1
+		size = 12
+		has_ring = no
+	}
+	planet = {
+		class = pc_food_giant
+		orbit_distance = 50
+		orbit_angle = 1
+		size = 30
+		has_ring = no
+		init_effect = {
+			save_global_event_target_as = groxfoodgiant
+		}
+	}
+	init_effect = {
+		save_global_event_target_as = giga_grox_outer_2
+		every_system_planet = {
+			set_planet_flag = cant_build_here
+			set_planet_flag = cant_target_this_planet
+		}
+		spawn_megastructure = {
+			type = yggdrasil_orchid_3
+			coords_from = event_target:groxfoodgiant
+			owner = event_target:giga_grox_country
+		}
+	}
+}
+
+giga_grox_outer_3_initializer = {
+	name = "Kahahou"
+	class = rl_all_stars
+	flags = {
+		giga_grox_system
+		giga_grox_outer_3
+		giga_grox_outer
+	}
+	planet = {
+		class = star
+		orbit_distance = 0
+		orbit_angle = 1
+		size = 30
+		has_ring = no
+	}
+	init_effect = {
+		save_global_event_target_as = giga_grox_outer_3
+		every_system_planet = {
+			set_planet_flag = cant_build_here
+			set_planet_flag = cant_target_this_planet
+		}
+	}
+}
+
+giga_grox_outer_4_initializer = {
+	name = "Irinug"
+	class = rl_all_stars
+	flags = {
+		giga_grox_system
+		giga_grox_outer_4
+		giga_grox_outer
+	}
+	planet = {
+		class = star
+		orbit_distance = 0
+		orbit_angle = 1
+		size = 30
+		has_ring = no
+	}
+	init_effect = {
+		save_global_event_target_as = giga_grox_outer_4
+		every_system_planet = {
+			set_planet_flag = cant_build_here
+			set_planet_flag = cant_target_this_planet
+		}
+	}
+}
+
+giga_grox_outer_5_initializer = {
+	name = "Imerika"
+	class = sc_m_giant
+	flags = {
+		giga_grox_system
+		giga_grox_outer_5
+		giga_grox_outer
+		giga_grox_raider_1
+	}
+	planet = {
+		class = pc_m_giant_star
+		orbit_distance = 0
+		orbit_angle = 1
+		size = 30
+		has_ring = no
+		init_effect = {
+			save_global_event_target_as = groxlifterforge
+		}
+	}
+	planet = {
+		class = pc_grox_molten
+		orbit_distance = 25
+		orbit_angle = {
+			min = 60
+			max = 180
+		}
+		size = 15
+		has_ring = no
+		flags = {
+			grox_raid_source_1
+			grox_raid_source
+		}
+		init_effect = {
+			save_event_target_as = grox_raid_source_planet
+		}
+	}
+	planet = {
+		name = "Castakum"
+		class = pc_broken
+		orbit_distance = 60
+		orbit_angle = 90
+		size = 17
+		has_ring = no
+	}
+	init_effect = {
+		save_global_event_target_as = giga_grox_outer_5
+		every_system_planet = {
+			set_planet_flag = cant_build_here
+			set_planet_flag = cant_target_this_planet
+		}
+		spawn_megastructure = {
+			type = star_lifter_5_m_giant_star
+			coords_from = event_target:groxlifterforge
+			owner = event_target:giga_grox_country
+		}
+	}
+}
+
+giga_grox_outer_6_initializer = {
+	name = "Mulnun"
+	class = rl_all_stars
+	flags = {
+		giga_grox_system
+		giga_grox_outer_6
+		giga_grox_outer
+	}
+	planet = {
+		class = star
+		orbit_distance = 0
+		orbit_angle = 1
+		size = 30
+		has_ring = no
+	}
+	init_effect = {
+		save_global_event_target_as = giga_grox_outer_6
+		every_system_planet = {
+			set_planet_flag = cant_build_here
+			set_planet_flag = cant_target_this_planet
+		}
+	}
+}
+
+giga_grox_outer_7_initializer = {
+	name = "Manu Novi"
+	class = rl_all_stars
+	flags = {
+		giga_grox_system
+		giga_grox_outer_7
+		giga_grox_outer
+	}
+	planet = {
+		class = star
+		orbit_distance = 0
+		orbit_angle = 1
+		size = 30
+		has_ring = no
+	}
+	init_effect = {
+		save_global_event_target_as = giga_grox_outer_7
+		every_system_planet = {
+			set_planet_flag = cant_build_here
+			set_planet_flag = cant_target_this_planet
+		}
+	}
+}
+
+giga_grox_outer_8_initializer = {
+	name = "Gacarat"
+	class = rl_all_stars
+	flags = {
+		giga_grox_system
+		giga_grox_outer_8
+		giga_grox_outer
+	}
+	planet = {
+		class = star
+		orbit_distance = 0
+		orbit_angle = 1
+		size = 30
+		has_ring = no
+	}
+	init_effect = {
+		save_global_event_target_as = giga_grox_outer_8
+		every_system_planet = {
+			set_planet_flag = cant_build_here
+			set_planet_flag = cant_target_this_planet
+		}
+	}
+}
+
+giga_grox_outer_9_initializer = {
+	name = "Lavania"
+	class = rl_all_stars
+	flags = {
+		giga_grox_system
+		giga_grox_outer_9
+		giga_grox_outer
+	}
+	planet = {
+		class = star
+		orbit_distance = 0
+		orbit_angle = 1
+		size = 30
+		has_ring = no
+	}
+	init_effect = {
+		save_global_event_target_as = giga_grox_outer_9
+		every_system_planet = {
+			set_planet_flag = cant_build_here
+			set_planet_flag = cant_target_this_planet
+		}
+	}
+}
+
+giga_grox_outer_10_initializer = {
+	name = "Spinea"
+	class = rl_all_stars
+	flags = {
+		giga_grox_system
+		giga_grox_outer_10
+		giga_grox_outer
+	}
+	planet = {
+		class = star
+		orbit_distance = 0
+		orbit_angle = 1
+		size = 30
+		has_ring = no
+	}
+	init_effect = {
+		save_global_event_target_as = giga_grox_outer_10
+		every_system_planet = {
+			set_planet_flag = cant_build_here
+			set_planet_flag = cant_target_this_planet
+		}
+	}
+}
+
+giga_grox_outer_11_initializer = {
+	name = "Arat Ariki"
+	class = sc_a
+	flags = {
+		giga_grox_system
+		giga_grox_outer_11
+		giga_grox_outer
+	}
+	planet = {
+		class = pc_a_star
+		orbit_distance = 0
+		orbit_angle = 1
+		size = 30
+		has_ring = no
+		init_effect = {
+			save_global_event_target_as = grox_mbraino
+		}
+	}
+	init_effect = {
+		save_global_event_target_as = giga_grox_outer_11
+		every_system_planet = {
+			set_planet_flag = cant_build_here
+			set_planet_flag = cant_target_this_planet
+		}
+		spawn_megastructure = {
+			type = matrioshka_brain_5_a_star
+			coords_from = event_target:grox_mbraino
+			owner = event_target:giga_grox_country
+		}
+	}
+}
+
+giga_grox_outer_12_initializer = {
+	name = "Heluawai"
+	class = rl_all_stars
+	flags = {
+		giga_grox_system
+		giga_grox_outer_12
+		giga_grox_outer
+	}
+	planet = {
+		class = star
+		orbit_distance = 0
+		orbit_angle = 1
+		size = 30
+		has_ring = no
+	}
+	init_effect = {
+		save_global_event_target_as = giga_grox_outer_12
+		every_system_planet = {
+			set_planet_flag = cant_build_here
+			set_planet_flag = cant_target_this_planet
+		}
+	}
+}
+
+#outermost ring
+giga_grox_outerest_1_initializer = {
+	#gonna keep this outerest bc its funny, yes i did name it that, not elo
+	name = "Whetuna"
+	class = rl_all_stars
+	flags = {
+		giga_grox_system
+		giga_grox_outerest_1
+		giga_grox_outerest
+	}
+	planet = {
+		class = star
+		orbit_distance = 0
+		orbit_angle = 1
+		size = 30
+		has_ring = no
+	}
+	init_effect = {
+		save_global_event_target_as = giga_grox_outerest_1
+		every_system_planet = {
+			set_planet_flag = cant_build_here
+			set_planet_flag = cant_target_this_planet
+		}
+	}
+}
+
+giga_grox_outerest_2_initializer = {
+	name = "Rahou"
+	class = rl_all_stars
+	flags = {
+		giga_grox_system
+		giga_grox_outerest_2
+		giga_grox_outerest
+	}
+	planet = {
+		class = star
+		orbit_distance = 0
+		orbit_angle = 1
+		size = 30
+		has_ring = no
+	}
+	init_effect = {
+		save_global_event_target_as = giga_grox_outerest_2
+		every_system_planet = {
+			set_planet_flag = cant_build_here
+			set_planet_flag = cant_target_this_planet
+		}
+	}
+}
+
+giga_grox_outerest_3_initializer = {
+	name = "Inutakka"
+	class = rl_all_stars
+	flags = {
+		giga_grox_system
+		giga_grox_outerest_3
+		giga_grox_outerest
+	}
+	planet = {
+		class = star
+		orbit_distance = 0
+		orbit_angle = 1
+		size = 30
+		has_ring = no
+	}
+	init_effect = {
+		save_global_event_target_as = giga_grox_outerest_3
+		every_system_planet = {
+			set_planet_flag = cant_build_here
+			set_planet_flag = cant_target_this_planet
+		}
+	}
+}
+
+giga_grox_outerest_4_initializer = {
+	name = "Okuit"
+	class = rl_all_stars
+	flags = {
+		giga_grox_system
+		giga_grox_outerest_4
+		giga_grox_outerest
+	}
+	planet = {
+		class = star
+		orbit_distance = 0
+		orbit_angle = 1
+		size = 30
+		has_ring = no
+	}
+	init_effect = {
+		save_global_event_target_as = giga_grox_outerest_4
+		every_system_planet = {
+			set_planet_flag = cant_build_here
+			set_planet_flag = cant_target_this_planet
+		}
+	}
+}
+
+giga_grox_outerest_5_initializer = {
+	name = "Verinti"
+	class = rl_all_stars
+	flags = {
+		giga_grox_system
+		giga_grox_outerest_5
+		giga_grox_outerest
+	}
+	planet = {
+		class = star
+		orbit_distance = 0
+		orbit_angle = 1
+		size = 30
+		has_ring = no
+	}
+	init_effect = {
+		save_global_event_target_as = giga_grox_outerest_5
+		every_system_planet = {
+			set_planet_flag = cant_build_here
+			set_planet_flag = cant_target_this_planet
+		}
+	}
+}
+
+giga_grox_outerest_6_initializer = {
+	name = "Ickasawta"
+	class = rl_all_stars
+	flags = {
+		giga_grox_system
+		giga_grox_outerest_6
+		giga_grox_outerest
+	}
+	planet = {
+		class = star
+		orbit_distance = 0
+		orbit_angle = 1
+		size = 30
+		has_ring = no
+	}
+	init_effect = {
+		save_global_event_target_as = giga_grox_outerest_6
+		every_system_planet = {
+			set_planet_flag = cant_build_here
+			set_planet_flag = cant_target_this_planet
+		}
+	}
+}
+
+giga_grox_outerest_7_initializer = {
+	name = "Uwunata"
+	class = rl_all_stars
+	flags = {
+		giga_grox_system
+		giga_grox_outerest_7
+		giga_grox_outerest
+	}
+	planet = {
+		class = star
+		orbit_distance = 0
+		orbit_angle = 1
+		size = 30
+		has_ring = no
+	}
+	init_effect = {
+		save_global_event_target_as = giga_grox_outerest_7
+		every_system_planet = {
+			set_planet_flag = cant_build_here
+			set_planet_flag = cant_target_this_planet
+		}
+	}
+}
+
+giga_grox_outerest_8_initializer = {
+	name = "Xenita"
+	class = rl_all_stars
+	flags = {
+		giga_grox_system
+		giga_grox_outerest_8
+		giga_grox_outerest
+	}
+	planet = {
+		class = star
+		orbit_distance = 0
+		orbit_angle = 1
+		size = 30
+		has_ring = no
+	}
+	init_effect = {
+		save_global_event_target_as = giga_grox_outerest_8
+		every_system_planet = {
+			set_planet_flag = cant_build_here
+			set_planet_flag = cant_target_this_planet
+		}
+	}
+}
+
+giga_grox_outerest_9_initializer = {
+	name = "Sathuna"
+	class = rl_all_stars
+	flags = {
+		giga_grox_system
+		giga_grox_outerest_9
+		giga_grox_outerest
+	}
+	planet = {
+		class = star
+		orbit_distance = 0
+		orbit_angle = 1
+		size = 30
+		has_ring = no
+	}
+	init_effect = {
+		save_global_event_target_as = giga_grox_outerest_9
+		every_system_planet = {
+			set_planet_flag = cant_build_here
+			set_planet_flag = cant_target_this_planet
+		}
+	}
+}
+
+giga_grox_outerest_10_initializer = {
+	name = "Ghulkata"
+	class = rl_all_stars
+	flags = {
+		giga_grox_system
+		giga_grox_outerest_10
+		giga_grox_outerest
+	}
+	planet = {
+		class = star
+		orbit_distance = 0
+		orbit_angle = 1
+		size = 30
+		has_ring = no
+	}
+	init_effect = {
+		save_global_event_target_as = giga_grox_outerest_10
+		every_system_planet = {
+			set_planet_flag = cant_build_here
+			set_planet_flag = cant_target_this_planet
+		}
+	}
+}
+
+giga_grox_outerest_11_initializer = {
+	name = "Varakuta"
+	class = rl_all_stars
+	flags = {
+		giga_grox_system
+		giga_grox_outerest_11
+		giga_grox_outerest
+	}
+	planet = {
+		class = star
+		orbit_distance = 0
+		orbit_angle = 1
+		size = 30
+		has_ring = no
+	}
+	init_effect = {
+		save_global_event_target_as = giga_grox_outerest_11
+		every_system_planet = {
+			set_planet_flag = cant_build_here
+			set_planet_flag = cant_target_this_planet
+		}
+	}
+}
+
+giga_grox_outerest_12_initializer = {
+	name = "Utata Hukatat"
+	class = rl_all_stars
+	flags = {
+		giga_grox_system
+		giga_grox_outerest_12
+		giga_grox_outerest
+	}
+	planet = {
+		class = star
+		orbit_distance = 0
+		orbit_angle = 1
+		size = 30
+		has_ring = no
+	}
+	init_effect = {
+		save_global_event_target_as = giga_grox_outerest_12
+		every_system_planet = {
+			set_planet_flag = cant_build_here
+			set_planet_flag = cant_target_this_planet
+		}
+	}
+}
+
+giga_grox_outerest_13_initializer = {
+	name = "Utya Hunia"
+	class = rl_all_stars
+	flags = {
+		giga_grox_system
+		giga_grox_outerest_13
+		giga_grox_outerest
+	}
+	planet = {
+		class = star
+		orbit_distance = 0
+		orbit_angle = 1
+		size = 30
+		has_ring = no
+	}
+	init_effect = {
+		save_global_event_target_as = giga_grox_outerest_13
+		every_system_planet = {
+			set_planet_flag = cant_build_here
+			set_planet_flag = cant_target_this_planet
+		}
+	}
+}
+
+giga_grox_outerest_14_initializer = {
+	name = "Novbatata"
+	class = rl_all_stars
+	flags = {
+		giga_grox_system
+		giga_grox_outerest_14
+		giga_grox_outerest
+	}
+	planet = {
+		class = star
+		orbit_distance = 0
+		orbit_angle = 1
+		size = 30
+		has_ring = no
+	}
+	init_effect = {
+		save_global_event_target_as = giga_grox_outerest_14
+		every_system_planet = {
+			set_planet_flag = cant_build_here
+			set_planet_flag = cant_target_this_planet
+		}
+	}
+}
+
+giga_grox_outerest_15_initializer = {
+	name = "Retakahuata"
+	class = rl_all_stars
+	flags = {
+		giga_grox_system
+		giga_grox_outerest_15
+		giga_grox_outerest
+	}
+	planet = {
+		class = star
+		orbit_distance = 0
+		orbit_angle = 1
+		size = 30
+		has_ring = no
+	}
+	init_effect = {
+		save_global_event_target_as = giga_grox_outerest_15
+		every_system_planet = {
+			set_planet_flag = cant_build_here
+			set_planet_flag = cant_target_this_planet
+		}
+	}
+}
+ ################## STRANGE MATTER SYSTEM
+giga_grox_strange_system_initializer = {
+	name = "Bordikelos"
+	class = sc_strange_star
+	flags = {
+		giga_grox_quirkylmao
+	}
+	planet = {
+		class = pc_strange_star
+		orbit_distance = 0
+		orbit_angle = 1
+		size = 30
+		has_ring = no
+	}
+	planet = {
+		name = "Forlorn"
+		class = pc_strange_shattered
+		orbit_distance = 40
+		orbit_angle = 1
+		size = 22
+		has_ring = no
+		init_effect = {
+			set_planet_flag = groxstrangeshattered
+		}
+	}
+	#please put actual planets in this system so its spicy
+	init_effect = {
+		save_global_event_target_as = giga_grox_strange
+		every_system_planet = {
+			set_planet_flag = cant_build_here
+			set_planet_flag = cant_target_this_planet
+		}
+	}
+}
