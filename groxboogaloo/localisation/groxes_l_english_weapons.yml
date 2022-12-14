@@ -5,6 +5,9 @@ l_english:
   grox_laser:0 "Novian Photograviton Coherence Beam"
   grox_laser_desc:0 "A Novian weapon which generates a high frequency laser and energetic gravitational wave, harmonized to perpetuate each other before violently interacting upon impact with a target."
   
+  grox_barrage_of_death:0 "The Barrage of Death"
+  grox_barrage_of_death_desc:0 "This gigantic weapons array batters at enemy ships, fortifications, and anything else the Grox want to destroy to esnure that death is delivered quickly, efficently, and brutally.  Do not point at self."
+  
   grox_autocannon:0 "Novian Lepton Cannon"
   grox_autocannon_desc:0 "A Novian weapon which rapidly fires dense bursts of muons. These beams are short-lived, but cause devastating cold fusion chain reactions when they do reach a target.
   
