@@ -937,153 +937,490 @@ country_event = {
 country_event = {
 	id = giga_grox.140
 	hide_window = yes
-	#is_triggered_only = yes
+	is_triggered_only = yes
 	trigger = {
 		event_target:giga_grox_country = {
 			NOT = {
 				has_country_flag = grox_raid_cooldown
+				has_country_flag = qso_complete
 			}
 		}
-	}
-	mean_time_to_happen = {
-		days = 1		############################################ CHANGE THIS TO YEARS = 5, THIS IS JUST FOR TESTING ###########################
-		modifier = {
-			factor = 2
-			mid_game_years_passed >= 15
-		}
-		modifier = {
-			factor = 0.75
-			mid_game_years_passed >= 50
-		}
-		modifier = {
-			factor = 0.5
-			any_country = {
-				has_ascension_perk = ap_gigastructural_constructs
-			}
-		}
-		modifier = {
-			factor = 0.5
-			any_country = {
-				has_ascension_perk = ap_systemcraft
-			}
-		}
+		is_country_type = giga_grox_country
 	}
 	immediate = {
-		#if = {
-		#limit = {
-		#	event_target:giga_grox_country = {
-		#		has_country_flag = grox_
-		#	}
-		#}
-		set_timed_country_flag = {
-			flag = grox_raid_cooldown
-			days = 1800
-		}
-		random_list = {
-			0 = {
-				random_system = {
-					limit = {
-						has_star_flag = giga_grox_raider_1
-					}
-					save_event_target_as = grox_raider_system
-					random_system_planet = {
-						limit = {
-							has_planet_flag = grox_raid_source
-						}
-						save_event_target_as = grox_raid_source_1
-					}
-				}
-				modifier = {
-					add = 1
-					NOT = {
-						has_country_flag = grox_raid_1_ongoing
-					}
-					midgame_years_passed > 25
-				}
-				break = yes
+		if = {
+			limit = {
+				mid_game_years_passed < 15
 			}
-			#0 = {
-			#	random_system = {
-			#		limit = {
-			#			has_star_flag = giga_grox_raider_2
-			#		}
-			#		save_event_target_as = grox_raider_system
-			#		random_system_planet = {
-			#			limit = {
-			#				has_planet_flag = grox_raid_source_2
-			#			}
-			#			save_event_target_as = grox_raid_source_2
-			#		}
-			#		root = {
-			#			set_country_flag = grox_raid_2_ongoing
-			#		}
-			#	}
-			#	modifier = {
-			#		add = 1
-			#		NOT = {
-			#			has_country_flag = grox_raid_2_ongoing
-			#		}
-			#		midgame_years_passed > 50
-			#	}
-			#	break = yes
-			#}
-		}
-		#	}
-		event_target:giga_grox_country = {
-			create_leader = {
-				class = admiral
-				species = event_target:giga_grox_species
-				name = random				# i gotta do the names for them some time later
-				skill = 10
-				leader_age_min = 40
-				leader_age_max = 150
-				traits = {
-					trait = random_trait
-					trait = leader_trait_admiral_cyborg
+			event_target:giga_grox_country = {
+				set_timed_country_flag = {
+					flag = grox_raid_cooldown
+					days = 1800
 				}
 			}
-			create_fleet = {
-				effect = {
-					set_owner = event_target:giga_grox_country
-					create_grox_raiders = yes
-					set_location = event_target:grox_raid_source
-					set_fleet_stance = aggressive
-					set_fleet_bombardment_stance = armageddon
-					set_aggro_range_measure_from = self
-					set_aggro_range = 150
-					set_owner = event_target:giga_grox_country
-					assign_leader = last_created_leader
-					save_event_target_as = grox_raiders
-					closest_system = {
-						limit = {
-							any_system_planet = {
-								exists = owner
-								#owner = {
-								#	is_same_value = event_target:grox_target
-								#	}
-								num_pops > 15
-							}
-						}
-						save_event_target_as = grox_raid_system
-					}
-					event_target:grox_raid_1_system = {
-						random_system_planet = {
-							limit = {
-								exists = owner
-								#owner = {
-								#	is_same_value = event_target:grox_target
-								#}
-								num_pops > 15
-							}
-							save_event_target_as = grox_raid_planet
-							owner = {
-								save_event_target_as = grox_target
-							}
+			break = yes
+			event_target:grox_target = {
+				country_event = {
+					id = giga_grox.144					#them telling you they're raiding you 
+					days = 1
+				}
+			}
+			hidden_effect = {
+				event_target:giga_grox_country = {
+					create_leader = {
+						class = admiral
+						species = event_target:giga_grox_species
+						name = random						# i gotta do the names for them some time later
+						skill = 10
+						leader_age_min = 40
+						leader_age_max = 150
+						traits = {
+							trait = random_trait
+							trait = leader_trait_admiral_cyborg
 						}
 					}
-					auto_move_to_planet = {
-						target = event_target:grox_raid_planet
-						clear_auto_move_on_arrival = no
+					create_fleet = {
+						effect = {
+							set_owner = event_target:giga_grox_country
+							create_grox_raiders = yes
+							set_location = event_target:giga_grox_capital
+							set_fleet_stance = aggressive
+							set_fleet_bombardment_stance = armageddon
+							set_aggro_range_measure_from = self
+							set_aggro_range = 150
+							set_owner = event_target:giga_grox_country
+							assign_leader = last_created_leader
+							save_event_target_as = grox_raiders
+							closest_system = {
+								limit = {
+									any_system_planet = {
+										exists = owner
+										#owner = {
+										#	is_same_value = event_target:grox_target
+										#	}
+										num_pops > 15
+									}
+								}
+								save_event_target_as = grox_raid_system
+							}
+							event_target:grox_raid_1_system = {
+								random_system_planet = {
+									limit = {
+										exists = owner
+										#owner = {
+										#	is_same_value = event_target:grox_target
+										#}
+										num_pops > 15
+									}
+									save_event_target_as = grox_raid_planet
+									owner = {
+										save_event_target_as = grox_target
+									}
+								}
+							}
+							auto_move_to_planet = {
+								target = event_target:grox_raid_planet
+								clear_auto_move_on_arrival = no
+							}
+						}
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				mid_game_years_passed >= 15
+			}
+			set_timed_country_flag = {
+				flag = grox_raid_cooldown
+				days = 1500
+			}
+			break = yes
+			event_target:grox_target = {
+				country_event = {
+					id = giga_grox.144					#them telling you they're raiding you 
+					days = 1
+				}
+			}
+			hidden_effect = {
+				event_target:giga_grox_country = {
+					create_leader = {
+						class = admiral
+						species = event_target:giga_grox_species
+						name = random						# i gotta do the names for them some time later
+						skill = 10
+						leader_age_min = 40
+						leader_age_max = 150
+						traits = {
+							trait = random_trait
+							trait = leader_trait_admiral_cyborg
+						}
+					}
+					create_fleet = {
+						effect = {
+							set_owner = event_target:giga_grox_country
+							create_grox_raiders = yes
+							set_location = event_target:giga_grox_capital
+							set_fleet_stance = aggressive
+							set_fleet_bombardment_stance = armageddon
+							set_aggro_range_measure_from = self
+							set_aggro_range = 150
+							set_owner = event_target:giga_grox_country
+							assign_leader = last_created_leader
+							save_event_target_as = grox_raiders
+							closest_system = {
+								limit = {
+									any_system_planet = {
+										exists = owner
+										#owner = {
+										#	is_same_value = event_target:grox_target
+										#	}
+										num_pops > 15
+									}
+								}
+								save_event_target_as = grox_raid_system
+							}
+							event_target:grox_raid_1_system = {
+								random_system_planet = {
+									limit = {
+										exists = owner
+										#owner = {
+										#	is_same_value = event_target:grox_target
+										#}
+										num_pops > 15
+									}
+									save_event_target_as = grox_raid_planet
+									owner = {
+										save_event_target_as = grox_target
+									}
+								}
+							}
+							auto_move_to_planet = {
+								target = event_target:grox_raid_planet
+								clear_auto_move_on_arrival = no
+							}
+						}
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				mid_game_years_passed >= 30
+			}
+			event_target:giga_grox_country = {
+				set_timed_country_flag = {
+					flag = grox_raid_cooldown
+					days = 1200
+				}
+			}
+			break = yes
+			event_target:grox_target = {
+				country_event = {
+					id = giga_grox.144					#them telling you they're raiding you 
+					days = 1
+				}
+			}
+			hidden_effect = {
+				event_target:giga_grox_country = {
+					create_leader = {
+						class = admiral
+						species = event_target:giga_grox_species
+						name = random						# i gotta do the names for them some time later
+						skill = 10
+						leader_age_min = 40
+						leader_age_max = 150
+						traits = {
+							trait = random_trait
+							trait = leader_trait_admiral_cyborg
+						}
+					}
+					create_fleet = {
+						effect = {
+							set_owner = event_target:giga_grox_country
+							create_grox_raiders = yes
+							set_location = event_target:giga_grox_capital
+							set_fleet_stance = aggressive
+							set_fleet_bombardment_stance = armageddon
+							set_aggro_range_measure_from = self
+							set_aggro_range = 150
+							set_owner = event_target:giga_grox_country
+							assign_leader = last_created_leader
+							save_event_target_as = grox_raiders
+							closest_system = {
+								limit = {
+									any_system_planet = {
+										exists = owner
+										#owner = {
+										#	is_same_value = event_target:grox_target
+										#	}
+										num_pops > 15
+									}
+								}
+								save_event_target_as = grox_raid_system
+							}
+							event_target:grox_raid_1_system = {
+								random_system_planet = {
+									limit = {
+										exists = owner
+										#owner = {
+										#	is_same_value = event_target:grox_target
+										#}
+										num_pops > 15
+									}
+									save_event_target_as = grox_raid_planet
+									owner = {
+										save_event_target_as = grox_target
+									}
+								}
+							}
+							auto_move_to_planet = {
+								target = event_target:grox_raid_planet
+								clear_auto_move_on_arrival = no
+							}
+						}
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				mid_game_years_passed >= 50
+			}
+			event_target:giga_grox_country = {
+				set_timed_country_flag = {
+					flag = grox_raid_cooldown
+					days = 1200
+				}
+			}
+			break = yes
+			event_target:grox_target = {
+				country_event = {
+					id = giga_grox.144					#them telling you they're raiding you 
+					days = 1
+				}
+			}
+			hidden_effect = {
+				event_target:giga_grox_country = {
+					create_leader = {
+						class = admiral
+						species = event_target:giga_grox_species
+						name = random						# i gotta do the names for them some time later
+						skill = 10
+						leader_age_min = 40
+						leader_age_max = 150
+						traits = {
+							trait = random_trait
+							trait = leader_trait_admiral_cyborg
+						}
+					}
+					create_fleet = {
+						effect = {
+							set_owner = event_target:giga_grox_country
+							create_grox_raiders = yes
+							set_location = event_target:giga_grox_capital
+							set_fleet_stance = aggressive
+							set_fleet_bombardment_stance = armageddon
+							set_aggro_range_measure_from = self
+							set_aggro_range = 150
+							set_owner = event_target:giga_grox_country
+							assign_leader = last_created_leader
+							save_event_target_as = grox_raiders
+							closest_system = {
+								limit = {
+									any_system_planet = {
+										exists = owner
+										#owner = {
+										#	is_same_value = event_target:grox_target
+										#	}
+										num_pops > 15
+									}
+								}
+								save_event_target_as = grox_raid_system
+							}
+							event_target:grox_raid_1_system = {
+								random_system_planet = {
+									limit = {
+										exists = owner
+										#owner = {
+										#	is_same_value = event_target:grox_target
+										#}
+										num_pops > 15
+									}
+									save_event_target_as = grox_raid_planet
+									owner = {
+										save_event_target_as = grox_target
+									}
+								}
+							}
+							auto_move_to_planet = {
+								target = event_target:grox_raid_planet
+								clear_auto_move_on_arrival = no
+							}
+						}
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				mid_game_years_passed >= 75
+			}
+			event_target:giga_grox_country = {
+				set_timed_country_flag = {
+					flag = grox_raid_cooldown
+					days = 900
+				}
+			}
+			break = yes
+			event_target:grox_target = {
+				country_event = {
+					id = giga_grox.144					#them telling you they're raiding you 
+					days = 1
+				}
+			}
+			hidden_effect = {
+				event_target:giga_grox_country = {
+					create_leader = {
+						class = admiral
+						species = event_target:giga_grox_species
+						name = random						# i gotta do the names for them some time later
+						skill = 10
+						leader_age_min = 40
+						leader_age_max = 150
+						traits = {
+							trait = random_trait
+							trait = leader_trait_admiral_cyborg
+						}
+					}
+					create_fleet = {
+						effect = {
+							set_owner = event_target:giga_grox_country
+							create_grox_raiders = yes
+							set_location = event_target:giga_grox_capital
+							set_fleet_stance = aggressive
+							set_fleet_bombardment_stance = armageddon
+							set_aggro_range_measure_from = self
+							set_aggro_range = 150
+							set_owner = event_target:giga_grox_country
+							assign_leader = last_created_leader
+							save_event_target_as = grox_raiders
+							closest_system = {
+								limit = {
+									any_system_planet = {
+										exists = owner
+										#owner = {
+										#	is_same_value = event_target:grox_target
+										#	}
+										num_pops > 15
+									}
+								}
+								save_event_target_as = grox_raid_system
+							}
+							event_target:grox_raid_1_system = {
+								random_system_planet = {
+									limit = {
+										exists = owner
+										#owner = {
+										#	is_same_value = event_target:grox_target
+										#}
+										num_pops > 15
+									}
+									save_event_target_as = grox_raid_planet
+									owner = {
+										save_event_target_as = grox_target
+									}
+								}
+							}
+							auto_move_to_planet = {
+								target = event_target:grox_raid_planet
+								clear_auto_move_on_arrival = no
+							}
+						}
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				mid_game_years_passed >= 90
+				NOT = {
+					event_target:giga_grox_country = {
+						has_country_flag = qso_complete
+					}
+				}
+			}
+			event_target:giga_grox_country = {
+				set_timed_country_flag = {
+					flag = grox_raid_cooldown
+					days = 600
+				}
+			}
+			event_target:grox_target = {
+				country_event = {
+					id = giga_grox.144					#them telling you they're raiding you 
+					days = 1
+				}
+			}
+			break = yes
+			hidden_effect = {
+				event_target:giga_grox_country = {
+					create_leader = {
+						class = admiral
+						species = event_target:giga_grox_species
+						name = random						# i gotta do the names for them some time later
+						skill = 10
+						leader_age_min = 40
+						leader_age_max = 150
+						traits = {
+							trait = random_trait
+							trait = leader_trait_admiral_cyborg
+						}
+					}
+					create_fleet = {
+						effect = {
+							set_owner = event_target:giga_grox_country
+							create_grox_raiders = yes
+							set_location = event_target:giga_grox_capital
+							set_fleet_stance = aggressive
+							set_fleet_bombardment_stance = armageddon
+							set_aggro_range_measure_from = self
+							set_aggro_range = 150
+							set_owner = event_target:giga_grox_country
+							assign_leader = last_created_leader
+							save_event_target_as = grox_raiders
+							closest_system = {
+								limit = {
+									any_system_planet = {
+										exists = owner
+										#owner = {
+										#	is_same_value = event_target:grox_target
+										#	}
+										num_pops > 15
+									}
+								}
+								save_event_target_as = grox_raid_system
+							}
+							event_target:grox_raid_1_system = {
+								random_system_planet = {
+									limit = {
+										exists = owner
+										#owner = {
+										#	is_same_value = event_target:grox_target
+										#}
+										num_pops > 15
+									}
+									save_event_target_as = grox_raid_planet
+									owner = {
+										save_event_target_as = grox_target
+									}
+								}
+							}
+							auto_move_to_planet = {
+								target = event_target:grox_raid_planet
+								clear_auto_move_on_arrival = no
+							}
+						}
 					}
 				}
 			}
@@ -1091,21 +1428,6 @@ country_event = {
 		#country_event = {
 		#	id = giga_grox.141
 		#}
-		if = {
-			limit = {
-				event_target:grox_target = {
-					is_ai = no
-				}
-			}
-			country_event = {
-				id = giga_grox.144				#them telling you they're raiding you 
-			}
-		}
-		else = {
-			country_event = {
-				id = giga_grox.145				#notification they're raiding another country
-			}
-		}
 	}
 }
 
@@ -1409,7 +1731,6 @@ fleet_event = {
 	trigger = {
 		from = {
 			has_fleet_flag = returning_to_core
-			
 		}
 	}
 	immediate = {
@@ -1472,4 +1793,60 @@ fleet_event = {
 		}
 		destroy_fleet = THIS
 	}
+}
+
+###################################################################################################################################
+# ARCH SITE EVENTS
+country_event = {
+	id = giga_grox.50000
+	hide_window = yes
+	mean_time_to_happen = {
+		months = 120
+	}
+	trigger = {
+		is_ai = no
+		has_country_flag = grox_projects_event_finish
+	}
+	fire_only_once = yes
+	title = "giga_grox.50000.name"
+	desc = "giga_grox.50000.desc"
+	immediate = {
+		random_system_within_border = {
+			save_event_target_as = grox_ruin_spawn_system
+		}
+		event_target:grox_ruin_spawn_system = {
+			spawn_system = {
+				min_distance = 10
+				max_distance = 30
+				max_jumps = 0
+				initializer = "giga_grox_ruin_system_initializer"
+			}
+			if = {
+				limit = {
+					last_created_system = {
+						NOT = {
+							has_hyperlane_to = prev
+						}
+					}
+				}
+				add_hyperlane = {
+					from = this
+					to = last_created_system
+				}
+			}
+			else = {
+				add_extra_hyperlane_to_spawned_system_effect = yes
+			}
+		}
+		country_event = {
+			id = giga_grox.50001
+			days = 1
+		}
+	}
+}
+country_event = {
+	id = giga_grox.50001
+	title = "giga_grox.50001.name"
+	desc = "giga_grox.50001.desc"
+	is_triggered_only = yes
 }
