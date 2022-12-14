@@ -133,6 +133,8 @@ pc_strange_star_desc:0 "This star seems to be made of a uniquely poorly understo
  giga_grox_destroyer_plural:0 "Novian Destroyers"
  giga_grox_assault_asteroid:0 "Ancient Assault Asteroid"
  giga_grox_assault_asteroid_plural:0 "Ancient Assault Asteroids"
+ giga_grox_sleepless_moon:0 "Sleepless Moon"
+ giga_grox_sleepless_moon_plural:0 "Sleepless Moons"
  giga_grox_hypership:0 "Hypership"
  giga_grox_hypership_plural:0 "Hyperships"
 
