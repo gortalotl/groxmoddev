@@ -1,14 +1,15 @@
 create_giga_grox = {
 	create_species = {
-		name = "Grox"
-		plural = "Grox"
-		class = GIGAGROX
-		portrait = gigagrox
+		name = "Novian"
+		plural = "Novians"
+		class = AVI
+		portrait = avi15
 		homeworld = THIS
 		traits = {
 			trait = trait_pc_grox_barren_preference
 			trait = trait_robust
 			trait = trait_fertile
+			trait = trait_latent_psionic
 			trait = trait_cybernetic
 			trait = trait_sedentary
 		}
@@ -18,7 +19,7 @@ create_giga_grox = {
 	}
 	while = {
 		#here they come
-		count = 150
+		count = 100
 		create_pop = {
 			species = event_target:giga_grox_species
 		}
@@ -66,7 +67,7 @@ create_giga_grox = {
 	}
 	create_country = {
 		species = event_target:giga_grox_species
-		name = "Grox Empire"
+		name = "Novian Arikhanate"
 		type = giga_grox_country
 		authority = auth_imperial
 		civics = {
@@ -75,7 +76,7 @@ create_giga_grox = {
 		}
 		ethos = {
 			ethic = ethic_fanatic_xenophobe
-			ethic = ethic_materialist
+			ethic = ethic_spiritualist
 		}
 		origin = origin_default
 		flag = {
@@ -271,6 +272,38 @@ grox_torture_segment = {
 create_grox_raiders = {
 	if = {
 		limit = {
+			midgame_years_passed < 0 #make sure to remove this one, this is only here for testing purposes
+		}
+		set_name = "Nov Irki"
+		while = {
+			count = 15
+			create_ship = {
+				name = Erkitak
+				design = "Erkitak"
+				prefix = no
+			}
+		}
+		while = {
+			count = 4
+			create_ship = {
+				name = Arikinovarat
+				design = "Arikinovarat"
+				prefix = no
+			}
+		}
+		while = {
+			count = 1
+			create_ship = {
+				name = Akitaliata
+				design = "Akitaliata"
+				prefix = no
+			}
+		}
+		set_fleet_flag = grox_raider_fleet
+		break = yes
+	}
+	if = {
+		limit = {
 			midgame_years_passed < 25
 		}
 		set_name = "Nov Irki"
@@ -299,6 +332,7 @@ create_grox_raiders = {
 			}
 		}
 		set_fleet_flag = grox_raider_fleet
+		break = yes
 	}
 	else_if = {
 		limit = {
@@ -329,6 +363,7 @@ create_grox_raiders = {
 			}
 		}
 		set_fleet_flag = grox_raider_fleet_1
+		break = yes
 	}
 	else_if = {
 		limit = {
@@ -362,6 +397,7 @@ create_grox_raiders = {
 			}
 		}
 		set_fleet_flag = grox_raider_fleet_1
+		break = yes
 	}
 	else = {
 		while = {
@@ -392,6 +428,7 @@ create_grox_raiders = {
 			}
 		}
 		set_fleet_flag = grox_raider_fleet_1
+		break = yes
 	}
 }
 
@@ -470,30 +507,14 @@ increase_grox_progress = {
 		if = {
 			limit = {
 				check_variable = {
-					which = aeternite_intel_count
+					which = grox_progress
 					value >= 100
 				}
 			}
-			change_variable = {
+			set_variable = {
 				which = grox_progress
-				value = 1
+				value = 100
 			}
-			if = {
-				limit = {
-					check_variable = {
-						which = aeternite_intel_count
-						value = 30
-					}
-				}
-				set_country_flag = giga_achievement_aet4
-				set_timed_country_flag = {
-					flag = giga_achievement_aet4_notification
-					days = 30
-				}
-				giga_achievement_sound = yes
-			}
-			clear_aet_intel_modifier = yes
-			apply_aet_intel_modifier = yes
 		}
 	}
 }
