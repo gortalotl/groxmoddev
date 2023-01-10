@@ -1,0 +1,11 @@
+figured i should probably credit where stuff comes from.
+
+Most of it is from PDX and modified to fit the themes that may appear in events or dig sites.  There are originations from the base game, game trailers, and concept art.  No copyright infringement intended.
+
+Some it it is AI art from DALL-E, then later modified to patch out some errors and to fit intended themes better.  However, the brunt of the work was done by the AI and I claim no credit for it.
+
+grox_arikouncil_2.dds is originated from the AI Midjourney.  It looks really cool and i claim no credit.
+
+Select pieces were created in Blender by me using mod or base game assets.  Feel free to use them as needed in other projects.  These include grox_frigate and the hyperships, unless otherwise stated.
+
+If there are any questions about what is what, please contact my discord at Spartan 0679#0679 .  I can refer you to what was made who whom, or what, and inform you where copyrights likely belong to.
