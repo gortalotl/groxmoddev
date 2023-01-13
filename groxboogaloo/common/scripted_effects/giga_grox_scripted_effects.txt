@@ -483,6 +483,99 @@ create_grox_disco_moon = {
 	}
 }
 
+create_grox_arikon_defense_fleet = {
+	#idk if this will work but i can try
+	create_fleet = {
+		name = "Arikon Defense Fleet"
+		settings = {
+			spawn_debris = no
+			can_change_composition = no
+			can_disband = no
+			can_change_leader = no
+			can_upgrade = no
+			uses_naval_capacity = no
+			garrison = yes
+		}
+		effect = {
+			set_owner = event_target:giga_grox_country
+			while = {
+				count = 1
+				create_ship = {
+					name = "Tactical Strike"
+					design = "Akitaliata"
+					prefix = no
+					upgradable = no
+				}
+				create_ship = {
+					name = "Strike of Fury"
+					design = "Akitaliata"
+					prefix = no
+					upgradable = no
+				}
+				create_ship = {
+					name = "Defensive Bias"
+					design = "Akitaliata"
+					prefix = no
+					upgradable = no
+				}
+				create_ship = {
+					name = random
+					design = "Arikinovarat"
+					prefix = no
+					upgradable = no
+				}
+				create_ship = {
+					name = random
+					design = "Arikinovarat"
+					prefix = no
+					upgradable = no
+				}
+				create_ship = {
+					name = random
+					design = "Arikinovarat"
+					prefix = no
+					upgradable = no
+				}
+				create_ship = {
+					name = random
+					design = "Arikinovarat"
+					prefix = no
+					upgradable = no
+				}
+				create_ship = {
+					name = random
+					design = "Arikinovarat"
+					prefix = no
+					upgradable = no
+				}
+				create_ship = {
+					name = random
+					design = "Arikinovarat"
+					prefix = no
+					upgradable = no
+				}
+				create_ship = {
+					name = random
+					design = "Arikinovarat"
+					prefix = no
+					upgradable = no
+				}
+				create_ship = {
+					name = random
+					design = "Arikinovarat"
+					prefix = no
+					upgradable = no
+				}
+			}
+			set_location = {
+				target = event_target:giga_grox_capital
+				distance = 1
+				angle = 0
+			}
+		}
+	}
+}
+
 increase_grox_progress = {
 	if = {
 		limit = {
