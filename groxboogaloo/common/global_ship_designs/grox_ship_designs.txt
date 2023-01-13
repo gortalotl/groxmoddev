@@ -79,18 +79,18 @@ ship_design = {
 	section = {
 		template = "GROX_DESTROYER"
 		slot = "mid"
-		component = { slot = "LARGE_GUN_01"			template = "ENERGY_TORPEDO_2" }
+		component = { slot = "LARGE_GUN_01"			template = "STRIKE_CRAFT_HANGAR_BLOKKAT" }
 
-		component = { slot = "MEDIUM_GUN_01"		template = "MEDIUM_MASS_DRIVER_5" }
-		component = { slot = "MEDIUM_GUN_02"		template = "MEDIUM_MASS_DRIVER_5" }
-		component = { slot = "MEDIUM_GUN_03"		template = "MEDIUM_MASS_DRIVER_5" }
+		component = { slot = "MEDIUM_GUN_01"		template = "PLASMA_BLOKKAT" }
+		component = { slot = "MEDIUM_GUN_02"		template = "PLASMA_BLOKKAT" }
+		component = { slot = "MEDIUM_GUN_03"		template = "PLASMA_BLOKKAT" }
 
-		component = { slot = "POINT_DEFENCE_01"		template = "POINT_DEFENCE_3" }
+		component = { slot = "POINT_DEFENCE_01"		template = "POINT_DEFENCE_BLOKKAT" }
 
-		component = { slot = "MEDIUM_UTILITY_1"		template = "MEDIUM_ARMOR_5" }
-		component = { slot = "MEDIUM_UTILITY_2"		template = "MEDIUM_ARMOR_5" }
-		component = { slot = "MEDIUM_UTILITY_3"		template = "MEDIUM_DARK_MATTER_DEFLECTOR" }
-		component = { slot = "MEDIUM_UTILITY_4"		template = "MEDIUM_DARK_MATTER_DEFLECTOR" }
+		component = { slot = "MEDIUM_UTILITY_1"		template = "ARMOR_BLOKKAT" }
+		component = { slot = "MEDIUM_UTILITY_2"		template = "ARMOR_BLOKKAT" }
+		component = { slot = "MEDIUM_UTILITY_3"		template = "SHIELD_BLOKKAT" }
+		component = { slot = "MEDIUM_UTILITY_4"		template = "SHIELD_BLOKKAT" }
 	}
 
 	required_component = "COMBAT_COMPUTER_PICKET_SAPIENT"
