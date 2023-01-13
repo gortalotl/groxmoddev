@@ -72,3 +72,30 @@ ship_design = {
 	required_component = "JUMP_DRIVE_1"
 	required_component = "BATTLESHIP_SHIP_THRUSTER_5"
 }
+
+ship_design = {
+	name = "i am repealing your right to fun" #spartan note to self: Fill everything here with blokktech (i dont remember ids off the top of my head and i dont have access to gigas rn)
+	ship_size = giga_grox_destroyer
+	section = {
+		template = "GROX_DESTROYER"
+		slot = "mid"
+		component = { slot = "LARGE_GUN_01"			template = "ENERGY_TORPEDO_2" }
+
+		component = { slot = "MEDIUM_GUN_01"		template = "MEDIUM_MASS_DRIVER_5" }
+		component = { slot = "MEDIUM_GUN_02"		template = "MEDIUM_MASS_DRIVER_5" }
+		component = { slot = "MEDIUM_GUN_03"		template = "MEDIUM_MASS_DRIVER_5" }
+
+		component = { slot = "POINT_DEFENCE_01"		template = "POINT_DEFENCE_3" }
+
+		component = { slot = "MEDIUM_UTILITY_1"		template = "MEDIUM_ARMOR_5" }
+		component = { slot = "MEDIUM_UTILITY_2"		template = "MEDIUM_ARMOR_5" }
+		component = { slot = "MEDIUM_UTILITY_3"		template = "MEDIUM_DARK_MATTER_DEFLECTOR" }
+		component = { slot = "MEDIUM_UTILITY_4"		template = "MEDIUM_DARK_MATTER_DEFLECTOR" }
+	}
+
+	required_component = "COMBAT_COMPUTER_PICKET_SAPIENT"
+	required_component = "SENSOR_4"
+	required_component = "DESTROYER_ZERO_POINT_REACTOR"
+	required_component = "JUMP_DRIVE_1"
+	required_component = "DESTROYER_SHIP_THRUSTER_5"
+}
