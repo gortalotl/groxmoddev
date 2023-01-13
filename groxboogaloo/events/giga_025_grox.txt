@@ -1055,6 +1055,21 @@ country_event = {
 							trait = random_trait
 							trait = leader_trait_admiral_cyborg
 						}
+					create_leader = {
+						class = admiral
+						species = event_target:giga_grox_species
+						name = Nimikyr                                   #i hope i did this right
+						skill = 10
+						leader_age_min = 40
+						leader_age_max = 150
+						traits = {
+							trait = random_trait
+							trait = leader_trait_admiral_cyborg
+							trait = leader_trait_aggressive
+							trait = leader_trait_unyielding
+							trait = leader_trait_fleet_organizer
+							trait = leader_trait_fleet_logistician
+						}
 					}
 					create_fleet = {
 						effect = {
