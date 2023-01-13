@@ -74,7 +74,7 @@ ship_design = {
 }
 
 ship_design = {
-	name = "i am repealing your right to fun" #spartan note to self: Fill everything here with blokktech (i dont remember ids off the top of my head and i dont have access to gigas rn)
+	name = "i am repealing your right to fun"
 	ship_size = giga_grox_destroyer
 	section = {
 		template = "GROX_DESTROYER"
