@@ -1055,6 +1055,7 @@ country_event = {
 							trait = random_trait
 							trait = leader_trait_admiral_cyborg
 						}
+					}
 					create_fleet = {
 						effect = {
 							set_owner = event_target:giga_grox_country
