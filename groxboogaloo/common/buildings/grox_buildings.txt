@@ -118,6 +118,38 @@ building_grox_fort = {
 				is_gestalt = no
 			}
 		}
+		job_soldier_add = 10
+	}
+	triggered_planet_modifier = {
+		potential = {
+			owner = {
+				is_gestalt = yes
+			}
+		}
+		job_warrior_drone_add = 10
+	}
+}
+
+building_grox_encampment = {
+	can_build = no
+	can_demolish = yes
+	can_be_ruined = no
+	ai_weight = {
+		weight = 0
+	}
+	potential = {
+		always = no
+	}
+	planet_modifier = {
+		planet_orbital_bombardment_damage = -0.25
+		planet_stability_add = 5
+	}
+	triggered_planet_modifier = {
+		potential = {
+			owner = {
+				is_gestalt = no
+			}
+		}
 		job_soldier_add = 5
 	}
 	triggered_planet_modifier = {
