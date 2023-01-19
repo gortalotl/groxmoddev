@@ -184,6 +184,27 @@ grox_temple_world = {
 	set_owner = event_target:giga_grox_country
 }
 
+grox_military_world = {
+	while = {
+		count = 50
+		create_pop = {
+			species = event_target:giga_grox_species
+		}
+	}
+	add_building = building_giga_grox_capital
+	add_building = building_grox_fort
+	add_building = building_grox_fort
+	add_building = building_grox_encampment
+	add_building = building_grox_encampment
+	add_building = building_grox_encampment
+	clear_deposits = yes
+	while = {
+		count = 5
+		add_district = district_grox_city
+	}
+	set_owner = event_target:giga_grox_country
+}
+
 create_giga_grox_outpost = {
 	create_starbase = {
 		#gives them some pretty strong outposts so they arent a pushover
