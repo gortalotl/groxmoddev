@@ -95,11 +95,11 @@ pc_strange_star_desc:0 "This star seems to be made of a uniquely poorly understo
  district_grox_farm_plural:0 "Novian Subterranean Farming Districts"
 #special project things
  STUDY_GROX_TECH:0 "Investigate Novian Technology"
- STUDY_GROX_TECH_DESC:0 "REPLACE_ME"
+ STUDY_GROX_TECH_DESC:0 "''The general who wins the battle makes many calculations in his temple before the battle is fought. The general who loses makes but few calculations beforehand.'' -Sun Tzu, The Art of War"
  STUDY_GROX_SOCIETY:0 "Investigate Novian Culture"
- STUDY_GROX_SOCIETY_DESC:0 "REPLACE_ME"
+ STUDY_GROX_SOCIETY_DESC:0 "''If you know the enemy and know yourself you need not fear the results of a hundred battles.'' -Sun Tzu, The Art of War"
  STUDY_GROX_DESIGNS:0 "Investigate Novian Engineering"
- STUDY_GROX_DESIGNS_DESC:0 "REPLACE_ME"
+ STUDY_GROX_DESIGNS_DESC:0 "''Pretend inferiority and encourage his arrogance.'' -Sun Tzu, The Art of War"
 #events triggered by completing special projects
  giga_grox.3001.a:0 "Lets get to work then"
  giga_grox.3001.name:0 "Novian Intelligence Agency"
