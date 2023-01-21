@@ -95,11 +95,11 @@ pc_strange_star_desc:0 "This star seems to be made of a uniquely poorly understo
  district_grox_farm_plural:0 "Novian Subterranean Farming Districts"
 #special project things
  STUDY_GROX_TECH:0 "Investigate Novian Technology"
- STUDY_GROX_TECH_DESC:0 "REPLACE_ME"
+ STUDY_GROX_TECH_DESC:0 "''The general who wins the battle makes many calculations in his temple before the battle is fought. The general who loses makes but few calculations beforehand.'' -Sun Tzu, The Art of War"
  STUDY_GROX_SOCIETY:0 "Investigate Novian Culture"
- STUDY_GROX_SOCIETY_DESC:0 "REPLACE_ME"
+ STUDY_GROX_SOCIETY_DESC:0 "''If you know the enemy and know yourself you need not fear the results of a hundred battles.'' -Sun Tzu, The Art of War"
  STUDY_GROX_DESIGNS:0 "Investigate Novian Engineering"
- STUDY_GROX_DESIGNS_DESC:0 "REPLACE_ME"
+ STUDY_GROX_DESIGNS_DESC:0 "''The art of war teaches us to rely not on the likelihood of the enemy's not coming, but on our own readiness to receive him; not on the chance of his not attacking, but rather on the fact that we have made our position unassailable.'' -Sun Tzu, The Art of War"
 #events triggered by completing special projects
  giga_grox.3001.a:0 "Lets get to work then"
  giga_grox.3001.name:0 "Novian Intelligence Agency"
@@ -121,10 +121,18 @@ pc_strange_star_desc:0 "This star seems to be made of a uniquely poorly understo
 # RAID EVENTS
  giga_grox.144.name:0 "Incoming Transmission"
  giga_grox.144.desc:0 "Hello xenos\n\nYou are harboring resources which can and will be used in the construction of the §RULTIMATE ANSWER§!, please do not resists, as that would §RNEGATIVELY§! impact your nation and its people."
- giga_grox.144.a:0 "What about the trout population on [Root.GetHomeWorldName]" #gonna have to remove this
+ giga_grox.144.a:0 "What about the trout population on [Root.GetHomeWorldName]" #gonna have to remove this      BEGIN note from spartan: dont remove it lol
  giga_grox.145.name:0 "Novian Raid"
  giga_grox.145.desc:0 "The Novians have seemingly sent a raiding party to assault a foreign power in an effort to gather resources for their so called 'Ultimate Answer.'"
  giga_grox.145.a:0 "Let us hope that this attempt fails..."
+
+giga_grox.150.name:0 "Incoming Transmission"
+giga_grox.150.desc:0 "Hello xenos.  Thank you for your compliance with the visit from RAIDCOM.  The comandeered resourced will be put to good use in the repair of the §RULTIMATE ANSWER§!, and strengthening the Novian Arikhanate as a whole."
+giga_grox.150.a:0 "There may still be time to stop them yet."
+
+giga_grox.160.name:0 "Novian Raid!"
+giga_grox.160.desc:0 "The Novians from the Galactic Core have begun their raid on [Root.Planet.GetName]!  Much of the planet is burning as the raiders force their way to any potential valuable objects with no regard to the civilian population."
+giga_grox.160.a:0 "Let's send a strongly worded letter.  It works in history!"   #replace later lol
 
 # SHIPS
  giga_grox_corvette:0 "Novian Corvette"

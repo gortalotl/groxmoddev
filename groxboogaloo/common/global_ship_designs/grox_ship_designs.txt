@@ -72,3 +72,30 @@ ship_design = {
 	required_component = "JUMP_DRIVE_1"
 	required_component = "BATTLESHIP_SHIP_THRUSTER_5"
 }
+
+ship_design = {
+	name = "i am repealing your right to fun"
+	ship_size = giga_grox_destroyer
+	section = {
+		template = "GROX_DESTROYER"
+		slot = "mid"
+		component = { slot = "LARGE_GUN_01"			template = "STRIKE_CRAFT_HANGAR_BLOKKAT" }
+
+		component = { slot = "MEDIUM_GUN_01"		template = "PLASMA_BLOKKAT" }
+		component = { slot = "MEDIUM_GUN_02"		template = "PLASMA_BLOKKAT" }
+		component = { slot = "MEDIUM_GUN_03"		template = "PLASMA_BLOKKAT" }
+
+		component = { slot = "POINT_DEFENCE_01"		template = "POINT_DEFENCE_BLOKKAT" }
+
+		component = { slot = "MEDIUM_UTILITY_1"		template = "ARMOR_BLOKKAT" }
+		component = { slot = "MEDIUM_UTILITY_2"		template = "ARMOR_BLOKKAT" }
+		component = { slot = "MEDIUM_UTILITY_3"		template = "SHIELD_BLOKKAT" }
+		component = { slot = "MEDIUM_UTILITY_4"		template = "SHIELD_BLOKKAT" }
+	}
+
+	required_component = "COMBAT_COMPUTER_PICKET_SAPIENT"
+	required_component = "SENSOR_4"
+	required_component = "DESTROYER_ZERO_POINT_REACTOR"
+	required_component = "JUMP_DRIVE_1"
+	required_component = "DESTROYER_SHIP_THRUSTER_5"
+}

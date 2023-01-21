@@ -184,6 +184,27 @@ grox_temple_world = {
 	set_owner = event_target:giga_grox_country
 }
 
+grox_military_world = {
+	while = {
+		count = 50
+		create_pop = {
+			species = event_target:giga_grox_species
+		}
+	}
+	add_building = building_giga_grox_capital
+	add_building = building_grox_fort
+	add_building = building_grox_fort
+	add_building = building_grox_encampment
+	add_building = building_grox_encampment
+	add_building = building_grox_encampment
+	clear_deposits = yes
+	while = {
+		count = 5
+		add_district = district_grox_city
+	}
+	set_owner = event_target:giga_grox_country
+}
+
 create_giga_grox_outpost = {
 	create_starbase = {
 		#gives them some pretty strong outposts so they arent a pushover
@@ -470,6 +491,99 @@ create_grox_disco_moon = {
 				create_ship = {
 					name = "Akitaliata"
 					design = "Akitaliata"
+					prefix = no
+					upgradable = no
+				}
+			}
+			set_location = {
+				target = event_target:giga_grox_capital
+				distance = 1
+				angle = 0
+			}
+		}
+	}
+}
+
+create_grox_arikon_defense_fleet = {
+	#idk if this will work but i can try
+	create_fleet = {
+		name = "Arikon Defense Fleet"
+		settings = {
+			spawn_debris = no
+			can_change_composition = no
+			can_disband = no
+			can_change_leader = no
+			can_upgrade = no
+			uses_naval_capacity = no
+			garrison = yes
+		}
+		effect = {
+			set_owner = event_target:giga_grox_country
+			while = {
+				count = 1
+				create_ship = {
+					name = "Tactical Strike"
+					design = "Akitaliata"
+					prefix = no
+					upgradable = no
+				}
+				create_ship = {
+					name = "Strike of Fury"
+					design = "Akitaliata"
+					prefix = no
+					upgradable = no
+				}
+				create_ship = {
+					name = "Defensive Bias"
+					design = "Akitaliata"
+					prefix = no
+					upgradable = no
+				}
+				create_ship = {
+					name = random
+					design = "Arikinovarat"
+					prefix = no
+					upgradable = no
+				}
+				create_ship = {
+					name = random
+					design = "Arikinovarat"
+					prefix = no
+					upgradable = no
+				}
+				create_ship = {
+					name = random
+					design = "Arikinovarat"
+					prefix = no
+					upgradable = no
+				}
+				create_ship = {
+					name = random
+					design = "Arikinovarat"
+					prefix = no
+					upgradable = no
+				}
+				create_ship = {
+					name = random
+					design = "Arikinovarat"
+					prefix = no
+					upgradable = no
+				}
+				create_ship = {
+					name = random
+					design = "Arikinovarat"
+					prefix = no
+					upgradable = no
+				}
+				create_ship = {
+					name = random
+					design = "Arikinovarat"
+					prefix = no
+					upgradable = no
+				}
+				create_ship = {
+					name = random
+					design = "Arikinovarat"
 					prefix = no
 					upgradable = no
 				}
