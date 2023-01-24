@@ -3,3 +3,9 @@ spriteTypes = {
 	spriteType = { name = "GFX_ship_part_reactor_hypership"					texturefile = "gfx/interface/icons/ship_parts/ship_part_reactor_hypership.dds" }
 
 }
+
+spriteTypes = {
+
+	spriteType = { name = "GFX_grox_research_1"					texturefile = "gfx/event_pictures/grox_research_1.dds" }
+
+}
