@@ -1,0 +1,30 @@
+tech_test_technology = {
+	cost = @tier5cost2
+	area = engineering
+	tier = 3
+	category = { industry }
+	weight = @tier35weight1
+
+	potential = {
+	}
+
+	modifier = {
+
+	}
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_industry"
+			}
+		}
+	}
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_industry"
+			}
+		}
+	}
+}
