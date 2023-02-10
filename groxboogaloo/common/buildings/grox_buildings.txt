@@ -226,3 +226,30 @@ building_grox_temple = {
 		job_coordinator_add = 10
 	}
 }
+
+building_grox_strange_power_generator = {
+	can_build = no
+	can_demolish = yes
+	can_be_ruined = no
+	ai_weight = {
+		weight = 0
+	}
+	potential = {
+		always = no
+	}
+	#destroy_trigger = {
+	#	is_country_type = gestalt
+	#}
+	resources = {
+		category = planet_buildings
+		produces = {
+			energy = 25
+		}
+		upkeep = {
+			sr_strange_matter = 1
+		}
+	}
+#	planet_modifier = {  #idk what job to put here for now
+#		job_artisan_add = 5
+#	}
+}
