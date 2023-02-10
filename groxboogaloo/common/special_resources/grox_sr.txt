@@ -1,0 +1,18 @@
+sr_strange_matter = {
+	tradable = yes
+	market_amount = 10
+	market_price = 250
+	max = 30000
+	
+###	prerequisites = { "tech_mine_volatile_motes" } imma replace this wth a custom tech later (maybe)
+	
+###	deficit_modifier = volatile_motes_deficit #found in static modifiers  #idk what to do with this
+	
+	ai_weight = {
+		weight = 10
+	}
+
+	ai_wants = {
+		base = 10
+	}
+}
