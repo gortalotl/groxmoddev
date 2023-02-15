@@ -1,4 +1,4 @@
-sr_strange_matter = {
+sr_strange_matter_novian = {
 	tradable = yes
 	market_amount = 10
 	market_price = 250
