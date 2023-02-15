@@ -246,7 +246,7 @@ building_grox_strange_power_generator = {
 			energy = 25
 		}
 		upkeep = {
-			sr_strange_matter = 1
+			sr_strange_matter_novian = 1
 		}
 	}
 #	planet_modifier = {  #idk what job to put here for now
