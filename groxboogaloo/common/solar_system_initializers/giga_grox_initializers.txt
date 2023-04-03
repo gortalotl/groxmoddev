@@ -1,18 +1,23 @@
 # Galactic Core (Grox)
 giga_black_hole_grox_initializer = {
-	name = "Tiorolca"
+	name = "Arivoejo"
 	class = "sc_quasar"
 	flags = {
 		giga_core_04
 		giga_galactic_center
 		giga_grox_system
+		giga_grox_own_at_start
 	}
 	asteroid_belt = {
 		type = rocky_asteroid_belt
 		radius = 300
 	}
+	asteroid_belt = {
+		type = debris_asteroid_belt
+		radius = 250
+	}
 	planet = {
-		name = "Hyperquasar"
+		name = "Arivoejo"
 		class = "pc_core_quasar"
 		orbit_distance = 0
 		orbit_angle = 1
@@ -23,8 +28,8 @@ giga_black_hole_grox_initializer = {
 		}
 	}
 	planet = {
-		name = "Tiorolc"
-		class = "pc_grox_barren"
+		name = "Novhurst"
+		class = "pc_grox_planet"
 		orbit_distance = 400
 		orbit_angle = 45
 		size = 30
@@ -34,36 +39,40 @@ giga_black_hole_grox_initializer = {
 			save_global_event_target_as = giga_grox_capital
 			set_planet_flag = grox_capital
 			create_grox_disco_moon = yes
+			save_global_event_target_as = giga_grox_raid_source
 		}
 		moon = {
-			name = Tlamoc
+			name = "Tlamoc"
 			class = pc_shattered
 			orbit_distance = 10
 			orbit_angle = 0
 			size = 10
 		}
 		moon = {
-			name = Gruno
+			name = "Xir"
 			class = pc_barren
-			orbit_distance = 15
+			orbit_distance = 14
 			orbit_angle = 45
 			size = 8
+
 		}
 		moon = {
-			name = Groxerqueque
+			name = "Tiptasp"
 			class = pc_barren
-			orbit_distance = 5
+			orbit_distance = 20
 			orbit_angle = 120
 			size = 12
+
 		}
 	}
 	planet = {
-		name = Grob
+		name = Inselik
 		class = pc_broken
 		orbit_distance = 300		#PLEASE BE IN LINE WITH THE ORBIT LINE IN GAME FOR THE LOVE OF GOD #it worked :)
 		orbit_angle = 180
 		size = 25
 		has_ring = yes
+	
 	}
 	init_effect = {
 		create_giga_grox_outpost = yes
@@ -76,6 +85,7 @@ giga_black_hole_grox_initializer = {
 		every_system_planet = {
 			set_planet_flag = cant_build_here
 			set_planet_flag = cant_target_this_planet
+			set_planet_flag = grox_planet
 		}
 		if = {
 			limit = {
@@ -97,6 +107,7 @@ giga_grox_inner_1_initializer = {
 		giga_grox_system
 		giga_grox_inner_1
 		giga_grox_inner
+		giga_grox_own_at_start
 	}
 	planet = {
 		class = pc_b_star
@@ -106,8 +117,8 @@ giga_grox_inner_1_initializer = {
 		has_ring = no
 	}
 	planet = {
-		name = "Groxica"
-		class = "pc_grox_molten"
+		name = "Novica"
+		class = "pc_grox_planet"
 		orbit_distance = 50
 		orbit_angle = 25
 		size = 25
@@ -119,19 +130,36 @@ giga_grox_inner_1_initializer = {
 	planet = {
 		name = "Tatanuta"
 		class = pc_barren
-		orbit_distance = 70
+		orbit_distance = 55
 		orbit_angle = 90
 		size = 12
 	}
+	planet = {
+		name = "Xebeicyan"
+		class = pc_gas_giant
+		orbit_distance = 70
+		orbit_angle = 24
+		size = 20
+	}
 	asteroid_belt = {
 		type = rocky_asteroid_belt
-		radius = 90
+		radius = 50
+	}
+	planet = {
+		name = "Deminya"
+		class = pc_relic
+		orbit_angle = 180
+		orbit_distance = 85
+		init_effect = {
+			set_planet_flag = grox_deminya
+		}
 	}
 	init_effect = {
 		save_global_event_target_as = giga_grox_inner_1
 		every_system_planet = {
 			set_planet_flag = cant_build_here
 			set_planet_flag = cant_target_this_planet
+			set_planet_flag = grox_planet
 		}
 	}
 }
@@ -143,6 +171,7 @@ giga_grox_inner_2_initializer = {
 		giga_grox_system
 		giga_grox_inner_2
 		giga_grox_inner
+		giga_grox_own_at_start
 	}
 	planet = {
 		class = pc_g_star
@@ -156,14 +185,14 @@ giga_grox_inner_2_initializer = {
 		radius = 20
 	}
 	planet = {
-		name = Taniya
+		name = "Taniya"
 		class = pc_shattered
 		orbit_distance = 30
 		orbit_angle = 30
 		size = 10
 	}
 	planet = {
-		name = Attica
+		name = "Attica"
 		class = pc_toxic
 		orbit_distance = 35
 		orbit_angle = 100
@@ -174,6 +203,7 @@ giga_grox_inner_2_initializer = {
 		every_system_planet = {
 			set_planet_flag = cant_build_here
 			set_planet_flag = cant_target_this_planet
+			set_planet_flag = grox_planet
 		}
 	}
 }
@@ -185,6 +215,7 @@ giga_grox_inner_3_initializer = {
 		giga_grox_system
 		giga_grox_inner_3
 		giga_grox_inner
+		giga_grox_own_at_start
 	}
 	planet = {
 		class = pc_m_giant_star
@@ -196,43 +227,43 @@ giga_grox_inner_3_initializer = {
 	planet = {
 		class = pc_molten
 		name = Gounitut
-		orbit_distance = 50
+		orbit_distance = 20
 		orbit_angle = 55
 		size = 15
 	}
 	asteroid_belt = {
 		type = rocky_asteroid_belt
-		radius = 80
+		radius = 40
 	}
 	planet = {
 		class = pc_asteroid
-		orbit_distance = 80
+		orbit_distance = 40
 		orbit_angle = 40
 		size = 2
 	}
 	planet = {
 		class = pc_asteroid
-		orbit_distance = 80
+		orbit_distance = 40
 		orbit_angle = 40
 		size = 2
 	}
 	planet = {
 		class = pc_asteroid
-		orbit_distance = 80
+		orbit_distance = 40
 		orbit_angle = 40
 		size = 2
 	}
 	planet = {
 		class = pc_barren
 		name = Gounitut
-		orbit_distance = 100
+		orbit_distance = 55
 		orbit_angle = 150
 		size = 12
 	}
 	planet = {
 		class = pc_barren
 		name = Itihukata
-		orbit_distance = 110
+		orbit_distance = 60
 		orbit_angle = 200
 		size = 20
 	}
@@ -241,6 +272,7 @@ giga_grox_inner_3_initializer = {
 		every_system_planet = {
 			set_planet_flag = cant_build_here
 			set_planet_flag = cant_target_this_planet
+			set_planet_flag = grox_planet
 		}
 	}
 }
@@ -252,6 +284,7 @@ giga_grox_inner_4_initializer = {
 		giga_grox_system
 		giga_grox_inner_4
 		giga_grox_inner
+		giga_grox_own_at_start
 	}
 	planet = {
 		class = pc_g_star
@@ -275,6 +308,7 @@ giga_grox_inner_4_initializer = {
 		every_system_planet = {
 			set_planet_flag = cant_build_here
 			set_planet_flag = cant_target_this_planet
+			set_planet_flag = grox_planet
 		}
 		spawn_megastructure = {
 			type = "star_lifter_5_g_star"
@@ -291,6 +325,7 @@ giga_grox_inner_5_initializer = {
 		giga_grox_system
 		giga_grox_inner_5
 		giga_grox_inner
+		giga_grox_own_at_start
 	}
 	planet = {
 		class = star
@@ -329,6 +364,7 @@ giga_grox_inner_5_initializer = {
 		every_system_planet = {
 			set_planet_flag = cant_build_here
 			set_planet_flag = cant_target_this_planet
+			set_planet_flag = grox_planet
 		}
 	}
 }
@@ -340,6 +376,7 @@ giga_grox_inner_6_initializer = {
 		giga_grox_system
 		giga_grox_inner_6
 		giga_grox_inner
+		giga_grox_own_at_start
 	}
 	planet = {
 		class = star
@@ -353,6 +390,7 @@ giga_grox_inner_6_initializer = {
 		every_system_planet = {
 			set_planet_flag = cant_build_here
 			set_planet_flag = cant_target_this_planet
+			set_planet_flag = grox_planet
 		}
 	}
 }
@@ -364,6 +402,7 @@ giga_grox_inner_7_initializer = {
 		giga_grox_system
 		giga_inner_7
 		giga_grox_inner
+		giga_grox_own_at_start
 	}
 	planet = {
 		class = star
@@ -377,6 +416,7 @@ giga_grox_inner_7_initializer = {
 		every_system_planet = {
 			set_planet_flag = cant_build_here
 			set_planet_flag = cant_target_this_planet
+			set_planet_flag = grox_planet
 		}
 	}
 }
@@ -389,6 +429,7 @@ giga_grox_middle_1_initializer = {
 		giga_grox_system
 		giga_grox_middle_1
 		giga_grox_middle
+		giga_grox_own_at_start
 	}
 	planet = {
 		class = star
@@ -402,6 +443,7 @@ giga_grox_middle_1_initializer = {
 		every_system_planet = {
 			set_planet_flag = cant_build_here
 			set_planet_flag = cant_target_this_planet
+			set_planet_flag = grox_planet
 		}
 	}
 }
@@ -413,6 +455,7 @@ giga_grox_middle_2_initializer = {
 		giga_grox_system
 		giga_grox_middle_2
 		giga_grox_middle
+		giga_grox_own_at_start
 	}
 	planet = {
 		class = star
@@ -426,6 +469,7 @@ giga_grox_middle_2_initializer = {
 		every_system_planet = {
 			set_planet_flag = cant_build_here
 			set_planet_flag = cant_target_this_planet
+			set_planet_flag = grox_planet
 		}
 	}
 }
@@ -437,6 +481,7 @@ giga_grox_middle_3_initializer = {
 		giga_grox_system
 		giga_grox_middle_3
 		giga_grox_middle
+		giga_grox_own_at_start
 	}
 	planet = {
 		class = star
@@ -450,6 +495,7 @@ giga_grox_middle_3_initializer = {
 		every_system_planet = {
 			set_planet_flag = cant_build_here
 			set_planet_flag = cant_target_this_planet
+			set_planet_flag = grox_planet
 		}
 	}
 }
@@ -461,6 +507,7 @@ giga_grox_middle_4_initializer = {
 		giga_grox_system
 		giga_grox_middle_4
 		giga_grox_middle
+		giga_grox_own_at_start
 	}
 	planet = {
 		class = pc_m_star
@@ -470,7 +517,7 @@ giga_grox_middle_4_initializer = {
 		has_ring = no
 	}
 	planet = {
-		class = pc_grox_toxic
+		class = pc_grox_planet
 		orbit_distance = 100
 		orbit_angle = 165
 		size = 11
@@ -490,6 +537,7 @@ giga_grox_middle_4_initializer = {
 		every_system_planet = {
 			set_planet_flag = cant_build_here
 			set_planet_flag = cant_target_this_planet
+			set_planet_flag = grox_planet
 		}
 	}
 }
@@ -501,6 +549,7 @@ giga_grox_middle_5_initializer = {
 		giga_grox_system
 		giga_grox_middle_5
 		giga_grox_middle
+		giga_grox_own_at_start
 	}
 	planet = {
 		class = star
@@ -514,6 +563,7 @@ giga_grox_middle_5_initializer = {
 		every_system_planet = {
 			set_planet_flag = cant_build_here
 			set_planet_flag = cant_target_this_planet
+			set_planet_flag = grox_planet
 		}
 	}
 }
@@ -525,6 +575,7 @@ giga_grox_middle_6_initializer = {
 		giga_grox_system
 		giga_grox_middle_6
 		giga_grox_middle
+		giga_grox_own_at_start
 	}
 	planet = {
 		class = star
@@ -538,6 +589,7 @@ giga_grox_middle_6_initializer = {
 		every_system_planet = {
 			set_planet_flag = cant_build_here
 			set_planet_flag = cant_target_this_planet
+			set_planet_flag = grox_planet
 		}
 	}
 }
@@ -549,6 +601,7 @@ giga_grox_middle_7_initializer = {
 		giga_grox_system
 		giga_grox_middle_7
 		giga_grox_middle
+		giga_grox_own_at_start
 	}
 	planet = {
 		class = pc_m_star
@@ -568,10 +621,13 @@ giga_grox_middle_7_initializer = {
 			#}
 			set_planet_flag = cant_build_here
 			set_planet_flag = cant_target_this_planet
+			set_planet_flag = grox_planet
 		}
 		spawn_megastructure = {
 			type = matrioshka_brain_5_m_star
+			owner = event_target:giga_grox_country
 		}
+
 	}
 }
 
@@ -582,6 +638,7 @@ giga_grox_middle_8_initializer = {
 		giga_grox_system
 		giga_grox_middle_8
 		giga_grox_middle
+		giga_grox_own_at_start
 	}
 	planet = {
 		class = star
@@ -595,6 +652,7 @@ giga_grox_middle_8_initializer = {
 		every_system_planet = {
 			set_planet_flag = cant_build_here
 			set_planet_flag = cant_target_this_planet
+			set_planet_flag = grox_planet
 		}
 	}
 }
@@ -606,6 +664,7 @@ giga_grox_middle_9_initializer = {
 		giga_grox_system
 		giga_grox_middle_9
 		giga_grox_middle
+		giga_grox_own_at_start
 	}
 	planet = {
 		class = star
@@ -619,6 +678,7 @@ giga_grox_middle_9_initializer = {
 		every_system_planet = {
 			set_planet_flag = cant_build_here
 			set_planet_flag = cant_target_this_planet
+			set_planet_flag = grox_planet
 		}
 	}
 }
@@ -631,6 +691,7 @@ giga_grox_outer_1_initializer = {
 		giga_grox_system
 		giga_grox_outer_1
 		giga_grox_outer
+		giga_grox_own_at_start
 	}
 	planet = {
 		class = pc_b_star
@@ -647,6 +708,7 @@ giga_grox_outer_1_initializer = {
 		every_system_planet = {
 			set_planet_flag = cant_build_here
 			set_planet_flag = cant_target_this_planet
+			set_planet_flag = grox_planet
 		}
 		spawn_megastructure = {
 			type = dyson_sphere_5_o_star
@@ -663,6 +725,7 @@ giga_grox_outer_2_initializer = {
 		giga_grox_system
 		giga_grox_outer_2
 		giga_grox_outer
+		giga_grox_own_at_start
 	}
 	planet = {
 		class = star
@@ -693,6 +756,7 @@ giga_grox_outer_2_initializer = {
 		every_system_planet = {
 			set_planet_flag = cant_build_here
 			set_planet_flag = cant_target_this_planet
+			set_planet_flag = grox_planet
 		}
 		spawn_megastructure = {
 			type = yggdrasil_orchid_3
@@ -709,6 +773,7 @@ giga_grox_outer_3_initializer = {
 		giga_grox_system
 		giga_grox_outer_3
 		giga_grox_outer
+		giga_grox_own_at_start
 	}
 	planet = {
 		class = star
@@ -722,6 +787,7 @@ giga_grox_outer_3_initializer = {
 		every_system_planet = {
 			set_planet_flag = cant_build_here
 			set_planet_flag = cant_target_this_planet
+			set_planet_flag = grox_planet
 		}
 	}
 }
@@ -733,6 +799,7 @@ giga_grox_outer_4_initializer = {
 		giga_grox_system
 		giga_grox_outer_4
 		giga_grox_outer
+		giga_grox_own_at_start
 	}
 	planet = {
 		class = star
@@ -746,6 +813,7 @@ giga_grox_outer_4_initializer = {
 		every_system_planet = {
 			set_planet_flag = cant_build_here
 			set_planet_flag = cant_target_this_planet
+			set_planet_flag = grox_planet
 		}
 	}
 }
@@ -757,7 +825,7 @@ giga_grox_outer_5_initializer = {
 		giga_grox_system
 		giga_grox_outer_5
 		giga_grox_outer
-		giga_grox_raider_1
+		giga_grox_own_at_start
 	}
 	planet = {
 		class = pc_m_giant_star
@@ -770,7 +838,7 @@ giga_grox_outer_5_initializer = {
 		}
 	}
 	planet = {
-		class = pc_grox_molten
+		class = pc_grox_planet
 		orbit_distance = 25
 		orbit_angle = {
 			min = 60
@@ -778,10 +846,6 @@ giga_grox_outer_5_initializer = {
 		}
 		size = 15
 		has_ring = no
-		flags = {
-			grox_raid_source_1
-			grox_raid_source
-		}
 		init_effect = {
 			save_event_target_as = grox_raid_source_planet
 		}
@@ -799,6 +863,7 @@ giga_grox_outer_5_initializer = {
 		every_system_planet = {
 			set_planet_flag = cant_build_here
 			set_planet_flag = cant_target_this_planet
+			set_planet_flag = grox_planet
 		}
 		spawn_megastructure = {
 			type = star_lifter_5_m_giant_star
@@ -815,6 +880,7 @@ giga_grox_outer_6_initializer = {
 		giga_grox_system
 		giga_grox_outer_6
 		giga_grox_outer
+		giga_grox_own_at_start
 	}
 	planet = {
 		class = star
@@ -828,6 +894,7 @@ giga_grox_outer_6_initializer = {
 		every_system_planet = {
 			set_planet_flag = cant_build_here
 			set_planet_flag = cant_target_this_planet
+			set_planet_flag = grox_planet
 		}
 	}
 }
@@ -839,6 +906,7 @@ giga_grox_outer_7_initializer = {
 		giga_grox_system
 		giga_grox_outer_7
 		giga_grox_outer
+		giga_grox_own_at_start
 	}
 	planet = {
 		class = star
@@ -852,6 +920,7 @@ giga_grox_outer_7_initializer = {
 		every_system_planet = {
 			set_planet_flag = cant_build_here
 			set_planet_flag = cant_target_this_planet
+			set_planet_flag = grox_planet
 		}
 	}
 }
@@ -863,6 +932,7 @@ giga_grox_outer_8_initializer = {
 		giga_grox_system
 		giga_grox_outer_8
 		giga_grox_outer
+		giga_grox_own_at_start
 	}
 	planet = {
 		class = star
@@ -876,6 +946,7 @@ giga_grox_outer_8_initializer = {
 		every_system_planet = {
 			set_planet_flag = cant_build_here
 			set_planet_flag = cant_target_this_planet
+			set_planet_flag = grox_planet
 		}
 	}
 }
@@ -887,6 +958,7 @@ giga_grox_outer_9_initializer = {
 		giga_grox_system
 		giga_grox_outer_9
 		giga_grox_outer
+		giga_grox_own_at_start
 	}
 	planet = {
 		class = star
@@ -900,6 +972,7 @@ giga_grox_outer_9_initializer = {
 		every_system_planet = {
 			set_planet_flag = cant_build_here
 			set_planet_flag = cant_target_this_planet
+			set_planet_flag = grox_planet
 		}
 	}
 }
@@ -911,6 +984,7 @@ giga_grox_outer_10_initializer = {
 		giga_grox_system
 		giga_grox_outer_10
 		giga_grox_outer
+		giga_grox_own_at_start
 	}
 	planet = {
 		class = star
@@ -924,6 +998,7 @@ giga_grox_outer_10_initializer = {
 		every_system_planet = {
 			set_planet_flag = cant_build_here
 			set_planet_flag = cant_target_this_planet
+			set_planet_flag = grox_planet
 		}
 	}
 }
@@ -935,6 +1010,7 @@ giga_grox_outer_11_initializer = {
 		giga_grox_system
 		giga_grox_outer_11
 		giga_grox_outer
+		giga_grox_own_at_start
 	}
 	planet = {
 		class = pc_a_star
@@ -951,6 +1027,7 @@ giga_grox_outer_11_initializer = {
 		every_system_planet = {
 			set_planet_flag = cant_build_here
 			set_planet_flag = cant_target_this_planet
+			set_planet_flag = grox_planet
 		}
 		spawn_megastructure = {
 			type = matrioshka_brain_5_a_star
@@ -967,6 +1044,7 @@ giga_grox_outer_12_initializer = {
 		giga_grox_system
 		giga_grox_outer_12
 		giga_grox_outer
+		giga_grox_own_at_start
 	}
 	planet = {
 		class = star
@@ -980,6 +1058,7 @@ giga_grox_outer_12_initializer = {
 		every_system_planet = {
 			set_planet_flag = cant_build_here
 			set_planet_flag = cant_target_this_planet
+			set_planet_flag = grox_planet
 		}
 	}
 }
@@ -1006,6 +1085,7 @@ giga_grox_outerest_1_initializer = {
 		every_system_planet = {
 			set_planet_flag = cant_build_here
 			set_planet_flag = cant_target_this_planet
+			set_planet_flag = grox_planet
 		}
 	}
 }
@@ -1030,6 +1110,7 @@ giga_grox_outerest_2_initializer = {
 		every_system_planet = {
 			set_planet_flag = cant_build_here
 			set_planet_flag = cant_target_this_planet
+			set_planet_flag = grox_planet
 		}
 	}
 }
@@ -1041,6 +1122,7 @@ giga_grox_outerest_3_initializer = {
 		giga_grox_system
 		giga_grox_outerest_3
 		giga_grox_outerest
+		
 	}
 	planet = {
 		class = star
@@ -1054,6 +1136,7 @@ giga_grox_outerest_3_initializer = {
 		every_system_planet = {
 			set_planet_flag = cant_build_here
 			set_planet_flag = cant_target_this_planet
+			set_planet_flag = grox_planet
 		}
 	}
 }
@@ -1078,6 +1161,7 @@ giga_grox_outerest_4_initializer = {
 		every_system_planet = {
 			set_planet_flag = cant_build_here
 			set_planet_flag = cant_target_this_planet
+			set_planet_flag = grox_planet
 		}
 	}
 }
@@ -1102,6 +1186,7 @@ giga_grox_outerest_5_initializer = {
 		every_system_planet = {
 			set_planet_flag = cant_build_here
 			set_planet_flag = cant_target_this_planet
+			set_planet_flag = grox_planet
 		}
 	}
 }
@@ -1126,6 +1211,7 @@ giga_grox_outerest_6_initializer = {
 		every_system_planet = {
 			set_planet_flag = cant_build_here
 			set_planet_flag = cant_target_this_planet
+			set_planet_flag = grox_planet
 		}
 	}
 }
@@ -1150,6 +1236,7 @@ giga_grox_outerest_7_initializer = {
 		every_system_planet = {
 			set_planet_flag = cant_build_here
 			set_planet_flag = cant_target_this_planet
+			set_planet_flag = grox_planet
 		}
 	}
 }
@@ -1174,6 +1261,7 @@ giga_grox_outerest_8_initializer = {
 		every_system_planet = {
 			set_planet_flag = cant_build_here
 			set_planet_flag = cant_target_this_planet
+			set_planet_flag = grox_planet
 		}
 	}
 }
@@ -1198,6 +1286,7 @@ giga_grox_outerest_9_initializer = {
 		every_system_planet = {
 			set_planet_flag = cant_build_here
 			set_planet_flag = cant_target_this_planet
+			set_planet_flag = grox_planet
 		}
 	}
 }
@@ -1222,6 +1311,7 @@ giga_grox_outerest_10_initializer = {
 		every_system_planet = {
 			set_planet_flag = cant_build_here
 			set_planet_flag = cant_target_this_planet
+			set_planet_flag = grox_planet
 		}
 	}
 }
@@ -1246,6 +1336,7 @@ giga_grox_outerest_11_initializer = {
 		every_system_planet = {
 			set_planet_flag = cant_build_here
 			set_planet_flag = cant_target_this_planet
+			set_planet_flag = grox_planet
 		}
 	}
 }
@@ -1270,6 +1361,7 @@ giga_grox_outerest_12_initializer = {
 		every_system_planet = {
 			set_planet_flag = cant_build_here
 			set_planet_flag = cant_target_this_planet
+			set_planet_flag = grox_planet
 		}
 	}
 }
@@ -1294,6 +1386,7 @@ giga_grox_outerest_13_initializer = {
 		every_system_planet = {
 			set_planet_flag = cant_build_here
 			set_planet_flag = cant_target_this_planet
+			set_planet_flag = grox_planet
 		}
 	}
 }
@@ -1318,6 +1411,7 @@ giga_grox_outerest_14_initializer = {
 		every_system_planet = {
 			set_planet_flag = cant_build_here
 			set_planet_flag = cant_target_this_planet
+			set_planet_flag = grox_planet
 		}
 	}
 }
@@ -1342,6 +1436,38 @@ giga_grox_outerest_15_initializer = {
 		every_system_planet = {
 			set_planet_flag = cant_build_here
 			set_planet_flag = cant_target_this_planet
+			set_planet_flag = grox_planet
+		}
+	}
+}
+########################################
+# ARCH SITE SYSTEM
+giga_grox_ruin_system_initializer = {
+	class = sc_black_hole
+	planet = {
+		class = star
+		orbit_distance = 0
+		orbit_angle = 1
+		size = 30
+		has_ring = no
+	}
+	planet = {
+		class = pc_gas_giant
+		orbit_distance = 50
+		orbit_angle = 20
+		size = 20
+		has_ring = yes
+		moon = {
+			class = pc_molten
+			orbit_distance = 10
+			orbit_angle = 180
+			size = 10
+			has_ring = no
+			init_effect = {
+				archaeological_site = {
+					site_archaic_signal
+				}
+			}
 		}
 	}
 }
