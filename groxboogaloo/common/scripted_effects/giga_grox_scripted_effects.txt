@@ -81,16 +81,16 @@ create_giga_grox = {
 		origin = origin_default
 		flag = {
 			icon = {
-				category = "gigagrox"
-				file = "grox_flag.dds"
+				category = "spherical"
+				file = "flag_spherical_8.dds"
 			}
 			background = {
 				category = "backgrounds"
-				file = "circle.dds"
+				file = "flag_BG_1.dds"
 			}
 			colors = {
-				"red"
-				"red_orange"
+				"shadow_blue"
+				"purple"
 				"null"
 				"null"
 			}
@@ -176,27 +176,6 @@ grox_temple_world = {
 	add_building = building_grox_civilian_forge
 	add_building = building_grox_autofab
 	add_building = building_grox_autofab
-	clear_deposits = yes
-	while = {
-		count = 5
-		add_district = district_grox_city
-	}
-	set_owner = event_target:giga_grox_country
-}
-
-grox_military_world = {
-	while = {
-		count = 50
-		create_pop = {
-			species = event_target:giga_grox_species
-		}
-	}
-	add_building = building_giga_grox_capital
-	add_building = building_grox_fort
-	add_building = building_grox_fort
-	add_building = building_grox_encampment
-	add_building = building_grox_encampment
-	add_building = building_grox_encampment
 	clear_deposits = yes
 	while = {
 		count = 5
@@ -293,7 +272,7 @@ grox_torture_segment = {
 create_grox_raiders = {
 	if = {
 		limit = {
-			midgame_years_passed < 0 #make sure to remove this one, this is only here for testing purposes
+			mid_game_years_passed < 25
 		}
 		set_name = "Nov Irki"
 		while = {
@@ -312,52 +291,19 @@ create_grox_raiders = {
 				prefix = no
 			}
 		}
-		while = {
-			count = 1
-			create_ship = {
-				name = Akitaliata
-				design = "Akitaliata"
-				prefix = no
-			}
-		}
-		set_fleet_flag = grox_raider_fleet
-		break = yes
-	}
-	if = {
-		limit = {
-			midgame_years_passed < 25
-		}
-		set_name = "Nov Irki"
-		while = {
-			count = 15
-			create_ship = {
-				name = Erkitak
-				design = "Erkitak"
-				prefix = no
-			}
-		}
-		while = {
-			count = 4
-			create_ship = {
-				name = Arikinovarat
-				design = "Arikinovarat"
-				prefix = no
-			}
-		}
-		while = {
-			count = 1
-			create_ship = {
-				name = Akitaliata
-				design = "Akitaliata"
-				prefix = no
-			}
-		}
-		set_fleet_flag = grox_raider_fleet
+		#while = {
+		#	count = 1
+		#	create_ship = {
+		#		name = Akitaliata
+		#		design = "Akitaliata"
+		#		prefix = no
+		#	}
+		#}
 		break = yes
 	}
 	else_if = {
 		limit = {
-			midgame_years_passed < 50
+			mid_game_years_passed < 50
 		}
 		while = {
 			count = 30
@@ -383,12 +329,11 @@ create_grox_raiders = {
 				prefix = no
 			}
 		}
-		set_fleet_flag = grox_raider_fleet_1
 		break = yes
 	}
 	else_if = {
 		limit = {
-			midgame_years_passed < 75
+			mid_game_years_passed < 75
 		}
 		while = {
 			count = 18
@@ -417,7 +362,6 @@ create_grox_raiders = {
 				#graphical_culture = "pirate_01"
 			}
 		}
-		set_fleet_flag = grox_raider_fleet_1
 		break = yes
 	}
 	else = {
@@ -448,7 +392,6 @@ create_grox_raiders = {
 				#graphical_culture = "pirate_01"
 			}
 		}
-		set_fleet_flag = grox_raider_fleet_1
 		break = yes
 	}
 }
@@ -491,99 +434,6 @@ create_grox_disco_moon = {
 				create_ship = {
 					name = "Akitaliata"
 					design = "Akitaliata"
-					prefix = no
-					upgradable = no
-				}
-			}
-			set_location = {
-				target = event_target:giga_grox_capital
-				distance = 1
-				angle = 0
-			}
-		}
-	}
-}
-
-create_grox_arikon_defense_fleet = {
-	#idk if this will work but i can try
-	create_fleet = {
-		name = "Arikon Defense Fleet"
-		settings = {
-			spawn_debris = no
-			can_change_composition = no
-			can_disband = no
-			can_change_leader = no
-			can_upgrade = no
-			uses_naval_capacity = no
-			garrison = yes
-		}
-		effect = {
-			set_owner = event_target:giga_grox_country
-			while = {
-				count = 1
-				create_ship = {
-					name = "Tactical Strike"
-					design = "Akitaliata"
-					prefix = no
-					upgradable = no
-				}
-				create_ship = {
-					name = "Strike of Fury"
-					design = "Akitaliata"
-					prefix = no
-					upgradable = no
-				}
-				create_ship = {
-					name = "Defensive Bias"
-					design = "Akitaliata"
-					prefix = no
-					upgradable = no
-				}
-				create_ship = {
-					name = random
-					design = "Arikinovarat"
-					prefix = no
-					upgradable = no
-				}
-				create_ship = {
-					name = random
-					design = "Arikinovarat"
-					prefix = no
-					upgradable = no
-				}
-				create_ship = {
-					name = random
-					design = "Arikinovarat"
-					prefix = no
-					upgradable = no
-				}
-				create_ship = {
-					name = random
-					design = "Arikinovarat"
-					prefix = no
-					upgradable = no
-				}
-				create_ship = {
-					name = random
-					design = "Arikinovarat"
-					prefix = no
-					upgradable = no
-				}
-				create_ship = {
-					name = random
-					design = "Arikinovarat"
-					prefix = no
-					upgradable = no
-				}
-				create_ship = {
-					name = random
-					design = "Arikinovarat"
-					prefix = no
-					upgradable = no
-				}
-				create_ship = {
-					name = random
-					design = "Arikinovarat"
 					prefix = no
 					upgradable = no
 				}
