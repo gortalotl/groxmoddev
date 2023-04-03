@@ -1,0 +1,19 @@
+on_custom_diplomacy = {
+    events = {
+		giga_grox.1001
+	}
+}
+on_entering_system_fleet = {
+	events = {
+		giga_grox.200
+	}
+}
+#triggers for raids and related events
+on_five_year_pulse = {
+	events = {
+		giga_grox.140
+	}
+}
+
+
+###########
