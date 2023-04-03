@@ -36,19 +36,15 @@
  building_grox_autofab_desc:0 "Using the energy from the quasar at the heart of Novian civilization, this building uses energy to mass converters to power the industry on this planet."
  building_grox_temple:0 "Novian Sanctuary"
  building_grox_temple_desc:0 "A place where local Novians can come together in worship of their gods. Although different from other galactic religions, the Novians still have a unifying faith."
- pc_grox_barren_desc:0 "This barren world has been shaped to fulfill the needs of the Novians. The lack of a need to care for the environment in any right enables local industries to be extremely productive"
- pc_grox_barren_adj:0 "Novian Barren World"
- pc_grox_toxic:0 "Novian Toxic World"
- pc_grox_toxic_desc:0 "A toxic world converted by the Arikhanate for its use. The unique environment of this world allows for significant research and energy production advantages."
- pc_grox_toxic_adj:0 "Novian Toxic World"
- pc_grox_molten:0 "Novian Molten World"
- pc_grox_molten_desc:0 "A molten world converted by the Arikhanate for its use. Large pyroclastic flows enables this world to produce significant amounts of minerals and alloys. This world is not suitable for habitation for non Novian species."
- pc_grox_molten_adj:0 "Novian Molten World"
- mod_pc_grox_barren_habitability:0 "Novian World Preference"
- trait_pc_grox_barren_preference:0 "Novian World Preference"
- trait_pc_grox_barren_preference_desc:0 "The Novians have a very unique biology, taking the word extremophile to its extreme. They are thus unable to live on any world that other species would consider habitable, but in turn are able to live on worlds other would consider to be uninhabitable."
+ pc_grox_planet:0 "Novian World"
+ pc_grox_planet_desc:0 "This barren world has been shaped to fulfill the needs of the Novians. The lack of a need to care for the environment in any right enables local industries to be extremely productive"
+ pc_grox_planet_adj:0 "Novian World"
+ mod_pc_grox_planet_habitability:0 "Novian World Preference"
+ trait_pc_grox_planet_preference:0 "Novian World Preference"
+ trait_pc_grox_planet_preference_desc:0 "The Novians have a very unique biology, taking the word extremophile to its extreme. They are thus unable to live on any world that other species would consider habitable, but in turn are able to live on worlds other would consider to be uninhabitable."
 pc_strange_star:0 "Strange star" #not sure if its supposed to be strangelet, strange, or strangematter
 pc_strange_star_desc:0 "This star seems to be made of a uniquely poorly understood form of matter. This star's corona is violent and chaotic, making coronal mass ejections commonplace and exceptionally destructive, although orbiting planets towards the edge of the system seem to be mostly spared. The star also rotates with such speed and force that it mimicks the polar electromagnetic emissions of a pulsar"
+
 
 
  GIGAGROX_desc:0 "Novian" #honestly have no clue what this is
@@ -95,11 +91,11 @@ pc_strange_star_desc:0 "This star seems to be made of a uniquely poorly understo
  district_grox_farm_plural:0 "Novian Subterranean Farming Districts"
 #special project things
  STUDY_GROX_TECH:0 "Investigate Novian Technology"
- STUDY_GROX_TECH_DESC:0 "''The general who wins the battle makes many calculations in his temple before the battle is fought. The general who loses makes but few calculations beforehand.'' -Sun Tzu, The Art of War"
+ STUDY_GROX_TECH_DESC:0 "REPLACE_ME"
  STUDY_GROX_SOCIETY:0 "Investigate Novian Culture"
- STUDY_GROX_SOCIETY_DESC:0 "''If you know the enemy and know yourself you need not fear the results of a hundred battles.'' -Sun Tzu, The Art of War"
+ STUDY_GROX_SOCIETY_DESC:0 "REPLACE_ME"
  STUDY_GROX_DESIGNS:0 "Investigate Novian Engineering"
- STUDY_GROX_DESIGNS_DESC:0 "''The art of war teaches us to rely not on the likelihood of the enemy's not coming, but on our own readiness to receive him; not on the chance of his not attacking, but rather on the fact that we have made our position unassailable.'' -Sun Tzu, The Art of War"
+ STUDY_GROX_DESIGNS_DESC:0 "REPLACE_ME"
 #events triggered by completing special projects
  giga_grox.3001.a:0 "Lets get to work then"
  giga_grox.3001.name:0 "Novian Intelligence Agency"
@@ -120,19 +116,11 @@ pc_strange_star_desc:0 "This star seems to be made of a uniquely poorly understo
 
 # RAID EVENTS
  giga_grox.144.name:0 "Incoming Transmission"
- giga_grox.144.desc:0 "Hello xenos\n\nYou are harboring resources which can and will be used in the construction of the §RULTIMATE ANSWER§!, please do not resists, as that would §RNEGATIVELY§! impact your nation and its people."
- giga_grox.144.a:0 "What about the trout population on [Root.GetHomeWorldName]" #gonna have to remove this      BEGIN note from spartan: dont remove it lol
+ giga_grox.144.desc:0 "Hello xenos\n\nYou are harboring resources which can and will be used in the construction of the §RULTIMATE ANSWER§!, please do not resist primitive, as that would negatively impact your nation and its people."
+ giga_grox.144.a:0 "What about the trout population on [Root.GetHomeWorldName]" #gonna have to remove this
  giga_grox.145.name:0 "Novian Raid"
  giga_grox.145.desc:0 "The Novians have seemingly sent a raiding party to assault a foreign power in an effort to gather resources for their so called 'Ultimate Answer.'"
  giga_grox.145.a:0 "Let us hope that this attempt fails..."
-
-giga_grox.150.name:0 "Incoming Transmission"
-giga_grox.150.desc:0 "Hello xenos.  Thank you for your compliance with the visit from RAIDCOM.  The comandeered resourced will be put to good use in the repair of the §RULTIMATE ANSWER§!, and strengthening the Novian Arikhanate as a whole."
-giga_grox.150.a:0 "There may still be time to stop them yet."
-
-giga_grox.160.name:0 "Novian Raid!"
-giga_grox.160.desc:0 "The Novians from the Galactic Core have begun their raid on [Root.Planet.GetName]!  Much of the planet is burning as the raiders force their way to any potential valuable objects with no regard to the civilian population."
-giga_grox.160.a:0 "Let's send a strongly worded letter.  It works in history!"   #replace later lol
 
 # SHIPS
  giga_grox_corvette:0 "Novian Corvette"
