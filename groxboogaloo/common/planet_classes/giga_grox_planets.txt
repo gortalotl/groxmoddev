@@ -1,5 +1,5 @@
 ###############	GROX PLANET TYPES ###############
-pc_grox_barren = {
+pc_grox_planet = {
 	entity = "grox_barren"
 	entity_scale = @planet_standard_scale
 	icon = GFX_planet_type_barren
@@ -18,56 +18,9 @@ pc_grox_barren = {
 	spawn_odds = 0
 	carry_cap_per_free_district = @carry_cap_normal
 	modifier = {
-		planet_jobs_food_produces_mult = 0.25
-		planet_jobs_unity_produces_mult = 0.25
-	}
-}
-pc_grox_toxic = {
-	entity = "grox_toxic_planet"
-	entity_scale = @planet_standard_scale
-	icon = GFX_planet_type_toxic
-	enable_tilt = yes
-	district_set = grox_districts
-	atmosphere_color		= hsv { 0.1 0.4 0.7 }
-	atmosphere_intensity	= 1.0
-	atmosphere_width		= 0.5
-	show_city = yes
-	colonizable = yes
-	initial = yes
-	ideal = no
-	is_artificial_planet = no
-	preview_entity = pc_toxic_sky.dds #same here
-	starting_planet = no
-	spawn_odds = 0
-	carry_cap_per_free_district = @carry_cap_normal
-	modifier = {
-		planet_jobs_energy_produces_mult = 0.25 #rough weather enabling wind power
-		planet_jobs_physics_research_produces_mult = 0.25 #research opportunities
-		planet_jobs_society_research_produces_mult = 0.25
-		planet_jobs_engineering_research_produces_mult = 0.25
-	}
-}
-pc_grox_molten = {
-	entity = "grox_molten"
-	entity_scale = @planet_standard_scale
-	icon = GFX_planet_type_molten
-	enable_tilt = yes
-	district_set = grox_districts
-	atmosphere_color		= hsv { 0.1 0.4 0.7 }
-	atmosphere_intensity	= 1.0
-	atmosphere_width		= 0.5
-	show_city = yes
-	colonizable = yes
-	initial = yes
-	ideal = no
-	is_artificial_planet = no
-	preview_entity = pc_metallic_hydrogen_sky.dds #same here
-	starting_planet = no
-	spawn_odds = 0
-	carry_cap_per_free_district = @carry_cap_normal
-	modifier = {
-		planet_jobs_minerals_produces_mult = 0.5 #molten world allows mining of rare resources
-		planet_jobs_alloys_produces_mult = 0.25 #uses the heat for metallurgy
+		planet_stability_add = -20
+		planet_jobs_produces_mult = 0.20
+		pop_growth_speed = 0.25
 	}
 }
 
@@ -131,4 +84,39 @@ pc_strange_star = {
 	colonizable = no
 
 	planet_custom_label_offset = 100
+}
+
+pc_agartha = { # mini birch (oppression edition) once again, heavily based off of code by ttft
+	is_artificial_planet = yes
+	climate = wet
+	#entity = birch_world
+	#preview_entity = birch_world_preview
+	#entity_scale = @planet_standard_scale
+	icon = GFX_birch_icon			# will probably make an icon for it but for now i'll just leave it with the birch one ig
+	#atmosphere_color 		= hsv { 0.75 0.10 0.60 }
+	#atmosphere_intensity 	= 1.0
+	#atmosphere_width 		= 0.5
+	city_color_lut = gfx/portraits/misc/colorcorrection_continental.dds
+	min_distance_from_sun = @habitable_min_distance
+	max_distance_from_sun = @habitable_max_distance
+	spawn_odds = 0
+	enable_tilt = no
+	fixed_entity_scale = yes
+	fixed_city_level = 6
+	chance_of_ring = 0
+	planet_size = { min = @habitable_planet_min_size max = @habitable_planet_max_size }
+	moon_size = { min = @habitable_moon_min_size max = @habitable_moon_max_size }
+	colonizable = yes
+	starting_planet = no
+	ideal = yes
+	district_set = agartha_districts
+	modifier = {
+		planet_max_buildings_add = 200
+		district_agartha_construction_max = 1
+		giga_planet_job_size = 1
+		planet_max_districts_add = -499
+		planet_carry_cap_add = 300 # never gonna have low pops lmao
+		planet_buildings_upkeep_mult = 1
+	}
+	carry_cap_per_free_district = 0 # big cap in the planet class, lots of housing
 }
