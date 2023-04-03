@@ -295,3 +295,119 @@ district_grox_farm = {
 		}
 	}
 }
+
+#############################################################################
+
+# AGARTHA DISTRICTS, similar to insulaes and sectors but agartha world
+@giga_agartha_domus_cost = 5000 # minerals and alloys
+@giga_agartha_domus_time = 2400
+@giga_agartha_domus_maintenance = 40
+
+@giga_agartha_demes_cost = 1000
+@giga_agartha_demes_sr_cost = 300
+@giga_agartha_demes_alt_cost = 600 # for ones which don't use SRs
+@giga_agartha_demes_time = 300
+@giga_agartha_demes_maintenance = 10
+@giga_agartha_demes_sr_maintenance = 2
+@giga_agartha_demes_alt_maintenance = 5 # for ones which don't use SRs
+
+@agartha_sector_jobs = 5 
+@agartha_workers = -5
+# **heavily** basedoff of code made by TTFT so much thanks to them
+
+#district that manages all the things for the domuses/domusae (what is the plural of domus??????)
+district_agartha_structure = {
+	base_buildtime = @giga_agartha_domus_time
+	potential = {
+		exists = owner
+		uses_district_set = agartha_districts
+	}
+	show_on_uncolonized = {
+		exists = from
+		uses_district_set = agartha_districts
+	}
+	resources = {
+		category = planet_districts_cities
+		cost = {
+			alloys = @giga_agartha_domus_cost
+			minerals = @giga_agartha_domus_cost
+		}
+		upkeep = {
+			energy = @giga_agartha_domus_maintenance
+		}
+	}
+	planet_modifier = {
+		agartha_district_domus_max = 1
+		agartha_district_domus_per_pop = 0.01
+	}
+	triggered_desc = {
+		trigger = {
+			always = yes
+		}
+		text = agartha_district_domus_tooltip
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = no }
+		}
+		job_agartha_structure_manager_add = 1
+		job_agartha_structure_manager_per_pop = 0.01
+		job_enforcer_per_pop = 0.04
+	}
+	triggered_desc = {
+		trigger = { exists = owner owner = { is_gestalt = no } }
+		text = job_agartha_structure_manager_effect_desc
+	}
+	triggered_desc = {
+		trigger = { exists = owner owner = { is_gestalt = no } }
+		text = job_enforcer_effect_desc
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		job_agartha_structure_manager_drone_add = 1
+		job_agartha_structure_manager_drone_per_pop = 0.01
+
+		job_patrol_drone_per_pop = 0.06
+	}
+	triggered_desc = {
+		trigger = { exists = owner owner = { is_gestalt = yes } }
+		text = job_giga_birch_structure_manager_drone_effect_desc
+	}
+	triggered_desc = {
+		trigger = { exists = owner owner = { is_gestalt = yes } }
+		text = job_patrol_drone_effect_desc
+	}
+}
+##############################################################################################################################
+##############################################################################################################################
+##############################################################################################################################
+
+#fornax
+
+district_agartha_fornax = {
+	base_buildtime = @giga_agartha_domus_time
+	show_on_uncolonized = {
+		uses_district_set = giga_birch
+	}
+	potential = {
+		uses_district_set = agartha_districts
+	}
+	allow = {
+		agartha_district_allow = { category = domus }
+	}
+	resources = { 
+		category = planet_districts_cities
+		cost = {
+			alloys = @giga_agartha_domus_cost
+			minerals = @giga_agartha_domus_cost
+		}
+		upkeep = {
+			energy = @giga_agartha_domus_maintenance
+		}
+	}
+}
