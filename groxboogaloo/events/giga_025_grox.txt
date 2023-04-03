@@ -594,7 +594,7 @@ system_event = {
 		#Ownership
 		every_system = {
 			limit = {
-				has_star_flag = giga_grox_system
+				has_star_flag = giga_grox_own_at_start
 			}
 			create_giga_grox_outpost = yes
 		}
@@ -950,6 +950,9 @@ country_event = {
 				}
 				save_event_target_as = grox_raid_target_planet
 			}
+			country_event = {
+				id = giga_grox.144
+			}
 		}
 		event_target:giga_grox_country = {
 			create_leader = {
@@ -973,7 +976,7 @@ country_event = {
 					set_location = event_target:giga_grox_raid_source
 					set_owner = event_target:giga_grox_country
 					#create_grox_raiders = yes
-					set_fleet_stance = passive
+					set_fleet_stance = aggressive
 					set_fleet_bombardment_stance = indiscriminate
 					set_aggro_range_measure_from = self
 					set_aggro_range = 150
@@ -1041,8 +1044,10 @@ planet_event = {
 	is_triggered_only = yes
 	trigger = {
 		planet_devastation >= 50
-		from = {
-			is_country_type = giga_grox_country
+		any_fleet_in_orbit = {
+			owner = {
+				is_country_type = giga_grox_country
+			}
 		}
 		owner = {
 			OR = {
@@ -1072,7 +1077,7 @@ planet_event = {
 					has_fleet_flag = grox_raider_fleet
 				}
 				fleet_event = {
-					id = giga_grox.160
+					id = giga_grox.110
 					days = 20
 				}
 			}
@@ -1274,6 +1279,7 @@ planet_event = {
 		}
 	}
 }
+
 country_event = {
 	id = giga_grox.170
 	hide_window = no
@@ -1282,22 +1288,23 @@ country_event = {
 	desc = "giga_grox.170.desc"
 	picture = GFX_evt_grox_wreck_1
 }
+
 ############## REMEMBER TO ADD MORE EVENTS WITH DIALOGUE AND STUFF RELATED TO THE COUNTRY TYPE ABOVE
 fleet_event = {
 	id = giga_grox.110
 	hide_window = yes
 	is_triggered_only = yes
 	immediate = {
-		set_fleet_flag = returning_to_core		#just in case i need to use them in the future or people make submods
+		set_fleet_flag = returning_to_core
 		owner = {
-			save_event_target_as = raiding_marauder
+			save_event_target_as = raiding_grox
 			if = {
 				limit = {
-					has_country_flag = giga_grox_country
+					is_country_type = giga_grox_country
 				}
 				random_system = {
 					limit = {
-						has_star_flag = giga_grox_raider_1
+						has_star_flag = giga_grox_capital
 					}
 					#solar_system = {  }
 				}
@@ -1308,7 +1315,7 @@ fleet_event = {
 		}
 		clear_fleet_actions = this
 		auto_move_to_planet = {
-			target = event_target:grox_raid_source_planet
+			target = event_target:giga_grox_capital
 			destroy_on_arrival = no
 			clear_auto_move_on_arrival = yes
 		}
@@ -1323,7 +1330,7 @@ fleet_event = {
 	hide_window = yes
 	is_triggered_only = yes
 	trigger = {
-		from = {
+		root = {
 			has_fleet_flag = returning_to_core
 		}
 	}
@@ -1438,6 +1445,7 @@ country_event = {
 		}
 	}
 }
+
 country_event = {
 	id = giga_grox.50001
 	title = "giga_grox.50001.name"
