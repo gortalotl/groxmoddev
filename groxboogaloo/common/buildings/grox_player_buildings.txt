@@ -1,5 +1,5 @@
 building_grox_foundry = {
-	base_buildtime = @b3_time
+	base_buildtime = 600
 	can_build = yes
 	category = manufacturing
 
