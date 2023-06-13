@@ -64,11 +64,12 @@ ship_design = {
 		component = { slot = "LARGE_UTILITY_3"		template = "LARGE_DARK_MATTER_DEFLECTOR" }
 		component = { slot = "LARGE_UTILITY_4"		template = "LARGE_DARK_MATTER_DEFLECTOR" }
 		component = { slot = "LARGE_UTILITY_5"		template = "LARGE_DARK_MATTER_DEFLECTOR" }
-	}
+		component = { slot = "AUX_UTILITY_1" template = AFTERBURNER_2	} }
 
 	required_component = "GIGA_MOON_COMPUTER"
 	required_component = "SENSOR_4"
 	required_component = "REACTOR_ASTEROID"
 	required_component = "JUMP_DRIVE_1"
 	required_component = "BATTLESHIP_SHIP_THRUSTER_5"
+	
 }
