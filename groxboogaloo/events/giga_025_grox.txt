@@ -964,14 +964,13 @@ country_event = {
 				leader_age_max = 150
 				traits = {
 					trait = random_trait
-					trait = leader_trait_admiral_cyborg
 				}
 			}
 			last_created_leader = {
 				save_event_target_as = grox_admiral
 			}
 			create_fleet = {
-				name = "Novaguerres"
+				name = "Novaidcom Warriors"
 				effect = {
 					set_location = event_target:giga_grox_raid_source
 					set_owner = event_target:giga_grox_country
@@ -990,7 +989,16 @@ country_event = {
 							prefix = no
 							#graphical_culture = "pirate_01"
 						}
-						count = 10
+						count = 50
+					}
+					while = {
+						create_ship = {
+							name = random
+							design = "Akitaliata"
+							prefix = no
+							#graphical_culture = "pirate_01"
+						}
+						count = 1
 					}
 				}
 				settings = {
@@ -1038,28 +1046,73 @@ country_event = {
 }
 
 #	Grox do a little trolling lmao
+event = {
+	id = giga_grox.149
+	is_triggered_only = yes
+	hide_window = yes
+	immediate = {
+		every_country = {
+			limit = {
+				any_planet_within_border = {
+					planet_devastation >= 30
+					any_fleet_in_orbit = {
+						owner = {
+							is_country_type = giga_grox_country
+						}
+						has_fleet_flag = grox_raider_fleet
+					}
+					owner = {
+						OR = {
+							is_country_type = default
+							is_country_type = awakened_fallen_empire
+							is_country_type = fallen_empire
+						}
+					}
+				}
+			}
+			every_owned_planet = {
+				limit = {
+					planet_devastation >= 30
+					any_fleet_in_orbit = {
+						owner = {
+							is_country_type = giga_grox_country
+						}
+						has_fleet_flag = grox_raider_fleet
+					}
+					owner = {
+						OR = {
+							is_country_type = default
+							is_country_type = awakened_fallen_empire
+							is_country_type = fallen_empire
+						}
+					}
+				}
+				planet_event = {
+					id = giga_grox.150
+				}
+			}
+		}
+	}
+}
+
 planet_event = {
 	id = giga_grox.150
 	hide_window = yes
 	is_triggered_only = yes
 	trigger = {
-		planet_devastation >= 50
+		planet_devastation >= 30
 		any_fleet_in_orbit = {
 			owner = {
 				is_country_type = giga_grox_country
 			}
+			has_fleet_flag = grox_raider_fleet
 		}
 		owner = {
 			OR = {
 				is_country_type = default
 				is_country_type = awakened_fallen_empire
 				is_country_type = fallen_empire
-				#is_country_type = ascended_empire				# why cant you just be normal zofe #you know what no zofe be damned, thats what you get for not being normal <3
-				#is_country_type = lost_empire
 			}
-		}
-		NOT = {
-			has_planet_flag = planet_grox_raided
 		}
 	}
 	immediate = {
@@ -1071,84 +1124,19 @@ planet_event = {
 			flag = planet_grox_raided
 			days = 1800
 		}
-		from = {
-			random_controlled_fleet = {
+		root = {
+			every_fleet_in_orbit = {
 				limit = {
 					has_fleet_flag = grox_raider_fleet
 				}
 				fleet_event = {
 					id = giga_grox.110
-					days = 20
 				}
+				save_event_target_as = grox_raiders
 			}
 		}
-		if = {
-			limit = {
-				owner = {
-					NOT = {
-						has_ethic = ethic_gestalt_consciousness
-					}
-				}
-			}
-			random_list = {
-				50 = {
-					planet_event = {
-						id = giga_grox.160
-					}
-				}
-				50 = {
-					planet_event = {
-						id = giga_grox.161
-					}
-				}
-			}
-			break = yes
-		}
-		if = {
-			limit = {
-				owner = {
-					has_authority = auth_machine_intelligence
-					NOT = {
-						has_valid_civic = civic_machine_servitor
-					}
-				}
-			}
-			planet_event = {
-				id = giga_grox.162
-			}
-			break = yes
-		}
-		if = {
-			limit = {
-				owner = {
-					has_valid_civic = civic_machine_servitor
-				}
-			}
-			planet_event = {
-				id = giga_grox.163
-			}
-			break = yes
-		}
-		if = {
-			limit = {
-				owner = {
-					has_authority = auth_hive_mind
-				}
-			}
-			planet_event = {
-				id = giga_grox.164
-			}
-			break = yes
-		}
-		else_if = {
-			limit = {
-				any_empire = {
-					is_ai = no
-				}
-			}
-			country_event = {
-				id = giga_grox.170
-			}
+		planet_event = {
+			id = giga_grox.160
 		}
 	}
 }
@@ -1169,6 +1157,9 @@ planet_event = {
 				limit = {
 					event_target:grox_raid_victim_planet = {
 						num_pops >= 15
+						NOT = {
+							num_pops >= 25
+						}
 					}
 				}
 				owner = {
@@ -1187,6 +1178,9 @@ planet_event = {
 				limit = {
 					event_target:grox_raid_victim_planet = {
 						num_pops >= 25
+						NOT = {
+							num_pops >= 50
+						}
 					}
 				}
 				owner = {
@@ -1205,6 +1199,9 @@ planet_event = {
 				limit = {
 					event_target:grox_raid_victim_planet = {
 						num_pops >= 50
+						NOT = {
+							num_pops >= 75
+						}
 					}
 				}
 				owner = {
@@ -1223,6 +1220,9 @@ planet_event = {
 				limit = {
 					event_target:grox_raid_victim_planet = {
 						num_pops >= 75
+						NOT = {
+							num_pops >= 100
+						}
 					}
 				}
 				owner = {
@@ -1241,6 +1241,9 @@ planet_event = {
 				limit = {
 					event_target:grox_raid_victim_planet = {
 						num_pops >= 100
+						NOT = {
+							num_pops >= 150
+						}
 					}
 				}
 				owner = {
@@ -1310,10 +1313,6 @@ fleet_event = {
 				}
 			}
 		}
-		solar_system = {
-			save_event_target_as = fleet_system
-		}
-		clear_fleet_actions = this
 		auto_move_to_planet = {
 			target = event_target:giga_grox_capital
 			destroy_on_arrival = no
@@ -1451,4 +1450,23 @@ country_event = {
 	title = "giga_grox.50001.name"
 	desc = "giga_grox.50001.desc"
 	is_triggered_only = yes
+}
+
+############### QSO STUFF
+
+#first upgrade
+country_event = {
+	is_triggered_only = yes
+	id = giga_grox.42000
+	picture = gfx_grox_building_something_1
+	title = "giga_grox.42000.name"
+	desc = "giga_grox.42000.desc"
+	option = {
+		name = giga_grox.42000.a
+		alloys = 6500
+		add_modifier = {
+			modifier = grox_qso_1_ohno
+			days = 7200
+		}
+	}
 }
