@@ -14,6 +14,10 @@ on_five_year_pulse = {
 		giga_grox.140
 	}
 }
-
+on_yearly_pulse = {
+	events = {
+		giga_grox.150
+	}
+}
 
 ###########
