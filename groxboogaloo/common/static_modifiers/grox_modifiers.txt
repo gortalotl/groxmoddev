@@ -1,0 +1,4 @@
+grox_qso_1_ohno = {
+	pop_happiness = -0.05
+	country_alloys_produces_mult = 0.05
+}

@@ -78,7 +78,7 @@ giga_black_hole_grox_initializer = {
 		create_giga_grox_outpost = yes
 		save_global_event_target_as = giga_core_system
 		spawn_megastructure = {
-			type = "quasi_stellar_obliterator_0"
+			type = "grox_quasi_stellar_obliterator_0"
 			coords_from = event_target:grox_quasar
 			owner = event_target:giga_grox_country
 		}
@@ -117,14 +117,15 @@ giga_grox_inner_1_initializer = {
 		has_ring = no
 	}
 	planet = {
-		name = "Novica"
+		name = "Arikon"
 		class = "pc_grox_planet"
 		orbit_distance = 50
 		orbit_angle = 25
 		size = 25
 		has_ring = yes
 		init_effect = {
-			grox_major_forge_colony = yes
+			grox_major_colony = yes
+			grox_arikon = yes
 		}
 	}
 	planet = {

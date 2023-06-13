@@ -6,24 +6,111 @@ create_giga_grox = {
 		portrait = avi15
 		homeworld = THIS
 		traits = {
-			trait = trait_pc_grox_barren_preference
+			trait = trait_pc_grox_preference
 			trait = trait_robust
-			trait = trait_fertile
-			trait = trait_latent_psionic
+			trait = trait_psionic
 			trait = trait_cybernetic
 			trait = trait_sedentary
+			trait = trait_perfected_genes
 		}
 		effect = {
 			save_global_event_target_as = giga_grox_species
 		}
 	}
+	create_species = {
+		name = "Deltkren"
+		plural = "Deltkrens"
+		class = HUM
+		portrait = humanoid_hp_06
+		traits = {
+			trait = trait_cybernetic
+			trait = trait_syncretic_proles
+			trait = trait_robust
+			trait = trait_fertile
+			trait = trait_very_strong
+		}
+		effect = {
+			save_global_event_target_as = giga_grox_deltkren_species
+		}
+	}
+	create_species = {
+		name = "Felikat"
+		plural = "Felikatz"
+		class = MAM
+		portrait = mam14
+		traits = {
+			trait = trait_sedentary
+			trait = trait_docile
+			trait = trait_syncretic_proles
+		}
+		effect = {
+			save_global_event_target_as = giga_grox_katz_species
+		}
+	}
+	create_species = {
+		class = ART
+		name = "Sektian"
+		plural = "Sektian"
+		portrait = art11
+		traits = {
+			trait = trait_fertile
+			trait = trait_industrious
+			trait = trait_syncretic_proles
+		}
+		effect = {
+			save_global_event_target_as = giga_grox_sektians_species
+		}
+	}
+	create_species = {
+		class = MAM
+		name = "Pangolier"
+		plural = "Pangoliers"
+		portrait = mam17
+		traits = {
+			trait = trait_very_strong
+			trait = trait_resilient
+			trait = trait_docile
+			trait = trait_syncretic_proles
+		}
+		effect = {
+			save_global_event_target_as = giga_grox_pangoliers_species
+		}
+	}
 	while = {
 		#here they come
-		count = 100
+		count = 20
 		create_pop = {
 			species = event_target:giga_grox_species
 		}
 		clear_deposits = yes
+	}
+	while = {
+		count = 10
+		create_pop = {
+			species = event_target:giga_grox_deltkren_species
+		}
+	}
+	while = {
+		count = 5
+		create_pop = {
+			species = event_target:giga_grox_pangoliers_species
+		}
+	}
+	while = {
+		count = 2
+		create_pop = {
+			species = event_target:giga_grox_katz_species
+		}
+	}
+	while = {
+		count = 38
+		create_pop = {
+			species = event_target:giga_grox_sektians_species
+		}
+	}
+	while = {
+		count = 10
+
 	}
 	while = {
 		#district stuff
@@ -89,8 +176,8 @@ create_giga_grox = {
 				file = "flag_BG_1.dds"
 			}
 			colors = {
-				"shadow_blue"
-				"purple"
+				"red"
+				"cerise_red"
 				"null"
 				"null"
 			}
@@ -130,11 +217,17 @@ create_giga_grox = {
 }
 
 #populates planets that aren't the grox's capital
-grox_major_forge_colony = {
+grox_major_colony = {
 	while = {
-		count = 60
+		count = 10
 		create_pop = {
 			species = event_target:giga_grox_species
+		}
+	}
+	while = {
+		count = 20
+		create_pop = {
+			species = event_target:giga_grox_sektians_species
 		}
 	}
 	set_owner = event_target:giga_grox_country
@@ -162,12 +255,20 @@ grox_major_forge_colony = {
 		add_district = district_grox_city
 	}
 }
-
+grox_arikon = {
+	add_building = 
+}
 grox_temple_world = {
 	while = {
 		count = 40
 		create_pop = {
 			species = event_target:giga_grox_species
+		}
+	}
+	while = {
+		count = 10
+		create_pop = {
+			species = event_target:giga_grox_sektians_species
 		}
 	}
 	add_building = building_giga_grox_capital
@@ -198,72 +299,6 @@ create_giga_grox_outpost = {
 			set_owner = event_target:giga_grox_country
 		}
 	}
-}
-
-grox_forge_ring = {
-	#for equatorial shipyards
-	while = {
-		count = 25
-		create_pop = {
-			species = event_target:giga_grox_species
-		}
-	}
-	while = {
-		count = 5
-		add_district = district_giga_planet_alloys
-	}
-	while = {
-		count = 2
-		add_district = district_giga_planet_city
-	}
-	add_building = building_giga_grox_capital
-	add_building = building_grox_autofab
-	set_owner = event_target:giga_grox_country
-}
-
-#grox do a little trolling (m brain edition)
-grox_torture_segment = {
-	create_species = {
-		name = "Insectrox"
-		plural = "Insectrox"
-		class = art
-		portrait = art18
-		homeworld = THIS
-		traits = {
-			trait = trait_very_strong
-			trait = trait_docile
-			trait = trait_syncretic_proles
-			trait = trait_delicious
-		}
-		effect = {
-			save_global_event_target_as = grox_insectrox
-		}
-	}
-	while = {
-		count = 5
-		add_district = district_virtual_hell
-	}
-	while = {
-		count = 5
-		create_pop = {
-			species = event_target:giga_grox_species
-		}
-	}
-	while = {
-		count = 50
-		create_pop = {
-			species = event_target:grox_insectrox
-		}
-	}
-	while = {
-		count = 10
-		create_pop = {
-			species = event_target:giga_grox_species
-		}
-	}
-	add_building = building_giga_grox_capital
-	add_building = building_grox_fort
-	set_owner = event_target:giga_grox_country
 }
 
 #####################################
@@ -482,3 +517,4 @@ increase_grox_progress = {
 		}
 	}
 }
+

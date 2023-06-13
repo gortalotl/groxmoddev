@@ -1,0 +1,9 @@
+agartha_district_allow = {
+	custom_tooltip_fail = {
+		text = agartha_district_$category$_allow
+		check_variable = {
+			which = agartha_district_$category$_built
+			value < modifier:agartha_district_$category$_max
+		}
+	}
+}

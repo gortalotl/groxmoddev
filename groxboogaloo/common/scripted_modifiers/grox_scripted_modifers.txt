@@ -1,0 +1,98 @@
+agartha_district_domus_max = {
+	#icon = mod_count
+	max_decimals = 0
+	good = yes
+	category = planet
+}
+
+agartha_district_domus_min = {
+	icon = mod_giga_birch_district_insula_max
+	max_decimals = 0
+	good = yes
+	category = planet
+}
+
+agartha_district_domus_per_pop = {
+	icon = mod_giga_birch_district_insula_max
+	max_decimals = 0
+	good = yes
+	category = planet
+	localize_with_value_key = yes
+}
+
+agartha_district_fornax_max = { #alloys and sr production, orykta equivalent
+	#icon = mod_count
+	max_decimals = 0
+	good = yes
+	category = planet
+}
+
+agartha_district_atlas_max = { #mega and fleet buffs, ktisma equivalent
+	#icon = mod_count
+	max_decimals = 0
+	good = yes
+	category = planet
+}
+
+agartha_district_ecclesia_max = { #planet buffs empire wide, physma equivalent
+	#icon = mod_count
+	max_decimals = 0
+	good = yes
+	category = planet
+}
+
+agartha_district_domus_tag = {
+	icon = mod_count
+	max_decimals = 0
+	neutral = yes
+	category = planet
+	localize_with_value_key = yes
+}
+
+agartha_district_domus_fornax_tag = {
+	icon = mod_count
+	max_decimals = 0
+	neutral = yes
+	category = planet
+	localize_with_value_key = yes
+}
+
+agartha_district_fornax_tag = {
+	icon = mod_count
+	max_decimals = 0
+	neutral = yes
+	category = planet
+	localize_with_value_key = yes
+}
+
+agartha_district_domus_atlas_tag = {
+	icon = mod_count
+	max_decimals = 0
+	neutral = yes
+	category = planet
+	localize_with_value_key = yes
+}
+
+agartha_district_atlas_tag = {
+	icon = mod_count
+	max_decimals = 0
+	neutral = yes
+	category = planet
+	localize_with_value_key = yes
+}
+
+agartha_district_domus_ecclesia_tag = {
+	icon = mod_count
+	max_decimals = 0
+	neutral = yes
+	category = planet
+	localize_with_value_key = yes
+}
+
+agartha_district_ecclesia_tag = {
+	icon = mod_count
+	max_decimals = 0
+	neutral = yes
+	category = planet
+	localize_with_value_key = yes
+}

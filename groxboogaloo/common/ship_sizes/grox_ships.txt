@@ -105,6 +105,8 @@ giga_grox_assault_asteroid = {
 		ship_armor_add = 20500
 		ship_evasion_mult = -1
 		ship_evasion_add = -1
+		ship_fire_rate_mult = 0.5
+		ship_orbital_bombardment_mult = 0.25
 	}
 	size_multiplier = 32
 	fleet_slot_size = 32

@@ -1,0 +1,96 @@
+grox_quasi_stellar_obliterator_0 = {
+	entity = "construction_platform_entity"
+	construction_entity = "construction_platform_entity"
+	# construction_blocks_and_blocked_by = none # BLOCKING TEST
+	portrait = "GFX_megastructure_construction_background"
+	place_entity_on_planet_plane = no
+	entity_offset = { x = -150 y = -7 }
+	#prerequisites = { giga_tech_quasi_stellar_1 }
+
+	build_time = 2700
+	resources = {
+		category = giga_gigastructures
+		cost = {
+			alloys = 100000
+			influence = 300
+			unity = @giga_tera_start_unity_cost
+		}
+		upkeep = { energy = 5 }
+	}
+
+	potential = {
+		is_country_type = giga_grox_country
+	}
+
+	possible = {
+		custom_tooltip = { fail_text = "requires_no_existing_quasistellar"					from = { NOT = { has_country_flag = built_quasistellar } } }
+		custom_tooltip = { fail_text = "requires_inside_border"								is_inside_border = from }
+		custom_tooltip = { fail_text = "requires_surveyed_system"							giga_system_is_surveyed = yes }
+	}
+
+	placement_rules = {
+		planet_possible = {
+			custom_tooltip = { fail_text = "requires_no_existing_megastructure"		planet_has_no_megastructure = yes }
+			custom_tooltip = { fail_text = "requires_no_anomaly"					has_anomaly = no }
+			custom_tooltip = { fail_text = "must_build_around_core_quasar"			is_planet_class = pc_core_quasar }
+		}
+	}
+
+	ai_weight = { factor = 0 }
+
+}
+grox_quasi_stellar_obliterator_1 = {
+	entity = "grox_quasistellar_obliterator_1_entity"
+	construction_entity = "grox_quasistellar_obliterator_1_entity"
+	portrait = "GFX_megastructure_construction_background"
+	upgrade_from = { quasi_stellar_obliterator_0 }
+
+	build_time = 3600
+	resources = {
+		category = giga_gigastructures
+		cost = { alloys = 250000 unity = @giga_tera_unity_cost }
+		upkeep = { alloys = 50 }
+	}
+
+	potential = {
+		is_country_type = giga_grox_country
+	}
+
+	on_build_complete = {
+		star = {
+			set_planet_entity = { entity = "core_quasar_compressed_entity" }
+			set_name = "Compressed Hyperquasar"
+		}
+		every_country = {
+			country_event = {
+				id = ineedtomakeaneventforthis1
+			}
+		}
+	}
+}
+
+grox_quasi_stellar_obliterator_2 = {
+	entity = "grox_quasistellar_obliterator_1_entity"
+	construction_entity = "grox_quasistellar_obliterator_1_entity"
+	portrait = "GFX_megastructure_construction_background"
+	upgrade_from = { quasi_stellar_obliterator_1 }
+
+	build_time = 3600
+	resources = {
+		category = giga_gigastructures
+		cost = { alloys = 250000 unity = @giga_tera_unity_cost }
+		upkeep = { alloys = 50 }
+	}
+
+	potential = {
+		is_country_type = giga_grox_country
+	}
+
+	on_build_complete = {
+		every_country = {
+			country_event = {
+				id = ineedtomakeaneventforthis2
+			}
+		}
+	}
+}
