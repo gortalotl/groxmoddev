@@ -6,7 +6,7 @@
  giga_grox.2000.a:0 "On screen."
 
  giga_grox.1001.name:0 "Incoming Transmission"
- giga_grox.1001.desc:0 "Greetings xenos, we are the Grox. I have been regretfully tasked with the job of speaking to your kind, we wish to be left alone. If you attempt to interfere in our isolation you will be §R<<EXTERMINATED LIKE THE VERMIN YOU ARE!>>§!"
+ giga_grox.1001.desc:0 "Greetings xenos, we are the Novians. I have been regretfully tasked with the job of speaking to your kind, we wish to be left alone. If you attempt to interfere in our isolation you will be §R<<EXTERMINATED LIKE THE VERMIN YOU ARE!>>§!"
  giga_grox.1001.who:0 "Tell us about your civilization"
  giga_grox.1001.who.response:0 "We are a very old civilization, much older than the 'precursors' that you may know. Your cycle of empires is the 12th to develop §R<ACCESS TO THE CORE>§!\n\nThe Novian Arikhanate is approximately 3.4 million years old, having developed faster-than-light travel long before your kind even gained sentience. We do not enjoy speaking to you and many in our civlization are repulsed by the fact that we are even speaking to xenos instead of simply §R<<EXTERMINATING>>§! them."
  giga_grox.1001.capital:0 "Your civilization makes entensive use of cybernetic enhancements"
